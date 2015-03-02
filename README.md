@@ -1,2 +1,4 @@
 # RegistroAsistencias
-Una aplicación Android desarrollada por estudiantes de Ingeniería de Software para tomar registro de asistencia de los alumnos a las clases.
+Es una aplicación desarrollada para la plataforma Android, la cual permitirá obtener el registro y control de la asistencia a clases. 
+
+  
