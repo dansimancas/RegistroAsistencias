@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\SiriusStudentModel;
+use Symfony\Component\HttpFoundation\Response;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +33,9 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+        $datos = SiriusStudentModel::find("T00026426");
+
+		return response()->json($datos);
 	}
 
 }
