@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace RegistroAsistencias\Http\Controllers;
 
 class WelcomeController extends Controller {
 
