@@ -33,7 +33,7 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-        $datos = SiriusStudentModel::find("T00026426");
+        $datos = SiriusStudentModel::find("T00022930");
 
 		return response()->json($datos);
 	}
