@@ -11,15 +11,33 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+/*
+muestra cursos que dicta el profesor id. Devuelve colección de cursos
 
-Route::get('/listar-cursos', 'ListarCursos@index');
+*/
+Route::get('teacher/{id}/courses', 'CoursesController@showCoursesByTeacher');
 
-Route::get('/listar-cursos/{id}', 'ListarCursos@show');
+/*
+muestra la lista de estudiantes del curso NRC del profesor id ya capturado
+devuelve coleccción de estudiantes
+*/
+
+Route::get('course/{NRC}/students', 'CoursesController@showStudentsByCourse');
+
+/*
+//muestra la lista de estudiantes
+Route::get('/estudiantes', 'ListarCursos@show');
+
+//muestra la informacion del estudiante id
+Route::get('/estudiantes/{id}', 'ListarCursos@show');
+
+//muestra los cursos en los que esta inscrito el estudiante id
+Route::get('/estudiantes/{id}/cursos', 'ListarCursos@show');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+*/

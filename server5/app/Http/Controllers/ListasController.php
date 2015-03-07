@@ -49,6 +49,12 @@ class ListasController extends Controller {
 	 */
 	public function show($id)
 	{
+		/*
+		crear objeto course con los datos de los cursos e inyectar en json.
+		Crear campo url que de la ruta para acceder a informacion adicional 
+		los cursos o los alumnos dentro de el.
+		lo mismo para student y teacher
+		*/
         // Muestra la información de los cursos dictados por el profesor de código pasado como parámetro.
         $datos = SiriusCoursesModel::where('DOCENTEID','=',$id)->get();
 
