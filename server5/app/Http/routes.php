@@ -25,6 +25,10 @@ devuelve coleccción de estudiantes (OK)
 
 Route::get('course/{NRC}/students', 'CoursesController@showStudentsByCourse');
 
+
+//muestra los cursos en los que esta inscrito el estudiante id
+Route::get('/student/{id}/courses', 'CoursesController@showCoursesByStudent');
+
 /*
 //muestra la lista de estudiantes
 Route::get('/estudiantes', 'ListarCursos@show');
@@ -32,8 +36,6 @@ Route::get('/estudiantes', 'ListarCursos@show');
 //muestra la informacion del estudiante id
 Route::get('/estudiantes/{id}', 'ListarCursos@show');
 
-//muestra los cursos en los que esta inscrito el estudiante id
-Route::get('/estudiantes/{id}/cursos', 'ListarCursos@show');
 
 
 Route::controllers([
