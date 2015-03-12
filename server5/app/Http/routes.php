@@ -14,13 +14,11 @@
 
 /*
 muestra cursos que dicta el profesor id. Devuelve colección de cursos (OK)
-
 */
 Route::get('teacher/{id}/courses', 'CoursesController@showCoursesByTeacher');
 
 /*
-muestra la lista de estudiantes del curso NRC del profesor id ya capturado
-devuelve coleccción de estudiantes (OK)
+muestra la lista de estudiantes del curso NRC, devuelve coleccción de estudiantes (OK)
 */
 
 Route::get('course/{NRC}/students', 'CoursesController@showStudentsByCourse');

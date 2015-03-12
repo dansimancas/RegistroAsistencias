@@ -4,9 +4,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class StudentsByCourseModel extends Model {
 
-	/*
-	 * Carga los datos de estudiantes y profesores y los relaciona por los NRC activos mediante MRC_PERIODO_KEY
-	 * */
+    /**
+     * @var string Carga la vista que contiene la información de los estudiantes que asisten a cursos.
+     */
     protected $table = 'StudentsByCourse';
 
 }
