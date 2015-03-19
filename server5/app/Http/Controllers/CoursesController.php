@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 
 class CoursesController extends Controller {
 
-<<<<<<< HEAD
-    /*
+
+    /**
      * Función para mostrar toda la información de un curso, pasando como referencia el NRC_PERIODO_KEY
+     * @param $NRC
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showCoursesInfo($NRC)
     {
@@ -20,14 +22,10 @@ class CoursesController extends Controller {
         return response()->json($data);
     }
 
-    /*
-     * Función para listar los cursos de un profesor, pasando como referencia el TEACHERID
-=======
     /**
-     * Funcion para listar los cursos de un profesor con su codigo.
+     * Función para listar los cursos de un profesor, pasando como referencia el TEACHERID
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
->>>>>>> origin/master
      */
     public function showCoursesByTeacher($id)
     {
@@ -53,38 +51,64 @@ class CoursesController extends Controller {
 
 	}
 
-<<<<<<< HEAD
-    /*
-     * Función para listar los alumnos de un curso, pasando como referencia el NRC_PERIODO_KEY
-=======
     /**
      * Funcion para listar los alumnos de un curso, pasando como referencia el NRC
      * @param $NRC
      * @return \Symfony\Component\HttpFoundation\Response
->>>>>>> origin/master
      */
     public function showStudentsByCourse($NRC)
     {
         $data = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
 
-        return response()->json($data);
+        $object = array(
+            "NRC" => $data[0]["NRC"],
+            "SUBJECT" => $data[0]["SUBJECT"],
+            "TEACHERID" => $data[0]["TEACHERID"],
+            "STUDENTS" => array()
+        );
+
+        foreach($data as $value){
+            $var = array(
+                "NAMES" => $value["NAMES"],
+                "LASTNAMES" => $value["LASTNAMES"],
+                "STUDENTID" => $value["STUDENTID"],
+                "PROGRAM" => $value["PROGRAM"],
+                "EMAIL" => $value["EMAIL"],
+            );
+            $object["STUDENTS"][] = $var;
+        }
+
+        return response()->json($object);
     }
 
-<<<<<<< HEAD
-    /*
-     * Función para mostrar los cursos de un estudiante, pasando como referencia el STUDENTID
-=======
     /**
-     * Funcion para listar los cursos de un estudiante, pasando como referencia su código.
+     * Función para mostrar los cursos de un estudiante, pasando como referencia el STUDENTID
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
->>>>>>> origin/master
      */
     public function showCoursesByStudent($id)
     {
         $data = CoursesByStudentModel::where("STUDENTID", "=", $id)->get();
 
-        return response()->json($data);
+        $object = array(
+            "STUDENTID" => $data[0]["STUDENTID"],
+            "COURSES" => array()
+        );
+
+        foreach($data as $value){
+            $var = array(
+                "SUBJECTNAME" => $value["SUBJECTNAME"],
+                "NRC" => $value["NRC"],
+                "SECTION" => $value["SECTION"],
+                "NAMES" => $value["NAMES"],
+                "LASTNAMES" => $value["LASTNAMES"],
+                "TEACHERID" => $value["TEACHERID"],
+
+            );
+            $object["COURSES"][] = $var;
+        }
+
+        return response()->json($object);
     }
 
 }

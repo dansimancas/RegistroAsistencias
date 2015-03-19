@@ -13,42 +13,30 @@
 
 /*
  * muestra la información de un estudiante
- *
  */
 Route::get('student/{id}', 'PersonsController@showStudentsInfo');
 
 /*
  * muestra la información de un profesor
- *
  */
 Route::get('teacher/{id}', 'PersonsController@showTeachersInfo');
 
 /*
-<<<<<<< HEAD
  * muestra la información de un curso
- *
  */
 Route::get('course/{NRC}', 'CoursesController@showCoursesInfo');
 
 /*
-muestra cursos que dicta el profesor id. Devuelve colección de cursos
-=======
-muestra cursos que dicta el profesor id. Devuelve colección de cursos (OK)
->>>>>>> origin/master
+ * muestra cursos que dicta el profesor id. Devuelve colección de cursos.
 */
 Route::get('teacher/{id}/courses', 'CoursesController@showCoursesByTeacher');
 
 /*
-<<<<<<< HEAD
-muestra la lista de estudiantes del curso NRC del profesor id ya capturado
-devuelve coleccción de estudiantes
-=======
-muestra la lista de estudiantes del curso NRC, devuelve coleccción de estudiantes (OK)
->>>>>>> origin/master
+ * muestra la lista de estudiantes del curso NRC del profesor id ya capturado
+ * devuelve coleccción de estudiantes
 */
 
 Route::get('course/{NRC}/students', 'CoursesController@showStudentsByCourse');
-
 
 /*
  * muestra los cursos en los que esta inscrito el estudiante id

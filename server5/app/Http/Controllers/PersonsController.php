@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class PersonsController extends Controller {
 
-    /*
+    /**
      * Función para mostrar toda la información de un estudiante, pasando como referencia el ID
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showStudentsInfo($id)
     {
@@ -17,8 +19,10 @@ class PersonsController extends Controller {
         return response()->json($data);
     }
 
-    /*
+    /**
      * Función para mostrar toda la información de un profesor, pasando como referencia el ID
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showTeachersInfo($id)
     {
