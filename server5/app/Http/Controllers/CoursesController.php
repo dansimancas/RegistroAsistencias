@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class CoursesController extends Controller {
 
+<<<<<<< HEAD
     /*
      * Función para mostrar toda la información de un curso, pasando como referencia el NRC_PERIODO_KEY
      */
@@ -21,6 +22,12 @@ class CoursesController extends Controller {
 
     /*
      * Función para listar los cursos de un profesor, pasando como referencia el TEACHERID
+=======
+    /**
+     * Funcion para listar los cursos de un profesor con su codigo.
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+>>>>>>> origin/master
      */
     public function showCoursesByTeacher($id)
     {
@@ -29,8 +36,15 @@ class CoursesController extends Controller {
         return response()->json($data);
 	}
 
+<<<<<<< HEAD
     /*
      * Función para listar los alumnos de un curso, pasando como referencia el NRC_PERIODO_KEY
+=======
+    /**
+     * Funcion para listar los alumnos de un curso, pasando como referencia el NRC
+     * @param $NRC
+     * @return \Symfony\Component\HttpFoundation\Response
+>>>>>>> origin/master
      */
     public function showStudentsByCourse($NRC)
     {
@@ -39,8 +53,15 @@ class CoursesController extends Controller {
         return response()->json($data);
     }
 
+<<<<<<< HEAD
     /*
      * Función para mostrar los cursos de un estudiante, pasando como referencia el STUDENTID
+=======
+    /**
+     * Funcion para listar los cursos de un estudiante, pasando como referencia su código.
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+>>>>>>> origin/master
      */
     public function showCoursesByStudent($id)
     {
