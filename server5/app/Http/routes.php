@@ -11,35 +11,40 @@
 |
 */
 
+/*
+ * muestra la información de un estudiante
+ *
+ */
+Route::get('student/{id}', 'PersonsController@showStudentsInfo');
 
 /*
-muestra cursos que dicta el profesor id. Devuelve colección de cursos (OK)
+ * muestra la información de un profesor
+ *
+ */
+Route::get('teacher/{id}', 'PersonsController@showTeachersInfo');
 
+/*
+ * muestra la información de un curso
+ *
+ */
+Route::get('course/{NRC}', 'CoursesController@showCoursesInfo');
+
+/*
+muestra cursos que dicta el profesor id. Devuelve colección de cursos
 */
 Route::get('teacher/{id}/courses', 'CoursesController@showCoursesByTeacher');
 
 /*
 muestra la lista de estudiantes del curso NRC del profesor id ya capturado
-devuelve coleccción de estudiantes (OK)
+devuelve coleccción de estudiantes
 */
 
 Route::get('course/{NRC}/students', 'CoursesController@showStudentsByCourse');
 
 
-//muestra los cursos en los que esta inscrito el estudiante id
-Route::get('/student/{id}/courses', 'CoursesController@showCoursesByStudent');
-
 /*
-//muestra la lista de estudiantes
-Route::get('/estudiantes', 'ListarCursos@show');
-
-//muestra la informacion del estudiante id
-Route::get('/estudiantes/{id}', 'ListarCursos@show');
+ * muestra los cursos en los que esta inscrito el estudiante id
+ */
+Route::get('student/{id}/courses', 'CoursesController@showCoursesByStudent');
 
 
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-*/

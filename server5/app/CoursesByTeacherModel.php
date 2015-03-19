@@ -4,9 +4,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class CoursesByTeacherModel extends Model {
 
-    //Se asigna la tabla de cursos para trabajar con el SiriusCoursesModel. En este caso la tabla de cursos
-    // que contiene información sobre los cursos: el NRC, periodo, materia, curso, sección, nombre de la asignatura
-    // nombre del profesor, número de créditos  y horas semanales.
+    //Se asigna la vista de CoursesByTeacher existente en la base de datos. Esta vista contiene la siguiente información:
+    //TEACHERID (código del PROFESOR), SUBJECTNAME (nombre de la materia), NRC (código de la materia), SECTION (sección),
+    //NAMES, LASTNAMES (nombres y apellidos del profesor, respectivamente).
+
     protected $table = 'CoursesByTeacher';
 
 }
