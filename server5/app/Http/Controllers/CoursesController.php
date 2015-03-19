@@ -33,7 +33,24 @@ class CoursesController extends Controller {
     {
         $data = CoursesByTeacherModel::where("TEACHERID", "=", $id)->get();
 
-        return response()->json($data);
+        $object = array(
+            "TEACHERID" => $data[0]["TEACHERID"],
+            "NAMES" => $data[0]["NAMES"],
+            "LASTNAMES" => $data[0]["LASTNAMES"],
+            "COURSES" => array()
+        );
+
+        foreach($data as $value){
+            $var = array(
+                "SUBJECTNAME" => $value["SUBJECTNAME"],
+                "NRC" => $value["NRC"],
+                "SECTION" => $value["SECTION"],
+            );
+            $object["COURSES"][] = $var;
+        }
+
+        return response()->json($object);
+
 	}
 
 <<<<<<< HEAD
