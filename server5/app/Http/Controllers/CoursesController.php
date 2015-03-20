@@ -91,8 +91,8 @@ class CoursesController extends Controller {
         $data = CoursesByStudentModel::where("STUDENTID", "=", $id)->get();
 
         $object = array(
-            "STUDENTID" => $data[0]["STUDENTID"],
-            "COURSES" => array()
+            "studentid" => $data[0]["STUDENTID"],
+            "courses" => array()
         );
 
         foreach($data as $value){

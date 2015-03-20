@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('token', 'Auth\AuthController@token');
+
 /*
  * muestra la información de un estudiante
  */
@@ -44,3 +46,4 @@ Route::get('course/{NRC}/students', 'CoursesController@showStudentsByCourse');
 Route::get('student/{id}/courses', 'CoursesController@showCoursesByStudent');
 
 
+Route::resource('attendance', 'AttendanceController');
