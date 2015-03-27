@@ -1,16 +1,12 @@
 <?php namespace App\Http\Controllers;
-
-use App\Attendance;
+use App\AttendanceModel;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Validator, Input, Redirect;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Tests\ServerBagTest;
-
-
 class AttendanceController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -18,19 +14,29 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $attendance = Attendance::all();
-        return response()->json();
+        $attendance = AttendanceModel::all();
+
+        $object = array();
+
+        foreach($attendance as $value){
+            $var = array(
+                "id" => $value["ID"],
+                "student_id" => $value["STUDENTID"],
+                "nrc" => $value["NRC"],
+                "attendance" => $value["ATTENDANCE"],
+                "created_at" => $value["created_at"]->toDateTimeString(),
+                "updated_at" => $value['updated_at']->toDateTimeString()
+            );
+            $object[] = $var;
+        }
+
+        return response()->json($object);
+
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -39,6 +45,35 @@ class AttendanceController extends Controller
      */
     public function store()
     {
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            'STUDENTID'     => 'required',
+            'NRC'      => 'required',
+            'ATTENDANCE'    => 'required|numeric'
+        );
+
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return 'fallo';
+        } else {
+            // store
+            $attendance = new AttendanceModel;
+
+            $attendance->STUDENTID      = Input::get('STUDENTID');
+            $attendance->NRC       = Input::get('NRC');
+            $attendance->ATTENDANCE     = Input::get('ATTENDANCE');
+            $attendance->save();
+
+            return 'ok, registro creado';
+        }
+
+    }
+    /*public function store()
+    {
         echo 'Informacion';
         // validate
         // read more on validation at http://laravel.com/docs/validation
@@ -46,12 +81,9 @@ class AttendanceController extends Controller
             'StudentId' => 'required',
             'CourseId' => 'required',
             'Attendance' => 'required|numeric',
-            'Date' => 'required'
+            //'Date' => 'required'
         );
-
-
         $validator = Validator::make(Input::all(), $rules);
-
         // process the login
         if ($validator->fails()) {
             return 'Falla';
@@ -61,59 +93,40 @@ class AttendanceController extends Controller
             $attendance->StudentId = Input::get('StudentId');
             $attendance->CourseId = Input::get('CourseId');
             $attendance->Attendance = Input::get('Attendance');
-            $attendance->Date = Input::get('Date');
+            //$attendance->Date = Input::get('Date');
             $attendance->save();
-
             return 'OK';
         }
+    }*/
+    /**
+     * @param $NRC
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function show($NRC)
+    {
+        $attendance = AttendanceModel::where('NRC', "=", $NRC)->get();
+        $object = array(
+            "nrc" => $attendance[0]["NRC"]
+        );
 
+        foreach($attendance as $value){
+            $var = array(
+                "id" => $value["ID"],
+                "student_id" => $value["STUDENTID"],
+                "attendance" => $value["ATTENDANCE"],
+                "created_at" => $value["created_at"]->toDateTimeString(),
+                "updated_at" => $value['updated_at']->toDateTimeString()
+            );
+            $object["students"][] = $var;
+        }
 
+        return response()->json($object);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function show($id)
+    /*public function show($id)
     {
         $attendance = Attendance::where("StudentId", "=", $id)->get();
         return response()->json($id);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
+    }*/
 
 }

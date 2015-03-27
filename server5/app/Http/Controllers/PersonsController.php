@@ -8,26 +8,46 @@ use Illuminate\Http\Request;
 class PersonsController extends Controller {
 
     /**
-     * Función para mostrar toda la información de un estudiante, pasando como referencia el ID
+     * Funcion para mostrar toda la informacion de un estudiante, pasando como referencia el ID
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showStudentsInfo($id)
     {
         $data = StudentsModel::where("ID", "=", $id)->get();
+        $object = array(
+            "id" => $data[0]["ID"],
+            "names" => $data[0]["NOMBRES"],
+            "lastnames" => $data[0]["APELLIDOS"],
+            "program" => $data[0]["PROGRAMA"],
+            "email" => $data[0]["EMAIL"],
+            "links" => array(
+                "student_uri" => "/student/".$data[0]["ID"]."/courses",
+                "attendance_uri" => $data[0]["ID"]."/attendance/",
+            )
 
-        return response()->json($data);
+        );
+        return response()->json($object);
     }
 
     /**
-     * Función para mostrar toda la información de un profesor, pasando como referencia el ID
+     * FunciÃ³n para mostrar toda la informaciÃ³n de un profesor, pasando como referencia el ID
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showTeachersInfo($id)
     {
         $data = TeachersModel::where("ID", "=", $id)->get();
-
-        return response()->json($data);
+        $object = array(
+            "id" => $data[0]["ID"],
+            "names" => $data[0]["NOMBRES"],
+            "lastnames" => $data[0]["APELLIDOS"],
+            "type" => $data[0]["TIPODOCENTE"],
+            "school" => $data[0]["ESCUELA"],
+            "department" => $data[0]["DEPARTAMENTO"],
+            "email" => $data[0]["EMAIL"],
+            "resource_uri" => "/teacher/".$data[0]["ID"]."/courses",
+        );
+        return response()->json($object);
     }
 }

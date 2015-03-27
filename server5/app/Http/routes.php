@@ -14,36 +14,46 @@
 Route::get('token', 'Auth\AuthController@token');
 
 /*
- * muestra la información de un estudiante
+ * Muestra la información de un estudiante
  */
 Route::get('student/{id}', 'PersonsController@showStudentsInfo');
 
 /*
- * muestra la información de un profesor
+ * Muestra la información de un profesor
  */
 Route::get('teacher/{id}', 'PersonsController@showTeachersInfo');
 
 /*
- * muestra la información de un curso
+ * Muestra la información de un curso
  */
 Route::get('course/{NRC}', 'CoursesController@showCoursesInfo');
 
 /*
- * muestra cursos que dicta el profesor id. Devuelve colección de cursos.
+ * Muestra cursos que dicta el profesor id. Devuelve colección de cursos.
 */
 Route::get('teacher/{id}/courses', 'CoursesController@showCoursesByTeacher');
 
 /*
- * muestra la lista de estudiantes del curso NRC del profesor id ya capturado
- * devuelve coleccción de estudiantes
+ * Muestra la lista de estudiantes del curso NRC del profesor id ya capturado
 */
 
 Route::get('course/{NRC}/students', 'CoursesController@showStudentsByCourse');
 
 /*
- * muestra los cursos en los que esta inscrito el estudiante id
+ * Muestra los cursos en los que esta inscrito el estudiante id
  */
 Route::get('student/{id}/courses', 'CoursesController@showCoursesByStudent');
 
-
+/*
+ * Guarda asistencias en la base de datos
+ */
 Route::resource('attendance', 'AttendanceController');
+
+/*
+ * Muestra las estadisticas de asistencia de un estudiante a un curso en %
+ */
+Route::get('student/{id}/course/{NRC}/attendance', 'StatisticsController@showStatisticsByStudentByCourse');
+
+Route::get('student/{id}/attendance', 'StatisticsController@showStatisticsByStudent');
+
+Route::get('course/{NRC}/attendance', 'StatisticsController@showStatisticsByCourse');
