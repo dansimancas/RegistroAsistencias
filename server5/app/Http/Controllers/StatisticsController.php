@@ -21,14 +21,14 @@ class StatisticsController extends Controller {
      * @param $idstudent, $idcourse
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showStatisticsByStudentByCourse($id, $NRC)
+    public function showStatisticsByStudentByCourse($id, $NRC, $response=true)
     {
         $data = AttendanceModel::where("STUDENTID", "=", $id)
                                 ->Where("NRC", "=", $NRC)
-                                ->get();
+                                ->get()->toArray();
         $object = array(
-            "student_id" => $data[0]["STUDENTID"],
-            "nrc" => $data[0]["NRC"]
+            "student_id" => $id,
+            "nrc" => $NRC
         );
 
         $came = 0;
@@ -39,8 +39,9 @@ class StatisticsController extends Controller {
 
         foreach($data as $value){
 
-            $response = $value["ATTENDANCE"];
-            switch ($response) {
+            $attendance_log = $value["ATTENDANCE"];
+
+            switch ($attendance_log) {
                 case 0:
                     $came += 1;
                     break;
@@ -68,7 +69,17 @@ class StatisticsController extends Controller {
             $object["left_soon"] = $leftsoon * 100 / $total;
             $object["undefined"] = $DK * 100 / $total;
         }else{
-            $object["data"] = 0;
+            $object["came"] = 0;
+            $object["did_not_come"] = 0;
+            $object["arrived_late"] = 0;
+            $object["left_soon"] = 0;
+            $object["undefined"] = 100;
+        }
+
+        if($response) {
+            return response()->json($object);
+        }else{
+            return $object;
         }
 
         return response()->json($object);
@@ -76,80 +87,66 @@ class StatisticsController extends Controller {
 
     public function showStatisticsByStudent($id)
     {
-        $data = CoursesByStudentModel::where("STUDENTID", "=", $id)->get();
-
-        $object = array(
-            "student_id" => $data[0]["STUDENTID"],
+        $response_data = array(
+            "student_id" => $id,
+            "resource_uri" => "/student/".$id,
             "courses" => array()
         );
 
-        $i = 0;
-        foreach ($data as $value) {
-            //$NRC = $value["NRC"];
-            $otherjson = $this->showStatisticsByStudentByCourse($data[0]["STUDENTID"], $value["NRC"]);
-            //$otherjson = json_decode(self::showStatisticsByStudentByCourse($data[0]["STUDENTID"], $value["NRC"]));
-            print_r ($otherjson);
-            $var = array(
-                "subject_name" => $value["SUBJECTNAME"],
-                "nrc" => $value["NRC"],
+        $courses = CoursesByStudentModel::where("STUDENTID", "=", $id)->get()->toArray();
+
+        foreach($courses as $course){
+            $student_attendance = self::showStatisticsByStudentByCourse($id, $course["NRC"], false);
+            $course_attendance = array(
+                "subject_name" => $course["SUBJECTNAME"],
+                "nrc" => $course["NRC"],
+                "resource_uri" => "/course/".$course["NRC"],
+                //"attendance" => $student_attendance
                 "attendance" => array(
-                    "CAME(%)" => $otherjson["CAME(%)"],
-                    "DID NOT COME(%)" => $otherjson["DID NOT COME(%)"],
-                    "ARRIVED LATE(%)" => $otherjson["ARRIVED LATE(%)"],
-                    "LEFT SOON(%)" => $otherjson["LEFT SOON(%)"],
-                    "DK/DA(%)" => $otherjson["DK/DA(%)"]
+                    "came" => $student_attendance["came"],
+                    "did_not_come" => $student_attendance["did_not_come"],
+                    "arrived_late" => $student_attendance["arrived_late"],
+                    "left_soon" => $student_attendance["left_soon"],
+                    "undefined" => $student_attendance["undefined"]
                 )
             );
-
-            $var2[$i] = $var;
-            $i+=1;
+            $response_data["courses"][] = $course_attendance;
         }
 
-        $object["courses"][]=$var2;
-        return response()->json($object);
+        return response()->json($response_data);
 
     }
 
     public function showStatisticsByCourse($NRC)
     {
-        $data = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
-
-        //print_r ($data);
-
-        $object = array(
-            "nrc" => $data[0]["NRC"],
+        $response_data = array(
+            "nrc" => $NRC,
+            "resource_uri" => "/course/".$NRC,
             "students" => array()
         );
 
-        $i = 0;
-        foreach ($data as $value) {
-            //$NRC = $value["NRC"];
-            $otherjson = $this->showStatisticsByStudentByCourse($value["STUDENTID"], $data[0]["NRC"]);
+        $students = StudentsByCourseModel::where("NRC", "=", $NRC)->get()->toArray();
 
-            //$array = json_decode(json_encode($otherjson), true); //convertir json a string
-            //$array = (array) $otherjson;
-            $string = json_decode($otherjson); //convierte el json en string
-            $array = str_split($string); //convierte string a array
-
-            print_r ($array);
-            $var = array(
-                "student_name" => $value["NAMES"],
-                "student_lastname" => $value["LASTNAMES"],
+        foreach($students as $student){
+            $course_attendance = self::showStatisticsByStudentByCourse($student["STUDENTID"], $NRC, false);
+            //var_dump($course);
+            $student_attendance = array(
+                "student_name" => $student["NAMES"],
+                "student_lastname" => $student["LASTNAMES"],
+                "student_id" => $student["STUDENTID"],
+                "resource_uri" => "/student/".$student["STUDENTID"]."/attendance",
                 "attendance" => array(
-                    "CAME(%)" => $array["CAME(%)"],
-                    "DID NOT COME(%)" => $array["DID NOT COME(%)"],
-                    "ARRIVED LATE(%)" => $array["ARRIVED LATE(%)"],
-                    "LEFT SOON(%)" => $array["LEFT SOON(%)"],
-                    "DK/DA(%)" => $array["DK/DA(%)"]
+                    "came" => $course_attendance["came"],
+                    "did_not_come" => $course_attendance["did_not_come"],
+                    "arrived_late" => $course_attendance["arrived_late"],
+                    "left_soon" => $course_attendance["left_soon"],
+                    "undefined" => $course_attendance["undefined"]
                 )
             );
-
-            $var2[$i] = $var;
-            $i+=1;
+            $response_data["students"][] = $student_attendance;
         }
 
-        $object["students"][]=$var2;
-        return response()->json($object);
+        return response()->json($response_data);
 
     }
 }

@@ -23,7 +23,7 @@ class PersonsController extends Controller {
             "email" => $data[0]["EMAIL"],
             "links" => array(
                 "student_uri" => "/student/".$data[0]["ID"]."/courses",
-                "attendance_uri" => $data[0]["ID"]."/attendance/",
+                "attendance_uri" => "/student/".$data[0]["ID"]."/attendance",
             )
 
         );
@@ -31,7 +31,7 @@ class PersonsController extends Controller {
     }
 
     /**
-     * FunciÃ³n para mostrar toda la informaciÃ³n de un profesor, pasando como referencia el ID
+     * Funcion para mostrar toda la informaciÃ³n de un profesor, pasando como referencia el ID
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */

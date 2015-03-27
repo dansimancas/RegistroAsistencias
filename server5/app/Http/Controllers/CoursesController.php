@@ -61,7 +61,7 @@ class CoursesController extends Controller {
                 "subject_name" => $value["SUBJECTNAME"],
                 "nrc" => $value["NRC"],
                 "section" => $value["SECTION"],
-                "resource_uri" => "/courses/".$value["NRC"],
+                "resource_uri" => "/course/".$value["NRC"],
             );
             $object["courses"][] = $var;
         }
@@ -77,17 +77,19 @@ class CoursesController extends Controller {
      */
     public function showStudentsByCourse($NRC)
     {
-        $data = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
+        $studentsbycourse = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
 
-        $object = array(
-            "subject" => $data[0]["SUBJECT"],
-            "nrc" => $data[0]["NRC"],
-            "teacher_id" => $data[0]["TEACHERID"],
+        $studentsbycourse_INIT = $studentsbycourse[0];
+
+        $studentsbycourse_JSON = array(
+            "subject" => $studentsbycourse_INIT["SUBJECT"],
+            "nrc" => $studentsbycourse_INIT["NRC"],
+            "teacher_id" => $studentsbycourse_INIT["TEACHERID"],
         );
 
-        $object["resource_uri"] = "/course/".$data[0]["NRC"];
+        $studentsbycourse_JSON["resource_uri"] = "/course/".$studentsbycourse[0]["NRC"];
 
-        foreach($data as $value){
+        foreach($studentsbycourse as $value){
             $var = array(
                 "id" => $value["STUDENTID"],
                 "names" => $value["NAMES"],
@@ -96,10 +98,10 @@ class CoursesController extends Controller {
                 "email" => $value["EMAIL"],
                 "resource_uri" => "/student/".$value["STUDENTID"],
             );
-            $object["students"][] = $var;
+            $studentsbycourse_JSON["students"][] = $var;
         }
 
-        return response()->json($object);
+        return response()->json($studentsbycourse_JSON);
     }
 
     /**
@@ -109,14 +111,16 @@ class CoursesController extends Controller {
      */
     public function showCoursesByStudent($id)
     {
-        $data = CoursesByStudentModel::where("STUDENTID", "=", $id)->get();
+        $coursesbystudent = CoursesByStudentModel::where("STUDENTID", "=", $id)->get();
 
-        $object = array(
-            "student_id" => $data[0]["STUDENTID"],
+        $coursesbystudent_INIT = $coursesbystudent[0];
+
+        $coursesbystudent_JSON = array(
+            "student_id" => $coursesbystudent_INIT["STUDENTID"],
             "courses" => array()
         );
 
-        foreach($data as $value){
+        foreach($coursesbystudent as $value){
             $var = array(
                 "subject_name" => $value["SUBJECTNAME"],
                 "nrc" => $value["NRC"],
@@ -126,10 +130,10 @@ class CoursesController extends Controller {
                 "teacher_id" => $value["TEACHERID"],
 
             );
-            $object["courses"][] = $var;
+            $coursesbystudent_JSON["courses"][] = $var;
         }
 
-        return response()->json($object);
+        return response()->json($coursesbystudent_JSON);
     }
 
 }
