@@ -36,7 +36,7 @@ public class CourseAdapter extends RecyclerView.Adapter<FeedListRowHolder> {
         CourseItem courseItem = courseItemList.get(i);
         feedListRowHolder.subject_name.setText(Html.fromHtml(courseItem.getSubjectName()));
         feedListRowHolder.nrc.setText(Html.fromHtml(courseItem.getNrc()));
-        feedListRowHolder.subject_name.setTag(Html.fromHtml(courseItem.getUri()));
+        feedListRowHolder.subject_name.setTag(Html.fromHtml(courseItem.getNrc()));
     }
 
     @Override

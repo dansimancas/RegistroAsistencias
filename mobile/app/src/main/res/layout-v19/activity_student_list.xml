@@ -8,13 +8,13 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp" >
+            android:padding="16dp"
+            android:background="@color/background" >
 
             <ImageView
                 android:id="@+id/person_photo"
@@ -34,14 +34,16 @@
                 android:layout_toRightOf="@+id/person_photo"
                 android:clickable="true"
                 android:onClick="onClickStudentName"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor= "@color/item_title" />
 
             <TextView
                 android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/student_name"
-                android:layout_toRightOf="@+id/person_photo" />
+                android:layout_toRightOf="@+id/person_photo"
+                android:textColor= "@color/item_code" />
 
         </RelativeLayout>
 
