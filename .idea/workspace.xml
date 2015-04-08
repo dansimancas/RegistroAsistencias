@@ -2,11 +2,576 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b672acb-965b-4b93-8acf-fde77160218c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server5/app/CoursesModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server5/app/StudentsModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server5/app/Http/Controllers/CoursesController.php" afterPath="$PROJECT_DIR$/server5/app/Http/Controllers/CoursesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server5/app/Http/Controllers/PersonsController.php" afterPath="$PROJECT_DIR$/server5/app/Http/Controllers/PersonsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server5/app/Http/Controllers/StatisticsController.php" afterPath="$PROJECT_DIR$/server5/app/Http/Controllers/StatisticsController.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/config.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/hooks/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/AndroidManifest.cordova.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/AndroidManifest.xml.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/build.prop" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Address.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Connection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/ConnectionPool$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/ConnectionPool$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/ConnectionPool.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Dispatcher$RealResponseBody.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Dispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Failure$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Failure$Builder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Failure.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$CacheRequestImpl$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$CacheRequestImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$Entry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$EntryCacheResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$EntrySecureCacheResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Job.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/MediaType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/OkAuthenticator$Challenge.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/OkAuthenticator$Credential.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/OkAuthenticator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/OkHttpClient$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/OkHttpClient.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/OkResponseCache.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$Body$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$Body$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$Body.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$Builder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Request.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Response$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Response$Body.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Response$Builder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Response$Receiver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Response.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/ResponseSource.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/Route.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/RouteDatabase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/TunnelRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/AbstractOutputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Base64.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/DiskLruCache$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/DiskLruCache$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/DiskLruCache$Editor$FaultHidingOutputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/DiskLruCache$Editor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/DiskLruCache$Entry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/DiskLruCache$Snapshot.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/DiskLruCache.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Dns$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Dns.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/FaultRecoveringOutputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/NamedRunnable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Platform$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Platform$Android23.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Platform$Android41.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Platform$JdkWithJettyNpnPlatform.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Platform$JettyNpnProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Platform.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/StrictLineReader$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/StrictLineReader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Util$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/Util.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/AbstractHttpInputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HeaderParser$CacheControlHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HeaderParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpAuthenticator$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpAuthenticator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpDate$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpDate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpEngine$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpEngine.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpTransport$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpTransport$ChunkedInputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpTransport$ChunkedOutputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpTransport$FixedLengthInputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpTransport$FixedLengthOutputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpTransport.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpURLConnectionImpl$Retry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpURLConnectionImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpsEngine.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpsURLConnectionImpl$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpsURLConnectionImpl$HttpUrlConnectionDelegate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/HttpsURLConnectionImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/OkResponseCacheAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/Policy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/RawHeaders$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/RawHeaders.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/RequestHeaders$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/RequestHeaders.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/ResponseHeaders$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/ResponseHeaders.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/RetryableOutputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/RouteSelector.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/SpdyTransport.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/Transport.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/http/UnknownLengthHttpInputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/ErrorCode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/FrameReader$Handler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/FrameReader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/FrameWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/HeadersMode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Hpack$HeaderEntry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Hpack$Reader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Hpack$Writer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Hpack.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Http20Draft06$Reader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Http20Draft06$Writer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Http20Draft06.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/IncomingStreamHandler$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/IncomingStreamHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/NameValueBlockReader$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/NameValueBlockReader$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/NameValueBlockReader$FillableInflaterInputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/NameValueBlockReader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Ping.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Settings.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Spdy3$Reader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Spdy3$Writer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Spdy3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$Builder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$Reader$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$Reader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyStream$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyStream$SpdyDataInputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyStream$SpdyDataOutputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Variant.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/tls/DistinguishedNameParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/tls/OkHostnameVerifier.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/App$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/App$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/App$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/App$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/App$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/App.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/AuthenticationToken.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CallbackContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/Config.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/ConfigXmlParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaActivity$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaActivity$4$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaActivity$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaActivity$5$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaActivity$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaArgs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaBridge.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient$7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient$8.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient$9.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaChromeClient.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaInterface.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaPlugin.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaPreferences.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaResourceApi$OpenForReadResult.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaResourceApi.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaUriHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebView$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebView$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebView$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebView$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebView$ActivityResult.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebView$Level16Apis.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebView.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebViewClient$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebViewClient$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/CordovaWebViewClient.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/DirectoryManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/DroidGap.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/ExifHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/ExposedJsApi.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/FileHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/IceCreamCordovaWebViewClient.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/JSONUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/LOG.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/LinearLayoutSoftKeyboardDetect.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$BridgeMode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$JsMessage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$LoadUrlBridgeMode$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$LoadUrlBridgeMode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$OnlineEventsBridgeMode$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$OnlineEventsBridgeMode$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$OnlineEventsBridgeMode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$PollingBridgeMode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue$PrivateApiBridgeMode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/NativeToJsMessageQueue.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/PluginEntry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/PluginManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/PluginResult$Status.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/PluginResult.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/ScrollEvent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/Whitelist$URLPattern.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/classes/org/apache/cordova/Whitelist.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/ant-build/proguard.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/Address.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/Connection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/ConnectionPool.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/Dispatcher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/Failure.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/HttpResponseCache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/Job.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/MediaType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/OkAuthenticator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/OkHttpClient.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/OkResponseCache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/Request.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/Response.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/ResponseSource.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/Route.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/RouteDatabase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/TunnelRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/AbstractOutputStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/Base64.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/DiskLruCache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/Dns.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/FaultRecoveringOutputStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/NamedRunnable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/Platform.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/StrictLineReader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/Util.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/AbstractHttpInputStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/HeaderParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/HttpAuthenticator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/HttpDate.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/HttpEngine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/HttpTransport.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/HttpURLConnectionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/HttpsEngine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/HttpsURLConnectionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/OkResponseCacheAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/Policy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/RawHeaders.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/RequestHeaders.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/ResponseHeaders.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/RetryableOutputStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/RouteSelector.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/SpdyTransport.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/Transport.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/http/UnknownLengthHttpInputStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/ErrorCode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/FrameReader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/FrameWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/HeadersMode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/Hpack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/Http20Draft06.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/IncomingStreamHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/NameValueBlockReader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/Ping.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/Settings.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/Spdy3.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/SpdyConnection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/SpdyStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/spdy/Variant.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/tls/DistinguishedNameParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/com/squareup/okhttp/internal/tls/OkHostnameVerifier.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/App.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/AuthenticationToken.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CallbackContext.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/Config.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/ConfigXmlParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaArgs.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaBridge.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaChromeClient.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaInterface.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaPlugin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaPreferences.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaResourceApi.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaUriHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaWebView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/CordovaWebViewClient.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/DirectoryManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/DroidGap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/ExifHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/ExposedJsApi.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/FileHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/IceCreamCordovaWebViewClient.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/JSONUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/LOG.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/LinearLayoutSoftKeyboardDetect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/NativeToJsMessageQueue.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/PluginEntry.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/PluginManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/PluginResult.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/ScrollEvent.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/CordovaLib/src/org/apache/cordova/Whitelist.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/AndroidManifest.cordova.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/AndroidManifest.xml.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/CordovaApp-debug-unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/CordovaApp-debug-unaligned.apk.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/CordovaApp-debug.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/CordovaApp.ap_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/CordovaApp.ap_.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/R.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/build.prop" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/classes.dex.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/classes/com/phonegap/helloworld/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/classes/com/phonegap/helloworld/CordovaApp.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/classes/com/phonegap/helloworld/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/classes/com/phonegap/helloworld/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/classes/com/phonegap/helloworld/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/classes/com/phonegap/helloworld/R$xml.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/classes/com/phonegap/helloworld/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/dexedLibs/classes-f4782f06ef2ed0320a5c63641418b2f9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/proguard.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-hdpi/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-land-hdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-land-ldpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-land-mdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-land-xhdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-port-hdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-port-ldpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-port-mdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-port-xhdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable-xxhdpi/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/ant-build/res/drawable/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/_where-is-www.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/cordova.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/cordova_plugins.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/js/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/.pgbomit" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/android/icon-36-ldpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/android/icon-48-mdpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/android/icon-72-hdpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/android/icon-96-xhdpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/bada-wac/icon-48-type5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/bada-wac/icon-50-type3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/bada-wac/icon-80-type4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/bada/icon-128.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/blackberry/icon-80.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/ios/icon-57-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/ios/icon-57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/ios/icon-72-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/ios/icon-72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/tizen/icon-128.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/webos/icon-64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/windows-phone/icon-173-tile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/windows-phone/icon-48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/icon/windows-phone/icon-62-tile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/android/screen-hdpi-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/android/screen-hdpi-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/android/screen-ldpi-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/android/screen-ldpi-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/android/screen-mdpi-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/android/screen-mdpi-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/android/screen-xhdpi-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/android/screen-xhdpi-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/bada-wac/screen-type3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/bada-wac/screen-type4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/bada-wac/screen-type5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/bada/screen-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/blackberry/screen-225.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/ios/screen-ipad-landscape-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/ios/screen-ipad-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/ios/screen-ipad-portrait-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/ios/screen-ipad-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/ios/screen-iphone-landscape-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/ios/screen-iphone-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/ios/screen-iphone-portrait-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/ios/screen-iphone-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/tizen/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/webos/screen-64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/res/screen/windows-phone/screen-portrait.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/spec.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/spec/helper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/spec/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/spec/lib/jasmine-1.2.0/MIT.LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine-html.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/android_sdk_version" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/build" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/build.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/check_reqs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/clean" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/clean.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/defaults.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/android_sdk_version.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/appinfo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/build.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/check_reqs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/device.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/emulator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/exec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/install-device" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/install-device.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/install-emulator" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/install-emulator.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/list-devices" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/list-devices.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/list-emulator-images" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/list-emulator-images.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/list-started-emulators" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/list-started-emulators.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/log.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/run.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/spawn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/start-emulator" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/lib/start-emulator.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/log.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/q/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/q/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/q/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/q/benchmark/compare-with-callbacks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/q/benchmark/scenarios.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/q/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/q/q.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/q/queue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/.documentup.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/.jshintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/bin/shjs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/global.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/make.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/scripts/generate-docs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/scripts/run-tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/shell.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/cat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/cd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/chmod.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/cp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/dirs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/echo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/error.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/exec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/find.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/grep.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/ls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/mkdir.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/mv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/popd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/pushd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/pwd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/rm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/sed.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/tempdir.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/to.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/toEnd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/shelljs/src/which.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/which/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/which/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/which/bin/which" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/which/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/node_modules/which/which.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/run" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/run.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/version" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/cordova/version.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/custom_rules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/platform_www/cordova.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-hdpi/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-land-hdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-land-ldpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-land-mdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-land-xhdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-port-hdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-port-ldpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-port-mdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-port-xhdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable-xxhdpi/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/drawable/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/res/xml/config.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/settings.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/platforms/android/src/com/phonegap/helloworld/CordovaApp.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/plugins/android.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/js/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/.pgbomit" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/android/icon-36-ldpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/android/icon-48-mdpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/android/icon-72-hdpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/android/icon-96-xhdpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/bada-wac/icon-48-type5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/bada-wac/icon-50-type3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/bada-wac/icon-80-type4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/bada/icon-128.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/blackberry/icon-80.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/ios/icon-57-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/ios/icon-57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/ios/icon-72-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/ios/icon-72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/tizen/icon-128.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/webos/icon-64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/windows-phone/icon-173-tile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/windows-phone/icon-48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/icon/windows-phone/icon-62-tile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/android/screen-hdpi-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/android/screen-hdpi-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/android/screen-ldpi-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/android/screen-ldpi-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/android/screen-mdpi-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/android/screen-mdpi-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/android/screen-xhdpi-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/android/screen-xhdpi-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/bada-wac/screen-type3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/bada-wac/screen-type4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/bada-wac/screen-type5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/bada/screen-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/blackberry/screen-225.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/ios/screen-ipad-landscape-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/ios/screen-ipad-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/ios/screen-ipad-portrait-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/ios/screen-ipad-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/ios/screen-iphone-landscape-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/ios/screen-iphone-landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/ios/screen-iphone-portrait-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/ios/screen-iphone-portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/tizen/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/webos/screen-64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/res/screen/windows-phone/screen-portrait.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/spec.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/spec/helper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/spec/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/spec/lib/jasmine-1.2.0/MIT.LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/spec/lib/jasmine-1.2.0/jasmine-html.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/spec/lib/jasmine-1.2.0/jasmine.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/spec/lib/jasmine-1.2.0/jasmine.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RegistroAsistencias.iws" />
@@ -31,92 +596,24 @@
     <favorites_list name="RegistroAsistencias" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.966667" vertical-offset="61" max-vertical-offset="1155">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatisticsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/StatisticsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-63.7" vertical-offset="0" max-vertical-offset="3129">
-              <caret line="99" column="25" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoursesController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/CoursesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-91.0" vertical-offset="0" max-vertical-offset="2940">
-              <caret line="135" column="55" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonsController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/PersonsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3714789" vertical-offset="419" max-vertical-offset="1176">
-              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/server5/.env" />
-        <option value="$PROJECT_DIR$/server5/app/Http/Controllers/StudentsController.php" />
-        <option value="$PROJECT_DIR$/server5/app/CoursesByStudentModel.php" />
-        <option value="$PROJECT_DIR$/server5/app/CoursesByTeacherModel.php" />
-        <option value="$PROJECT_DIR$/server5/app/TeachersModel.php" />
-        <option value="$PROJECT_DIR$/server5/app/StudentsModel.php" />
-        <option value="$PROJECT_DIR$/server5/app/StudentsByCourseModel.php" />
-        <option value="$PROJECT_DIR$/server5/app/CoursesModel.php" />
-        <option value="$PROJECT_DIR$/server5/app/Http/Controllers/BaseController.php" />
-        <option value="$PROJECT_DIR$/server5/resources/views/crear.html" />
-        <option value="$PROJECT_DIR$/server5/app/Services/Attendance.php" />
-        <option value="$PROJECT_DIR$/server5/app/Attendance.php" />
-        <option value="$PROJECT_DIR$/server5/resources/views/crear.blade.php" />
-        <option value="$PROJECT_DIR$/server5/app/Http/Controllers/Auth/AuthController.php" />
-        <option value="$PROJECT_DIR$/server5/app/Http/Middleware/VerifyCsrfToken.php" />
-        <option value="$PROJECT_DIR$/server5/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/server5/database/migrations/2015_03_24_184102_create_Attendance.php" />
-        <option value="$PROJECT_DIR$/server5/database/migrations/2015_03_24_191359_create_Attendance.php" />
-        <option value="$PROJECT_DIR$/server5/database/migrations/2015_03_24_192430_create_Attendance.php" />
-        <option value="$PROJECT_DIR$/server5/app/AttendanceModel.php" />
-        <option value="$PROJECT_DIR$/server5/database/migrations/2015_03_26_023539_create_Attendance.php" />
-        <option value="$PROJECT_DIR$/server5/app/Http/Controllers/AttendanceController.php" />
-        <option value="$PROJECT_DIR$/server5/app/Http/Controllers/StatisticsController.php" />
-        <option value="$PROJECT_DIR$/server5/app/Http/Controllers/CoursesController.php" />
-        <option value="$PROJECT_DIR$/server5/app/Http/Controllers/PersonsController.php" />
-      </list>
-    </option>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
-    <option name="y" value="52" />
-    <option name="width" value="1910" />
-    <option name="height" value="998" />
+    <option name="y" value="24" />
+    <option name="width" value="1920" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -127,6 +624,9 @@
     <OptionsSetting value="true" id="Edit" />
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -170,140 +670,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="seeds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
+              <option name="myItemId" value="mobile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,32 +698,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <pass-parent-envs>true</pass-parent-envs>
-      <envs />
-      <method />
-    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -366,28 +714,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="52" width="1910" height="998" extended-state="0" />
+    <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23229614" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30253807" sideWeight="0.67504054" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32743362" sideWeight="0.3249595" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3037694" sideWeight="0.67504054" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23692636" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32743362" sideWeight="0.3249595" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -411,6 +764,69 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
+          <caret line="28" column="61" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/StatisticsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1485" max-vertical-offset="2355">
+          <caret line="99" column="25" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/CoursesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2175">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/CoursesModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="330">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/PersonsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="885">
+          <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="61" max-vertical-offset="1155">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/StatisticsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1911" max-vertical-offset="3129">
+          <caret line="99" column="25" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/CoursesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2730" max-vertical-offset="2940">
+          <caret line="135" column="55" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/PersonsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1176">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server5/app/CoursesByStudentModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="609">
@@ -429,7 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="799">
           <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -458,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="799">
           <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -494,7 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -509,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -524,7 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -539,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -554,7 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,9 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6808874" vertical-offset="0" max-vertical-offset="609">
           <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding>
-            <element signature="e#38#50#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8666667" vertical-offset="56" max-vertical-offset="756">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -629,7 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.3" vertical-offset="0" max-vertical-offset="315">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -637,7 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.6" vertical-offset="0" max-vertical-offset="357">
           <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,7 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42260063" vertical-offset="0" max-vertical-offset="646">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -653,7 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19504644" vertical-offset="0" max-vertical-offset="646">
           <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -661,7 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13003096" vertical-offset="0" max-vertical-offset="646">
           <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,17 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8854489" vertical-offset="1197" max-vertical-offset="2877">
           <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
-          <folding>
-            <element signature="e#38#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.966667" vertical-offset="61" max-vertical-offset="1155">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,9 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4924623" vertical-offset="0" max-vertical-offset="861">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding>
-            <element signature="e#7#48#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -697,39 +1083,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10047847" vertical-offset="0" max-vertical-offset="627">
           <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/CoursesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-91.0" vertical-offset="0" max-vertical-offset="2940">
-          <caret line="135" column="55" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/StatisticsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-63.7" vertical-offset="0" max-vertical-offset="3129">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1911" max-vertical-offset="3129">
           <caret line="99" column="25" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="960">
+          <caret line="28" column="61" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/CoursesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="2175">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server5/app/CoursesModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4918919" vertical-offset="0" max-vertical-offset="555">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="38" />
-          <folding />
+        <state vertical-scroll-proportion="0.32554257" vertical-offset="0" max-vertical-offset="599">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/PersonsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3714789" vertical-offset="419" max-vertical-offset="1176">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.42404008" vertical-offset="286" max-vertical-offset="885">
+          <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
         </state>
       </provider>
     </entry>
