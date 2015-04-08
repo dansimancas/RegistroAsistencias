@@ -53,9 +53,12 @@ public class MainActivity extends Activity {
         new AsyncHttpTask().execute(url);
     }
 
+    //TODO: Agregarle el tag para que pase el id del estudiante
     public void onClickCourseName(View v) {
         Log.d("Click", v.getTag().toString());
         Intent intent = new Intent(this, StudentListActivity.class);
+        String nrc = v.getTag().toString();
+        intent.putExtra("nrc", nrc);
         startActivity(intent);
     }
 

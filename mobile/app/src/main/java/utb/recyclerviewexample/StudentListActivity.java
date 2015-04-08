@@ -46,13 +46,17 @@ public class StudentListActivity extends Activity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        Bundle b = getIntent().getExtras();
+        String id = b.getString("nrc");
+
+        Log.d("Tag", id);
         //String course = mRecyclerView.getTag().toString();
 
         /*Downloading data from below url*/
-        //final String url = "http://104.236.31.197/course/"+course+"/students";
+        final String url = "http://104.236.31.197/course/"+id+"/students";
 
 
-        final String url = "http://104.236.31.197/course/2028-201510/students";
+        //final String url = "http://104.236.31.197/course/2028-201510/students";
         new AsyncHttpTask().execute(url);
     }
 
