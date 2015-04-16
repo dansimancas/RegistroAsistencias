@@ -4,7 +4,7 @@ android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
     defaultConfig {
-        applicationId "utb.recyclerviewexample"
+        applicationId "utb.attendancebook"
         minSdkVersion 21
         targetSdkVersion 21
         versionCode 1

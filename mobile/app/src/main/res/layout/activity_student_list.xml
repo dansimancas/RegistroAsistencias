@@ -34,14 +34,18 @@
                 android:layout_toRightOf="@+id/person_photo"
                 android:clickable="true"
                 android:onClick="onClickStudentName"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/item_title"/>
 
             <TextView
                 android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/student_name"
-                android:layout_toRightOf="@+id/person_photo" />
+                android:clickable="true"
+                android:onClick="onClickStudentId"
+                android:layout_toRightOf="@+id/person_photo"
+                android:textColor="@color/item_code"/>
 
         </RelativeLayout>
 
