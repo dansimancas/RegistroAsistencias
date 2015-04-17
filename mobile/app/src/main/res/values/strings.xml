@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Ingeniería de Software 2: Estudiantes</string>
-
+    <string name="app_name">UTB Attendance</string>
+    <string name="main_activity">UTB Attendance Book</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="activity_student_list">StudentListActivity</string>
-    <string name="activity_student_info">StudentInfoActivity</string>
+    <string name="activity_student_list">Students in this course</string>
+    <string name="activity_student_info">About this student</string>
 </resources>

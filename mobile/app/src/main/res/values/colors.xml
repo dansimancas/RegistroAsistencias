@@ -4,4 +4,8 @@
     <color name="item_code">#99705A</color>
     <color name="comment">#99705A</color>
     <color name="background">#ffffff</color>
+    <color name="colorPrimary">#2A7D4E</color>
+    <color name="colorPrimaryDark">#579f73</color>
+    <color name="colorAccent">#333</color>
+    <color name="actionbar_text">#333</color>
 </resources>
