@@ -8,4 +8,9 @@
     <color name="colorPrimaryDark">#579f73</color>
     <color name="colorAccent">#333</color>
     <color name="actionbar_text">#333</color>
+    <color name="came">#19FE72</color>
+    <color name="late">#FEA30D</color>
+    <color name="notcame">#BC2F5B</color>
+    <color name="leftsoon">#FEA30D</color>
+    <color name="undefined">#ffffff</color>
 </resources>

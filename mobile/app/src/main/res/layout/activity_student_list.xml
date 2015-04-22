@@ -38,6 +38,15 @@
                 android:textColor="@color/item_title"/>
 
             <TextView
+                android:id="@+id/attendance_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/student_name"
+                android:textSize="20sp"
+                android:textColor="@color/item_title"/>
+
+            <TextView
                 android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

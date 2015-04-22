@@ -23,6 +23,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="false"
                 android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:onClick="onClickCourseImage"
                 android:src="@mipmap/ic_course" />
 
             <TextView

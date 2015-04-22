@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import utb.attendancebook.courses.CourseAdapter;
+import utb.attendancebook.courses.CourseInfoActivity;
 import utb.attendancebook.courses.CourseItem;
 import utb.attendancebook.students.StudentListActivity;
 
@@ -60,6 +61,14 @@ public class MainActivity extends Activity {
     public void onClickCourseName(View v) {
         Log.d("Click", v.getTag().toString());
         Intent intent = new Intent(this, StudentListActivity.class);
+        String nrc = v.getTag().toString();
+        intent.putExtra("nrc", nrc);
+        startActivity(intent);
+    }
+
+    public void onClickCourseImage(View v) {
+        Log.d("ClickCourseImage", v.getTag().toString());
+        Intent intent = new Intent(this, CourseInfoActivity.class);
         String nrc = v.getTag().toString();
         intent.putExtra("nrc", nrc);
         startActivity(intent);

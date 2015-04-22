@@ -2,12 +2,14 @@ package utb.attendancebook.students;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewParent;
 import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -72,6 +74,19 @@ public class StudentListActivity extends Activity {
     }
 
     public void onClickStudentName(View v) {
+        ViewParent grandparent = v.getParent();
+        View vv = (View) grandparent;
+        vv.setBackgroundColor(getResources().getColor(R.color.notcame));
+
+
+        Log.v("font",v.getClass().toString());
+
+        TextView sampleText = (TextView) v;
+        Typeface fontFamily = Typeface.createFromAsset(getAssets(), "fonts/fontawesome.ttf");
+        sampleText.setTypeface(fontFamily);
+        sampleText.setTextColor(getResources().getColor(R.color.background));
+        sampleText.setText("\uF0C0");
+
         Toast.makeText(getApplicationContext(),"Nombre del estudiante",Toast.LENGTH_SHORT).show();
         /*
         * Log.d("ClickStudentName", v.getTag().toString());

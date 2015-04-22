@@ -4,6 +4,7 @@ package utb.attendancebook.students;
  * Created by daniela on 8/04/15.
  */
 
+import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -19,6 +20,7 @@ public class FeedListRowHolderStudent extends RecyclerView.ViewHolder {
     protected TextView id;
     protected TextView program;
     protected TextView email;
+    protected TextView attendance_status;
 
     public FeedListRowHolderStudent(View view){
         super(view);
@@ -27,5 +29,10 @@ public class FeedListRowHolderStudent extends RecyclerView.ViewHolder {
         id = (TextView) view.findViewById(R.id.id);
         program = (TextView) view.findViewById(R.id.program);
         email = (TextView) view.findViewById(R.id.email);
+        attendance_status = (TextView) view.findViewById(R.id.attendance_status);
+        //Typeface fontFamily = Typeface.createFromAsset(view.getContext().getAssets(), "fonts/fontawesome.ttf");
+        //attendance_status.setTypeface(fontFamily);
+        //attendance_status.setTextColor(view.getContext().getResources().getColor(R.color.background));
+
     }
 }
