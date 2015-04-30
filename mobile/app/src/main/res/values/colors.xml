@@ -11,6 +11,7 @@
     <color name="came">#19FE72</color>
     <color name="late">#FEA30D</color>
     <color name="notcame">#BC2F5B</color>
-    <color name="leftsoon">#FEA30D</color>
+    <color name="notcame_text">#ffffff</color>
+    <color name="leftsoon">#CCCCCC</color>
     <color name="undefined">#ffffff</color>
 </resources>

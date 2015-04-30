@@ -38,8 +38,9 @@ public class StudentListAdapter extends RecyclerView.Adapter<FeedListRowHolderSt
         feedListRowHolderStudent.student_name.setText(Html.fromHtml(studentItem.getStudentName()));
         feedListRowHolderStudent.id.setText(Html.fromHtml(studentItem.getId()));
         feedListRowHolderStudent.id.setTag(Html.fromHtml(studentItem.getId()));
-        feedListRowHolderStudent.attendance_status.setText(Html.fromHtml(studentItem.getId()));
-}
+        feedListRowHolderStudent.student_name.setTag(Html.fromHtml(studentItem.getId()));
+    }
+
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);

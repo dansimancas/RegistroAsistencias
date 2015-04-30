@@ -23,24 +23,24 @@
                 android:textColor="@color/item_title"/>
 
             <TextView
-                android:id="@+id/id"
+                android:id="@+id/program"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/student_name"
                 android:textColor="@color/item_code"/>
 
             <TextView
-                android:id="@+id/program"
+                android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/id"
+                android:layout_below="@+id/program"
                 android:textColor="@color/item_code"/>
 
             <TextView
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/program"
+                android:layout_below="@+id/id"
                 android:textColor="@color/item_code"/>
 
         </RelativeLayout>

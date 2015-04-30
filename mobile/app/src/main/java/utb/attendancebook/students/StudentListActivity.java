@@ -3,6 +3,7 @@ package utb.attendancebook.students;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,12 +12,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewParent;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -25,21 +28,25 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 import utb.attendancebook.R;
 
-public class StudentListActivity extends Activity {
+public class StudentListActivity extends Activity{
 
     private static final String TAG = "Estudiantes";
     private List<StudentItem> studentItemList = new ArrayList<StudentItem>();
 
     private RecyclerView mRecyclerView;
     private StudentListAdapter adapter;
+    private JSONArray studentAttendances = new JSONArray();
+    private JSONObject courseAttendances = new JSONObject();
+    private String nrc = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_student_list);
 
         /* Allow activity to show indeterminate progress-bar */
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
@@ -51,48 +58,145 @@ public class StudentListActivity extends Activity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Bundle b = getIntent().getExtras();
-        String id = b.getString("nrc");
+        nrc = b.getString("nrc");
 
-        Log.d("Tag", id);
-        //String course = mRecyclerView.getTag().toString();
+        Log.d("Tag", nrc);
 
         /*Downloading data from below url*/
-        final String url = "http://104.236.31.197/course/"+id+"/students";
+        final String url = "http://104.236.31.197/course/"+nrc+"/students";
 
-
-        //final String url = "http://104.236.31.197/course/2028-201510/students";
         new AsyncHttpTask().execute(url);
-        /*
-        * TextView tx = (TextView) findViewById(R.id.id);
-        tx.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Hola mundo",Toast.LENGTH_SHORT).show();
-            }
-        });
-        * */
     }
 
+
+
     public void onClickStudentName(View v) {
+
+        String tag = v.getTag().toString();
         ViewParent grandparent = v.getParent();
         View vv = (View) grandparent;
-        vv.setBackgroundColor(getResources().getColor(R.color.notcame));
+        int attendanceValue = 0;
 
+        int currentColor = ((ColorDrawable) vv.getBackground()).getColor();
 
-        Log.v("font",v.getClass().toString());
+        if(currentColor == getResources().getColor(R.color.undefined)){
 
-        TextView sampleText = (TextView) v;
-        Typeface fontFamily = Typeface.createFromAsset(getAssets(), "fonts/fontawesome.ttf");
-        sampleText.setTypeface(fontFamily);
-        sampleText.setTextColor(getResources().getColor(R.color.background));
-        sampleText.setText("\uF0C0");
+            vv.setBackgroundColor(getResources().getColor(R.color.came));
+            attendanceValue = 0;
 
-        Toast.makeText(getApplicationContext(),"Nombre del estudiante",Toast.LENGTH_SHORT).show();
-        /*
-        * Log.d("ClickStudentName", v.getTag().toString());
-         Intent intent = new Intent(StudentListActivity.this, StudentListActivity.class);
-         startActivity(intent);
-        * */
+        }else if(currentColor == getResources().getColor(R.color.came)){
+
+            vv.setBackgroundColor(getResources().getColor(R.color.notcame));
+            attendanceValue = 1;
+
+        }else if(currentColor == getResources().getColor(R.color.notcame)){
+
+            vv.setBackgroundColor(getResources().getColor(R.color.late));
+            attendanceValue = 2;
+
+        }else if(currentColor == getResources().getColor(R.color.late)){
+
+            vv.setBackgroundColor(getResources().getColor(R.color.leftsoon));
+            attendanceValue = 3;
+
+        }else if(currentColor == getResources().getColor(R.color.leftsoon)){
+
+            vv.setBackgroundColor(getResources().getColor(R.color.undefined));
+            attendanceValue = 4;
+
+        }
+
+        if(studentAttendances.length() == 0) {
+            JSONObject student = new JSONObject();
+            try {
+                student.put("id", tag);
+                student.put("attendance", attendanceValue);
+                Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
+                studentAttendances.put(student);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }else{
+            for(int i = 0; i < studentAttendances.length(); i++){
+
+                try {
+                    JSONObject student = (JSONObject) studentAttendances.get(i);
+                    String id = student.getString("id");
+                    if(id.equals(tag)) {
+
+                        student.remove("attendance");
+                        student.put("attendance", attendanceValue);
+                        studentAttendances.remove(i);
+                        studentAttendances.put(student);
+                        Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+
+                    e.printStackTrace();
+                }
+            }
+            try {
+                JSONObject student = new JSONObject();
+                student.put("id", tag);
+                student.put("attendance", attendanceValue);
+                Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
+                studentAttendances.put(student);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        Log.v("font", v.getClass().toString());
+    }
+
+    public String getAttendanceStatus(int i){
+
+        String status = "";
+
+        switch(i){
+            case 0:
+                status = "came";
+                break;
+            case 1:
+                status = "did not come";
+                break;
+            case 2:
+                status = "arrived late";
+                break;
+            case 3:
+                status = "left soon";
+                break;
+            case 4:
+                status = "undefined";
+                break;
+            default:
+                status = "error";
+                break;
+        }
+
+        return status;
+    }
+
+    public void onClickSave(View v){
+        for(int i = 0; i < studentAttendances.length(); i++){
+            try {
+                JSONObject json = (JSONObject) studentAttendances.get(i);
+                Log.i("id: ",""+json.getString("id"));
+                Log.i("attendance: ",""+json.getString("attendance"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        try {
+            courseAttendances.put(nrc,studentAttendances);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void onClickStudentId(View v){
@@ -105,7 +209,6 @@ public class StudentListActivity extends Activity {
             intent.putExtra("id", id);
             startActivity(intent);
         }
-
     }
 
     private void parseResult(String result) {

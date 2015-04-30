@@ -36,13 +36,14 @@ public class CourseInfoAdapter extends RecyclerView.Adapter<FeedListRowHolder> {
     public void onBindViewHolder(FeedListRowHolder feedListRowHolder, int i) {
         CourseItem courseItem = this.courseItem;
         feedListRowHolder.subject_name.setText(Html.fromHtml(courseItem.getSubjectName()));
-        feedListRowHolder.nrc.setText(Html.fromHtml(courseItem.getNrc()));
-        feedListRowHolder.period.setText(Html.fromHtml(courseItem.getPeriod()));
-        feedListRowHolder.credits.setText(Html.fromHtml(courseItem.getCredits()));
-        feedListRowHolder.week_hours.setText(Html.fromHtml(courseItem.getWeekHours()));
-        feedListRowHolder.subject.setText(Html.fromHtml(courseItem.getSubject()));
-        feedListRowHolder.section.setText(Html.fromHtml(courseItem.getSection()));
-        feedListRowHolder.course.setText(Html.fromHtml(courseItem.getCourse()));
+        feedListRowHolder.nrc.setText("NRC: "+Html.fromHtml(courseItem.getNrc()));
+        feedListRowHolder.nrc.setTag(Html.fromHtml(courseItem.getNrc()));
+        feedListRowHolder.period.setText("Period: "+Html.fromHtml(courseItem.getPeriod()));
+        feedListRowHolder.credits.setText("Credits: "+Html.fromHtml(courseItem.getCredits()));
+        feedListRowHolder.week_hours.setText("Week hours: "+Html.fromHtml(courseItem.getWeekHours()));
+        feedListRowHolder.subject.setText("Subject: "+Html.fromHtml(courseItem.getSubject()));
+        feedListRowHolder.section.setText("Section: "+Html.fromHtml(courseItem.getSection()));
+        feedListRowHolder.course.setText("Course: "+Html.fromHtml(courseItem.getCourse()));
     }
 
     @Override

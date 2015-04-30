@@ -42,6 +42,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/subject_name"
                 android:layout_toRightOf="@+id/person_photo"
+                android:clickable="true"
+                android:onClick="onClickCourseNrc"
                 android:textColor= "@color/item_code" />
 
         </RelativeLayout>

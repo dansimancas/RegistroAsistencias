@@ -26,7 +26,7 @@ Route::get('teacher/{id}', 'PersonsController@showTeachersInfo');
 /*
  * Muestra la información de un curso
  */
-Route::get('course/{NRC}', 'CoursesController@showCoursesInfo');
+Route::get('course/{NRC}', 'CoursesController@cd ');
 
 /*
  * Muestra cursos que dicta el profesor id. Devuelve colección de cursos.

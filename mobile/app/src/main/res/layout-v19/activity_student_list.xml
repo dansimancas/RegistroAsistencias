@@ -57,5 +57,20 @@
         android:layout_height="match_parent"
         android:layout_weight="1" />
     -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/save"
+            android:layout_gravity="center_horizontal|center"
+            android:clickable="true"
+            android:onClick="onClickSave" />
+
+    </RelativeLayout>
+
 
 </LinearLayout>
