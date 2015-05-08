@@ -12,6 +12,7 @@ class AttendanceController extends Controller
      *
      * @return Response
      */
+
     public function index()
     {
         $attendance = AttendanceModel::all();
@@ -40,64 +41,24 @@ class AttendanceController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
      * @return Response
      */
     public function store()
     {
-        // validate
-        // read more on validation at http://laravel.com/docs/validation
-        $rules = array(
-            'STUDENTID'     => 'required',
-            'NRC'      => 'required',
-            'ATTENDANCE'    => 'required|numeric'
-        );
+        $json  = Input::json()->all();
 
-
-        $validator = Validator::make(Input::all(), $rules);
-
-        // process the login
-        if ($validator->fails()) {
-            return 'fallo';
-        } else {
-            // store
+        $size =  sizeof($json[0]['ESTUDIANTES']);
+        for($i=0;$i<$size;$i++){
             $attendance = new AttendanceModel;
-
-            $attendance->STUDENTID      = Input::get('STUDENTID');
-            $attendance->NRC       = Input::get('NRC');
-            $attendance->ATTENDANCE     = Input::get('ATTENDANCE');
+            $attendance->NRC       = $json[0]['NRC'];
+            $attendance->STUDENTID      = $json[0]['ESTUDIANTES'][$i]['ID'];
+            $attendance->ATTENDANCE     = $json[0]['ESTUDIANTES'][$i]['ATTENDANCE'];
             $attendance->save();
-
-            return 'ok, registro creado';
         }
+        return 'ok, registro creado';
 
     }
-    /*public function store()
-    {
-        echo 'Informacion';
-        // validate
-        // read more on validation at http://laravel.com/docs/validation
-        $rules = array(
-            'StudentId' => 'required',
-            'CourseId' => 'required',
-            'Attendance' => 'required|numeric',
-            //'Date' => 'required'
-        );
-        $validator = Validator::make(Input::all(), $rules);
-        // process the login
-        if ($validator->fails()) {
-            return 'Falla';
-        } else {
-            // store
-            $attendance = new Attendance;
-            $attendance->StudentId = Input::get('StudentId');
-            $attendance->CourseId = Input::get('CourseId');
-            $attendance->Attendance = Input::get('Attendance');
-            //$attendance->Date = Input::get('Date');
-            $attendance->save();
-            return 'OK';
-        }
-    }*/
+
     /**
      * @param $NRC
      * @return \Symfony\Component\HttpFoundation\Response
