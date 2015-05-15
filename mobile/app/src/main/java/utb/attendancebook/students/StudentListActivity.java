@@ -16,6 +16,22 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,6 +59,10 @@ public class StudentListActivity extends Activity{
     private JSONArray studentAttendances = new JSONArray();
     private JSONObject courseAttendances = new JSONObject();
     private String nrc = "";
+    /*
+    @TODO: Cambiar por la uri original cuando se corrija la api en el servidor.
+     */
+    private String uri= "http://104.236.31.197/attendance";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,8 +129,8 @@ public class StudentListActivity extends Activity{
         if(studentAttendances.length() == 0) {
             JSONObject student = new JSONObject();
             try {
-                student.put("id", tag);
-                student.put("attendance", attendanceValue);
+                student.put("ID", tag);
+                student.put("ATTENDANCE", attendanceValue);
                 Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
                 studentAttendances.put(student);
 
@@ -123,11 +143,11 @@ public class StudentListActivity extends Activity{
 
                 try {
                     JSONObject student = (JSONObject) studentAttendances.get(i);
-                    String id = student.getString("id");
+                    String id = student.getString("ID");
                     if(id.equals(tag)) {
 
-                        student.remove("attendance");
-                        student.put("attendance", attendanceValue);
+                        student.remove("ATTENDANCE");
+                        student.put("ATTENDANCE", attendanceValue);
                         studentAttendances.remove(i);
                         studentAttendances.put(student);
                         Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
@@ -139,8 +159,8 @@ public class StudentListActivity extends Activity{
             }
             try {
                 JSONObject student = new JSONObject();
-                student.put("id", tag);
-                student.put("attendance", attendanceValue);
+                student.put("ID", tag);
+                student.put("ATTENDANCE", attendanceValue);
                 Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
                 studentAttendances.put(student);
 
@@ -180,23 +200,80 @@ public class StudentListActivity extends Activity{
         return status;
     }
 
-    public void onClickSave(View v){
+
+    public void onClickSave(){
         for(int i = 0; i < studentAttendances.length(); i++){
             try {
                 JSONObject json = (JSONObject) studentAttendances.get(i);
-                Log.i("id: ",""+json.getString("id"));
-                Log.i("attendance: ",""+json.getString("attendance"));
+                Log.i("ID: ",""+json.getString("ID"));
+                Log.i("ATTENDANCE: ",""+json.getString("ATTENDANCE"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
 
         try {
-            courseAttendances.put(nrc,studentAttendances);
+            courseAttendances.put("NRC", nrc);
+            courseAttendances.put("ESTUDIANTES", studentAttendances);
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
+    }
+
+
+    private class UploadASyncTask extends AsyncTask<JSONObject, Void, Void> {
+
+        @Override
+        protected Void doInBackground(JSONObject... auth) {
+            try {
+                HttpParams params = new BasicHttpParams();
+
+                HttpClient httpclient = new DefaultHttpClient(params);
+
+                HttpPost httpPost = new HttpPost(uri);
+
+                List<NameValuePair> postParams = new ArrayList<NameValuePair>();
+                postParams.add(new BasicNameValuePair("data",courseAttendances.toString()));
+
+                UrlEncodedFormEntity entity = new UrlEncodedFormEntity(postParams);
+                entity.setContentEncoding(HTTP.UTF_8);
+                httpPost.setEntity(entity);
+                HttpResponse httpResponse = httpclient.execute(httpPost);
+
+                InputStream inputStream = httpResponse.getEntity().getContent();
+                String result = "";
+
+                if (inputStream != null) {
+                    result = inputStream.toString();
+
+                } else {
+                    result = "Did not work!";
+
+                }
+
+                Log.d("RESULT", result);
+
+
+            } catch (Exception e) {
+
+                Log.e("ERROR IN SEVER UPLOAD", e.getMessage());
+            }
+            return null;
+
+
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        onClickSave();
+        UploadASyncTask upload = new UploadASyncTask();
+        upload.execute(courseAttendances);
+        super.onBackPressed();
     }
 
     public void onClickStudentId(View v){
