@@ -31,13 +31,13 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -58,11 +58,9 @@ public class StudentListActivity extends Activity{
     private StudentListAdapter adapter;
     private JSONArray studentAttendances = new JSONArray();
     private JSONObject courseAttendances = new JSONObject();
+    private JSONArray Attendances = new JSONArray();
     private String nrc = "";
-    /*
-    @TODO: Cambiar por la uri original cuando se corrija la api en el servidor.
-     */
-    private String uri= "http://104.236.31.197/attendance";
+    private String uri="http://104.236.31.197/attendance";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +89,7 @@ public class StudentListActivity extends Activity{
 
 
     public void onClickStudentName(View v) {
-
+        String initial ="";
         String tag = v.getTag().toString();
         ViewParent grandparent = v.getParent();
         View vv = (View) grandparent;
@@ -149,7 +147,6 @@ public class StudentListActivity extends Activity{
                         student.remove("ATTENDANCE");
                         student.put("ATTENDANCE", attendanceValue);
                         studentAttendances.remove(i);
-                        studentAttendances.put(student);
                         Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
@@ -158,9 +155,13 @@ public class StudentListActivity extends Activity{
                 }
             }
             try {
+
                 JSONObject student = new JSONObject();
-                student.put("ID", tag);
-                student.put("ATTENDANCE", attendanceValue);
+
+                    student.put("ID", tag);
+                    student.put("ATTENDANCE", attendanceValue);
+
+
                 Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
                 studentAttendances.put(student);
 
@@ -168,7 +169,6 @@ public class StudentListActivity extends Activity{
                 e.printStackTrace();
             }
         }
-
         Log.v("font", v.getClass().toString());
     }
 
@@ -200,13 +200,12 @@ public class StudentListActivity extends Activity{
         return status;
     }
 
-
     public void onClickSave(){
         for(int i = 0; i < studentAttendances.length(); i++){
             try {
-                JSONObject json = (JSONObject) studentAttendances.get(i);
-                Log.i("ID: ",""+json.getString("ID"));
-                Log.i("ATTENDANCE: ",""+json.getString("ATTENDANCE"));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                JSONObject json = (JSONObject) studentAttendances.get(i);
+                Log.i("ID: ",""+json.getString("id"));
+                Log.i("ATTENDANCE: ",""+json.getString("attendance"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -215,32 +214,29 @@ public class StudentListActivity extends Activity{
         try {
             courseAttendances.put("NRC", nrc);
             courseAttendances.put("ESTUDIANTES", studentAttendances);
-
+            Attendances.put(courseAttendances);
+            System.out.print(courseAttendances);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
     }
-
-
     private class UploadASyncTask extends AsyncTask<JSONObject, Void, Void> {
 
         @Override
         protected Void doInBackground(JSONObject... auth) {
             try {
                 HttpParams params = new BasicHttpParams();
-
                 HttpClient httpclient = new DefaultHttpClient(params);
 
                 HttpPost httpPost = new HttpPost(uri);
 
-                List<NameValuePair> postParams = new ArrayList<NameValuePair>();
-                postParams.add(new BasicNameValuePair("data",courseAttendances.toString()));
 
-                UrlEncodedFormEntity entity = new UrlEncodedFormEntity(postParams);
-                entity.setContentEncoding(HTTP.UTF_8);
-                httpPost.setEntity(entity);
+                httpPost.setEntity(new StringEntity(Attendances.toString(), "UTF8"));
+                httpPost.setHeader("Content-type", "application/json");
+
+
                 HttpResponse httpResponse = httpclient.execute(httpPost);
 
                 InputStream inputStream = httpResponse.getEntity().getContent();
@@ -266,13 +262,13 @@ public class StudentListActivity extends Activity{
 
         }
     }
-
     @Override
     public void onBackPressed() {
 
         onClickSave();
+        Log.d("otro1: ",Attendances.toString());
         UploadASyncTask upload = new UploadASyncTask();
-        upload.execute(courseAttendances);
+        upload.execute();
         super.onBackPressed();
     }
 
