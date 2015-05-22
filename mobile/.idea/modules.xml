@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mobile.iml" filepath="$PROJECT_DIR$/mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../home/jairo/Proyectos/RegistroAsistencias/mobile/app/app.iml" filepath="$PROJECT_DIR$/../../../../home/jairo/Proyectos/RegistroAsistencias/mobile/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../home/jairo/Proyectos/RegistroAsistencias/mobile/mobile.iml" filepath="$PROJECT_DIR$/../../../../home/jairo/Proyectos/RegistroAsistencias/mobile/mobile.iml" />
     </modules>
   </component>
 </project>
-

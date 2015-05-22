@@ -1,6 +1,7 @@
 package utb.attendancebook.students;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -48,6 +49,7 @@ import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
 import utb.attendancebook.R;
+import utb.attendancebook.WebStatistics;
 
 public class StudentListActivity extends Activity{
 
@@ -199,7 +201,13 @@ public class StudentListActivity extends Activity{
 
         return status;
     }
+    public void onClickInfo(View v) {
 
+        final Context context = this;
+
+        Intent intent = new Intent(context, WebStatistics.class);
+        startActivity(intent);
+    }
     public void onClickSave(){
         for(int i = 0; i < studentAttendances.length(); i++){
             try {
