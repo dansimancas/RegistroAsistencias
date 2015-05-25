@@ -1,4 +1,4 @@
-package utb.attendancebook;
+package utb.attendancebook.courses;
 
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
@@ -18,6 +18,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import utb.attendancebook.R;
 
 public class NavigationActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {

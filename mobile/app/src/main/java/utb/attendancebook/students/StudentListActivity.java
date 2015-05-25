@@ -86,9 +86,74 @@ public class StudentListActivity extends Activity{
         new AsyncHttpTask().execute(url);
     }
 
+    public void onClickStudentName(View v, TextView t) {
+        String initial ="";
+        String tag = v.getTag().toString();
+        ViewParent grandparent = v.getParent();
+        View vv = (View) grandparent;
+        TextView text = (TextView) findViewById(R.id.student_name);
+        int attendanceValue = 0;
+        int currentColor = ((ColorDrawable) vv.getBackground()).getColor();
+        if(currentColor == getResources().getColor(R.color.undefined)){
+            text.setTextColor(getResources().getColor(R.color.textDefined));
+            vv.setBackgroundColor(getResources().getColor(R.color.came));
+            attendanceValue = 0;
+        }else if(currentColor == getResources().getColor(R.color.came)){
+            text.setTextColor(getResources().getColor(R.color.textDefined));
+            vv.setBackgroundColor(getResources().getColor(R.color.notcame));
+            attendanceValue = 1;
+        }else if(currentColor == getResources().getColor(R.color.notcame)){
+            text.setTextColor(getResources().getColor(R.color.textDefined));
+            vv.setBackgroundColor(getResources().getColor(R.color.late));
+            attendanceValue = 2;
+        }else if(currentColor == getResources().getColor(R.color.late)){
+            text.setTextColor(getResources().getColor(R.color.textDefined));
+            vv.setBackgroundColor(getResources().getColor(R.color.leftsoon));
+            attendanceValue = 3;
+        }else if(currentColor == getResources().getColor(R.color.leftsoon)){
+            text.setTextColor(getResources().getColor(R.color.textUndefined));
+            vv.setBackgroundColor(getResources().getColor(R.color.undefined));
+            attendanceValue = 4;
+        }
+        if(studentAttendances.length() == 0) {
+            JSONObject student = new JSONObject();
+            try {
+                student.put("ID", tag);
+                student.put("ATTENDANCE", attendanceValue);
+                Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
+                studentAttendances.put(student);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }else{
+            for(int i = 0; i < studentAttendances.length(); i++){
+                try {
+                    JSONObject student = (JSONObject) studentAttendances.get(i);
+                    String id = student.getString("ID");
+                    if(id.equals(tag)) {
+                        student.remove("ATTENDANCE");
+                        student.put("ATTENDANCE", attendanceValue);
+                        studentAttendances.remove(i);
+                        Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            try {
+                JSONObject student = new JSONObject();
+                student.put("ID", tag);
+                student.put("ATTENDANCE", attendanceValue);
+                Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
+                studentAttendances.put(student);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        Log.v("font", v.getClass().toString());
+    }
 
-
-    public void onClickStudentName(View v) {
+    /*public void onClickStudentName(View v) {
         String initial ="";
         String tag = v.getTag().toString();
         ViewParent grandparent = v.getParent();
@@ -170,7 +235,7 @@ public class StudentListActivity extends Activity{
             }
         }
         Log.v("font", v.getClass().toString());
-    }
+    }*/
 
     public String getAttendanceStatus(int i){
 

@@ -8,9 +8,10 @@
     <string name="activity_course_info">About this course</string>
     <string name="title_activity_navigation">NavigationActivity</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Start</string>
+    <string name="title_section2">Profile</string>
+    <string name="title_section3">Settings</string>
+    <string name="title_section4">About</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
