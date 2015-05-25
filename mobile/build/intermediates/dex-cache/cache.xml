@@ -2,179 +2,179 @@
 <items version="2" >
 
     <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-60589e679404748cd84755f04b51bd1922c7dddd.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-e7c5d8192b2a8e3f3de32e9640d53a3c0348b0bf.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-df43475307bea24e8caa51e0aaa8b6bd89405e0d.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="055783146ba9654a725442563be78cad303aad1f">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-6e9ab416399e51c26d8963bee7d92da6a55639cd.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-e205d8bce488a663057fb83e56218e4471b1b556.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-616f3c480ff8a4c1191a6d323f5f7d6a54895a15.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-b345eb2e47e80ca07d82abfb66ed96de8552414e.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-dd05edf66f767a1c8579414706ec40a6a8ad82e1.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-3c08c5e8cb000c7433b7318f800f38310cc485db.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-0984d9c7b5473195232734cd2520b880d08933ed.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-a12adae3e280d91ca57dfac83a8144db4ee154a7.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-883a69c44e064f9b936063ad98fd6054672e73e5.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/support-annotations-22.0.0-dbb2bc4ed3aed5e8259489f9884f6cbc07e43ef1.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-d278168535be7bf4d66402d0e633f61ee70e6a35.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-908a8dd76b26dd0728f0017b8da6cd7d4e3e4739.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.0.0/classes.jar"
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-12ada61591c11f70285f687c3efe12a6f7a5ee29.jar" />
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-ab9088c718c2ba6a666d75118f0804c516f6b9ba.jar" />
     </item>
     <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-f6d0618e7af0f4fcbcf41cd86fb30309740a0dc5.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-45a25e35ceaa03e9d022159a41a307012cf29768.jar" />
-    </item>
-    <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/internal_impl-22.0.0-8134c05c16bd891a879461b48ff63890db4e0664.jar" />
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/internal_impl-22.0.0-4227a5694c3ec6b1b4b409e5c80e02a2628b02b2.jar" />
     </item>
     <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/classes.jar"
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-d70be30ad261232c72688218f214c9b01f47f2be.jar" />
+        sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-5e5cd833dd4a0a48eaef9d58ae9e3ae6cfa63c5c.jar" />
     </item>
     <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-b46f398e00360c93a4204afcb4d2d69507311d1c.jar" />
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-c3dee1282387bd3b8fd279efd7e7c6c3a6ebddc3.jar" />
     </item>
     <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/classes.jar"
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="c6d79137693d494dee16372d3921f919eb724ced">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-b84487c934f28a407175fc1f6689daca5b97d2cd.jar" />
+        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-8051897d613ae272383c2bb5935e625c61034902.jar" />
     </item>
     <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.0.0/classes.jar"
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-0bf021d98232470818e41f0b68cc72d3c2843ac1.jar" />
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-2008559a7e60324d77e6000e84b1cc6b3e0a9743.jar" />
     </item>
     <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-290c797a0f7ddfa46cc08c09d440dc410e8c05c9.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-8b8aa019cf0b1ef7ce4d5fd36b9647e0e7f6b8fd.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-84972ad0b851aea4b809bb65b7719203ed0e7dcd.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-a643cf4a0953079b338ed6a52754354f1ca868ff.jar" />
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-e5acfec32d56e60ef720ab84825dd98253006e07.jar" />
     </item>
     <item
-        jar="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-3e8d0351a29c09fe30a9beb255b5f2be6d06af51.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-38f9bdfb7684d21399d5aa931cebf267e1e611b8.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-18ccfa988f79ae87e85a15b75d2af066b82a3389.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-b1f7322e91c6ed2221c5904322bf4a738ce2ff7b.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-40f96b8b6a547b47e3f451cb50114841f1987eb6.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c6d79137693d494dee16372d3921f919eb724ced">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-ef15ac11b3846ed795782510602bd5112608b7e3.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-6804d582253cee079c4378f3c265643d43ddb62c.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-b517aa81171b4a1082c79c0933e6995e951b0697.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-0504e5d323cdef5939ef7ca0dd09b76e23af5e85.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
-        <dex dex="/home/daniela/Desktop/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-40a55c79984aea9ee6be0cf1b81efb7f50fecd3e.jar" />
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-cc797c1c1bdc32ddd6a4718ce47e47d5e44c31a7.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-c35bf4f5a2ed44b68f3791dc20f55af2dbecfccf.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-4442f0cd9895112b164746b157acb2eb151c8a81.jar" />
+    </item>
+    <item
+        jar="/home/jairo/Apps/android-sdks/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/support-annotations-22.0.0-ac690e3c5c3eb9be7da17da57b0520179f87e72e.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-b57ac6f3f03e02a5e6472ac5737262e3fba52b92.jar" />
+    </item>
+    <item
+        jar="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/home/home/jairo/Proyectos/RegistroAsistencias/mobile/app/build/intermediates/pre-dexed/flavor/debug/classes-03c104423385a4c3ce5844c0b56b5a01b3ba7918.jar" />
     </item>
 
 </items>

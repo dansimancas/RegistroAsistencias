@@ -26,6 +26,15 @@
                 android:layout_marginRight="10dp"
                 android:src="@mipmap/ic_course" />
 
+            <Button
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:text="Info"
+                android:id="@+id/info"
+                android:layout_gravity="center_horizontal|center"
+                android:clickable="true"
+                android:onClick="onClickInfo" />
+
             <TextView
                 android:id="@+id/student_name"
                 android:layout_width="wrap_content"
@@ -50,27 +59,5 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
-
-    <!--
-    <View
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-    -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:layout_width="145dp"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            android:id="@+id/save"
-            android:layout_gravity="center_horizontal|center"
-            android:clickable="true"
-            android:onClick="onClickSave" />
-
-    </RelativeLayout>
-
 
 </LinearLayout>
