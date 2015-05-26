@@ -13,7 +13,7 @@ class AttendanceController extends Controller
      * @return Response
      */
 
-    public function index()
+   /* public function index()
     {
         $attendance = AttendanceModel::all();
 
@@ -34,8 +34,8 @@ class AttendanceController extends Controller
         return response()->json($object);
 
 
-    }
-    
+    }*/
+
     /**
      * Store a newly created resource in storage.
      * @return Response
