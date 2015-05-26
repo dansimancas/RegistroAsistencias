@@ -8,7 +8,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\AttendanceModel;
 use App\StudentsByCourseModel;
 use App\StudentsModel;
@@ -62,7 +61,7 @@ class StatisticsController extends Controller {
 
         $total = $came + $notcame + $arrivedlate + $leftsoon + $DK;
 
-        if($total!=0) {
+        /*if($total!=0) {
             $object["came"] = $came * 100 / $total;
             $object["did_not_come"] = $notcame * 100 / $total;
             $object["arrived_late"] = $arrivedlate * 100 / $total;
@@ -74,17 +73,38 @@ class StatisticsController extends Controller {
             $object["arrived_late"] = 0;
             $object["left_soon"] = 0;
             $object["undefined"] = 100;
+        }*/
+
+        //Two dimensional arrays
+        if($total!=0) {
+            $attendance = array(
+                array("key" => "Came", "value" => round($came * 100 / $total, 2, PHP_ROUND_HALF_UP)), //2 decimals round
+                array("key" => "Did not come", "value" => round($notcame * 100 / $total, 2, PHP_ROUND_HALF_UP)),
+                array("key" => "Arrived late", "value" => round($arrivedlate * 100 / $total, 2, PHP_ROUND_HALF_UP)),
+                array("key" => "Left Soon", "value" => round($leftsoon * 100 / $total, 2, PHP_ROUND_HALF_UP)),
+                array("key" => "Undefined", "value" => round($DK * 100 / $total, 2, PHP_ROUND_HALF_UP))
+            );
+        }else{
+            $attendance = array(
+                array("key" => "Came", "value" => 0),
+                array("key" => "Did not come", "value" => 0),
+                array("key" => "Arrived late", "value" => 0),
+                array("key" => "Left Soon", "value" => 0),
+                array("key" => "Undefined", "value" => 100)
+            );
         }
+
+        $object["attendance"] = $attendance;
+
+        //$jsonp = json_encode($object);
 
         if($response) {
-            return response()->json($object);
+            return response()->json($object); //returns json object
         }else{
-            return $object;
+            return($object); //returns an array
         }
-
-        return response()->json($object);
     }
-
+/*
     public function showStatisticsByStudent($id)
     {
         $response_data = array(
@@ -115,7 +135,7 @@ class StatisticsController extends Controller {
 
         return response()->json($response_data);
 
-    }
+    }*/
 
     public function showStatisticsByCourse($NRC)
     {
@@ -129,18 +149,29 @@ class StatisticsController extends Controller {
 
         foreach($students as $student){
             $course_attendance = self::showStatisticsByStudentByCourse($student["STUDENTID"], $NRC, false);
-            //var_dump($course);
+            // var_dump($course_attendance);
+
             $student_attendance = array(
                 "student_name" => $student["NAMES"],
                 "student_lastname" => $student["LASTNAMES"],
                 "student_id" => $student["STUDENTID"],
                 "resource_uri" => "/student/".$student["STUDENTID"]."/attendance",
-                "attendance" => array(
+
+               /* "attendance" => array(
                     "came" => $course_attendance["came"],
                     "did_not_come" => $course_attendance["did_not_come"],
                     "arrived_late" => $course_attendance["arrived_late"],
                     "left_soon" => $course_attendance["left_soon"],
+
                     "undefined" => $course_attendance["undefined"]
+               )*/
+
+                "attendance" => array(
+                    array("key" => "Came", "value" => $course_attendance["attendance"][0]["value"]),
+                    array("key" => "Did not come", "value" => $course_attendance["attendance"][1]["value"]),
+                    array("key" => "Arrived late", "value" => $course_attendance["attendance"][2]["value"]),
+                    array("key" => "Left Soon", "value" => $course_attendance["attendance"][3]["value"]),
+                    array("key" => "Undefined", "value" => $course_attendance["attendance"][4]["value"])
                 )
             );
             $response_data["students"][] = $student_attendance;
