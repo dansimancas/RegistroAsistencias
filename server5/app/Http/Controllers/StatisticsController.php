@@ -61,20 +61,6 @@ class StatisticsController extends Controller {
 
         $total = $came + $notcame + $arrivedlate + $leftsoon + $DK;
 
-        /*if($total!=0) {
-            $object["came"] = $came * 100 / $total;
-            $object["did_not_come"] = $notcame * 100 / $total;
-            $object["arrived_late"] = $arrivedlate * 100 / $total;
-            $object["left_soon"] = $leftsoon * 100 / $total;
-            $object["undefined"] = $DK * 100 / $total;
-        }else{
-            $object["came"] = 0;
-            $object["did_not_come"] = 0;
-            $object["arrived_late"] = 0;
-            $object["left_soon"] = 0;
-            $object["undefined"] = 100;
-        }*/
-
         //Two dimensional arrays
         if($total!=0) {
             $attendance = array(
@@ -157,15 +143,6 @@ class StatisticsController extends Controller {
                 "student_id" => $student["STUDENTID"],
                 "resource_uri" => "/student/".$student["STUDENTID"]."/attendance",
 
-               /* "attendance" => array(
-                    "came" => $course_attendance["came"],
-                    "did_not_come" => $course_attendance["did_not_come"],
-                    "arrived_late" => $course_attendance["arrived_late"],
-                    "left_soon" => $course_attendance["left_soon"],
-
-                    "undefined" => $course_attendance["undefined"]
-               )*/
-
                 "attendance" => array(
                     array("key" => "Came", "value" => $course_attendance["attendance"][0]["value"]),
                     array("key" => "Did not come", "value" => $course_attendance["attendance"][1]["value"]),
@@ -180,4 +157,37 @@ class StatisticsController extends Controller {
         return response()->json($response_data);
 
     }
+
+    /*public function showStatisticsByStudent($id)
+    {
+        $response_data = array(
+            "student_id" => $id,
+            "resource_uri" => "/student/".$id,
+            "courses" => array()
+        );
+
+        $courses = CoursesByStudentModel::where("STUDENTID", "=", $id)->get()->toArray();
+
+        foreach($courses as $course){
+            $student_attendance = self::showStatisticsByStudentByCourse($id, $course["NRC"], false);
+            $course_attendance = array(
+                "subject_name" => $course["SUBJECTNAME"],
+                "nrc" => $course["NRC"],
+                "resource_uri" => "/course/".$course["NRC"],
+                //"attendance" => $student_attendance
+                "attendance" => array(
+                    "came" => $student_attendance["came"],
+                    "did_not_come" => $student_attendance["did_not_come"],
+                    "arrived_late" => $student_attendance["arrived_late"],
+                    "left_soon" => $student_attendance["left_soon"],
+                    "undefined" => $student_attendance["undefined"]
+                )
+            );
+            $response_data["courses"][] = $course_attendance;
+        }
+
+        return response()->json($response_data);
+
+    }*/
+
 }
