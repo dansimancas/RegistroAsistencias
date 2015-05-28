@@ -13,7 +13,7 @@ class AttendanceController extends Controller
      * @return Response
      */
 
-    public function index()
+   /* public function index()
     {
         $attendance = AttendanceModel::all();
 
@@ -34,10 +34,7 @@ class AttendanceController extends Controller
         return response()->json($object);
 
 
-    }
-
-
-
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -63,7 +60,7 @@ class AttendanceController extends Controller
      * @param $NRC
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function show($NRC)
+    /*public function show($NRC)
     {
         $attendance = AttendanceModel::where('NRC', "=", $NRC)->get();
         $object = array(
@@ -82,7 +79,7 @@ class AttendanceController extends Controller
         }
 
         return response()->json($object);
-    }
+    }*/
 
     /*public function show($id)
     {
