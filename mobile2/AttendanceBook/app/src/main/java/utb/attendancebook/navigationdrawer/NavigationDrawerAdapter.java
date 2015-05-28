@@ -72,7 +72,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
         @Override
         public void onClick(View v) {
-            mContext.startActivity(new Intent(mContext, ProfileActivity.class));
+            //mContext.startActivity(new Intent(mContext, ProfileActivity.class));
             if(mClickListener != null){
                 mClickListener.itemClicked(v,getPosition());
             }

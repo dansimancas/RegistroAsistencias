@@ -12,5 +12,10 @@
     <dimen name="list_icon_padding">8dp</dimen>
     <dimen name="nav_row_height">48dp</dimen>
     <dimen name="drawer_row_image_margin">16dp</dimen>
-    <dimen name="drawer_row_text_marginleft">72dp</dimen>
+    <dimen name="drawer_row_text_marginleft">56dp</dimen>
+    <dimen name="list_item_height">72dp</dimen>
+    <dimen name="subtitle_height">48dp</dimen>
+    <dimen name="list_row_left_padding">16dp</dimen>
+    <dimen name="item_padding_top">8dp</dimen>
+    <dimen name="text_small_size">12sp</dimen>
 </resources>

@@ -18,9 +18,13 @@ import android.support.v7.widget.Toolbar;
 import java.util.ArrayList;
 import java.util.List;
 
+import utb.attendancebook.courses.CourseListActivity;
+import utb.attendancebook.exit.ExitActivity;
+import utb.attendancebook.help.HelpActivity;
 import utb.attendancebook.navigationdrawer.NavigationDrawerAdapter;
 import utb.attendancebook.navigationdrawer.NavigationDrawerItem;
 import utb.attendancebook.profile.ProfileActivity;
+import utb.attendancebook.settings.SettingsActivity;
 
 
 /**
@@ -123,6 +127,26 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
 
     @Override
     public void itemClicked(View view, int position) {
-        startActivity(new Intent(getActivity(), ProfileActivity.class));
+        switch (position){
+            case 0:
+                startActivity(new Intent(getActivity(), ProfileActivity.class));
+                break;
+            case 1:
+                startActivity(new Intent(getActivity(), MainActivity.class));
+                break;
+            case 2:
+                startActivity(new Intent(getActivity(), SettingsActivity.class));
+                break;
+            case 3:
+                startActivity(new Intent(getActivity(), HelpActivity.class));
+                break;
+            case 4:
+                startActivity(new Intent(getActivity(), ExitActivity.class));
+                break;
+            default:
+                startActivity(new Intent(getActivity(), CourseListActivity.class));
+                break;
+        }
+
     }
 }

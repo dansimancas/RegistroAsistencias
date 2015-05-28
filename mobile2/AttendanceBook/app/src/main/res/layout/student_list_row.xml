@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_height"
+    android:clickable="true"
+    android:onClick="onStudentItemClick"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/student_thumbnail"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:onClick="onStudentItemClick"
+        android:src="@drawable/ic_graycirlce" />
+
+    <TextView
+        android:id="@+id/student_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/drawer_row_text_marginleft"
+        android:clickable="true"
+        android:onClick="onStudentItemClick"
+        android:paddingTop="@dimen/item_padding_top"
+        android:text="Dummy text" />
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/student_name"
+        android:layout_marginLeft="@dimen/drawer_row_text_marginleft"
+        android:clickable="true"
+        android:onClick="onStudentItemClick"
+        android:text="Dummy text"
+        android:textSize="@dimen/text_small_size" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/student_thumbnail"
+        android:layout_marginLeft="@dimen/drawer_row_text_marginleft"
+        android:background="@color/divider_color"
+        android:paddingTop="@dimen/item_padding_top" />
+
+</RelativeLayout>

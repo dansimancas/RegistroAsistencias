@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:background="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="utb.attendancebook.MainActivity">
@@ -15,10 +16,22 @@
             layout="@layout/app_bar" />
 
         <TextView
+            android:id="@+id/subtitle"
+            android:paddingLeft="@dimen/list_row_left_padding"
             android:layout_below="@+id/app_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_world" />
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/subtitle_height"
+            android:text="My courses"
+            android:gravity="center_vertical"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:paddingLeft="@dimen/list_row_left_padding"
+            android:id="@+id/courses_list"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/subtitle"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
 
     </RelativeLayout>
     

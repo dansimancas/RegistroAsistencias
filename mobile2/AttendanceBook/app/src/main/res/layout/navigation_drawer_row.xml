@@ -21,7 +21,6 @@
         android:layout_centerVertical="true"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="@dimen/drawer_row_text_marginleft"
-        android:clickable="true"
         android:text="Dummy text"/>
 
 </RelativeLayout>
