@@ -1,5 +1,4 @@
 package utb.attendancebook.students;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -13,7 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewParent;
-import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +42,7 @@ import utb.attendancebook.statistics.WebStatistics;
 /**
  * Created by daniela on 28/05/15.
  */
-public class StudentListActivity extends ActionBarActivity {
+public class StudentListActivity extends ActionBarActivity{
 
     private Toolbar mToolbar;
     private static final String TAG = "Estudiantes";
@@ -89,41 +87,72 @@ public class StudentListActivity extends ActionBarActivity {
         new AsyncHttpTask().execute(url);
     }
 
-    public void onStudentItemClick(View v, TextView t) {
-        String initial ="";
-        String tag = v.getTag().toString();
-        ViewParent grandparent = v.getParent();
-        View vv = (View) grandparent;
-        TextView text = (TextView) findViewById(R.id.student_name);
+    public void onStudentItemClick(View vv) {
+
+        //String tag = v.getTag().toString();
+        ViewParent grandparent = vv.getParent();
+        View v = (View) grandparent;
+        TextView studentNameView = (TextView) v.findViewById(R.id.student_name);
+        TextView studentIdView = (TextView) v.findViewById(R.id.id);
+        String studentId = studentIdView.getText().toString();
+        TextView attendanceStatus = (TextView) v.findViewById(R.id.attendance_status);
         int attendanceValue = 0;
-        int currentColor = ((ColorDrawable) vv.getBackground()).getColor();
+        int currentColor = (v.getBackground() != null) ? ((ColorDrawable) v.getBackground()).getColor() : getResources().getColor(R.color.undefined);
+
         if(currentColor == getResources().getColor(R.color.undefined)){
-            text.setTextColor(getResources().getColor(R.color.textDefined));
-            vv.setBackgroundColor(getResources().getColor(R.color.came));
+
+            studentNameView.setTextColor(getResources().getColor(R.color.textDefined));
+            studentIdView.setTextColor(getResources().getColor(R.color.textDefined));
+            attendanceStatus.setTextColor(getResources().getColor(R.color.textDefined));
+            attendanceStatus.setText(getString(R.string.came_string));
+            v.setBackgroundColor(getResources().getColor(R.color.came));
             attendanceValue = 0;
+
         }else if(currentColor == getResources().getColor(R.color.came)){
-            text.setTextColor(getResources().getColor(R.color.textDefined));
-            vv.setBackgroundColor(getResources().getColor(R.color.notcame));
+
+            studentNameView.setTextColor(getResources().getColor(R.color.textDefined));
+            studentIdView.setTextColor(getResources().getColor(R.color.textDefined));
+            studentIdView.setTextColor(getResources().getColor(R.color.textDefined));
+            attendanceStatus.setTextColor(getResources().getColor(R.color.textDefined));
+            attendanceStatus.setText(getString(R.string.notcame_string));
+            v.setBackgroundColor(getResources().getColor(R.color.notcame));
             attendanceValue = 1;
+
         }else if(currentColor == getResources().getColor(R.color.notcame)){
-            text.setTextColor(getResources().getColor(R.color.textDefined));
-            vv.setBackgroundColor(getResources().getColor(R.color.late));
+
+            studentNameView.setTextColor(getResources().getColor(R.color.textDefined));
+            studentIdView.setTextColor(getResources().getColor(R.color.textDefined));
+            studentIdView.setTextColor(getResources().getColor(R.color.textDefined));
+            attendanceStatus.setTextColor(getResources().getColor(R.color.textDefined));
+            attendanceStatus.setText(getString(R.string.late_string));
+            v.setBackgroundColor(getResources().getColor(R.color.late));
             attendanceValue = 2;
+
         }else if(currentColor == getResources().getColor(R.color.late)){
-            text.setTextColor(getResources().getColor(R.color.textDefined));
-            vv.setBackgroundColor(getResources().getColor(R.color.leftsoon));
+            studentNameView.setTextColor(getResources().getColor(R.color.textDefined));
+            studentIdView.setTextColor(getResources().getColor(R.color.textDefined));
+            studentIdView.setTextColor(getResources().getColor(R.color.textDefined));
+            attendanceStatus.setTextColor(getResources().getColor(R.color.textDefined));
+            attendanceStatus.setText(getString(R.string.leftsoon_string));
+            v.setBackgroundColor(getResources().getColor(R.color.leftsoon));
             attendanceValue = 3;
+
         }else if(currentColor == getResources().getColor(R.color.leftsoon)){
-            text.setTextColor(getResources().getColor(R.color.textUndefined));
-            vv.setBackgroundColor(getResources().getColor(R.color.undefined));
+            studentNameView.setTextColor(getResources().getColor(R.color.primaryText));
+            studentIdView.setTextColor(getResources().getColor(R.color.primaryText));
+            studentIdView.setTextColor(getResources().getColor(R.color.primaryText));
+            attendanceStatus.setTextColor(getResources().getColor(R.color.primaryText));
+            attendanceStatus.setText(getString(R.string.undefined_string));
+            v.setBackgroundColor(getResources().getColor(R.color.undefined));
             attendanceValue = 4;
+
         }
         if(studentAttendances.length() == 0) {
+
             JSONObject student = new JSONObject();
             try {
-                student.put("ID", tag);
+                student.put("ID", studentId);
                 student.put("ATTENDANCE", attendanceValue);
-                Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
                 studentAttendances.put(student);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -133,11 +162,10 @@ public class StudentListActivity extends ActionBarActivity {
                 try {
                     JSONObject student = (JSONObject) studentAttendances.get(i);
                     String id = student.getString("ID");
-                    if(id.equals(tag)) {
+                    if(id.equals(studentId)) {
                         student.remove("ATTENDANCE");
                         student.put("ATTENDANCE", attendanceValue);
                         studentAttendances.remove(i);
-                        Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -145,9 +173,8 @@ public class StudentListActivity extends ActionBarActivity {
             }
             try {
                 JSONObject student = new JSONObject();
-                student.put("ID", tag);
+                student.put("ID", studentId);
                 student.put("ATTENDANCE", attendanceValue);
-                Toast.makeText(getApplicationContext(),"The student "+getAttendanceStatus(attendanceValue),Toast.LENGTH_SHORT).show();
                 studentAttendances.put(student);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -240,33 +267,6 @@ public class StudentListActivity extends ActionBarActivity {
         Log.v("font", v.getClass().toString());
     }*/
 
-    public String getAttendanceStatus(int i){
-
-        String status = "";
-
-        switch(i){
-            case 0:
-                status = "came";
-                break;
-            case 1:
-                status = "did not come";
-                break;
-            case 2:
-                status = "arrived late";
-                break;
-            case 3:
-                status = "left soon";
-                break;
-            case 4:
-                status = "undefined";
-                break;
-            default:
-                status = "error";
-                break;
-        }
-
-        return status;
-    }
     public void onClickInfo(View v) {
 
         final Context context = this;
@@ -296,6 +296,7 @@ public class StudentListActivity extends ActionBarActivity {
         }
 
     }
+
     private class UploadASyncTask extends AsyncTask<JSONObject, Void, Void> {
 
         @Override
@@ -346,17 +347,17 @@ public class StudentListActivity extends ActionBarActivity {
         super.onBackPressed();
     }
 
-    /*public void onClickStudentId(View v){
-
-        Object tag = v.getTag();
-        if(tag != null){
-            Log.d("ClickStudentId", tag.toString());
+    public void onInfoIconClick(View vv){
+        ViewParent grandparent = vv.getParent();
+        View v = (View) grandparent;
+        String studentId = ((TextView) v.findViewById(R.id.id)).getText().toString();
+        if(studentId != null){
+            Log.d("ClickStudentId", studentId);
             Intent intent = new Intent(StudentListActivity.this, StudentInfoActivity.class);
-            String id = v.getTag().toString();
-            intent.putExtra("id", id);
+            intent.putExtra("id", studentId);
             startActivity(intent);
         }
-    }*/
+    }
 
     private void parseResult(String result) {
         try {
@@ -437,6 +438,4 @@ public class StudentListActivity extends ActionBarActivity {
             }
         }
     }
-
-
 }

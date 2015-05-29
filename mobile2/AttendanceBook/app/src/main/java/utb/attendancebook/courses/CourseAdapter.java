@@ -33,6 +33,7 @@ public class CourseAdapter extends RecyclerView.Adapter<FeedCourseListRowHolder>
     @Override
     public void onBindViewHolder(FeedCourseListRowHolder feedCourseListRowHolder, int i) {
         CourseItem courseItem = courseItemList.get(i);
+        feedCourseListRowHolder.course_thumbnail.setTag(Html.fromHtml(courseItem.getNrc()));
         feedCourseListRowHolder.subject_name.setText(Html.fromHtml(courseItem.getSubjectName()));
         feedCourseListRowHolder.nrc.setText(Html.fromHtml(courseItem.getNrc()));
         feedCourseListRowHolder.nrc.setTag(Html.fromHtml(courseItem.getNrc()));

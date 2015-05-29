@@ -4,6 +4,7 @@ package utb.attendancebook.courses;
  * Created by daniela on 28/05/15.
  */
 public class CourseItem {
+    private int course_thumbnail;
     private String subject_name;
     private String uri;
     private String nrc;
@@ -78,12 +79,18 @@ public class CourseItem {
         this.nrc = nrc;
     }
 
-
     public String getSubjectName() {
         return subject_name;
     }
 
     public void setSubjectName(String subject_name) {
         this.subject_name = subject_name;
+    }
+
+    public int getStudentThumbnail(){
+        return course_thumbnail;
+    }
+    public void setStudentThumbnail(int imageId){
+        course_thumbnail = imageId;
     }
 }

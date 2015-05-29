@@ -1,10 +1,14 @@
 package utb.attendancebook.students;
 
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+
 /**
  * Created by daniela on 8/04/15.
  */
 public class StudentItem {
-
+    private int student_picture;
+    private int student_thumbnail;
     private String student_name;
     private String id;
     private String program;
@@ -49,6 +53,22 @@ public class StudentItem {
 
     public void setEmail(String email){
         this.email = email;
+    }
+
+    public int getStudentThumbnail(){
+        return student_thumbnail;
+    }
+
+    public void setStudentThumbnail(int imageId){
+        student_thumbnail = imageId;
+    }
+
+    public int getStudentPicture(){
+        return student_picture;
+    }
+
+    public void setStudentPicture(int imageId){
+        student_picture = imageId;
     }
 
 }

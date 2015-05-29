@@ -2,6 +2,7 @@ package utb.attendancebook.courses;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import utb.attendancebook.R;
 
@@ -9,6 +10,7 @@ import utb.attendancebook.R;
  * Created by daniela on 28/05/15.
  */
 public class FeedCourseListRowHolder extends RecyclerView.ViewHolder {
+    protected ImageView course_thumbnail;
     protected TextView subject_name;
     protected TextView nrc;
     protected TextView period;
@@ -20,6 +22,7 @@ public class FeedCourseListRowHolder extends RecyclerView.ViewHolder {
 
     public FeedCourseListRowHolder(View view) {
         super(view);
+        course_thumbnail = (ImageView) view.findViewById(R.id.course_thumbnail);
         subject_name = (TextView) view.findViewById(R.id.subject_name);
         nrc = (TextView) view.findViewById(R.id.nrc);
         //period = (TextView) view.findViewById(R.id.period);
