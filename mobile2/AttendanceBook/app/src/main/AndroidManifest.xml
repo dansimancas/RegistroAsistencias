@@ -1,24 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="utb.attendancebook" >
-
+    package="utb.attendancebook">
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".profile.ProfileActivity"
-            android:label="@string/title_activity_profile" >
+            android:label="@string/title_activity_profile">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity
+            android:name=".courses.CourseListActivity"
+            android:label="@string/title_activity_course_list"></activity>
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+        <activity
+            android:name=".help.HelpActivity"
+            android:label="@string/title_activity_help"></activity>
+        <activity
+            android:name=".exit.ExitActivity"
+            android:label="@string/title_activity_exit"></activity>
+        <activity
+            android:name=".students.StudentListActivity"
+            android:label="@string/title_activity_student">
+        </activity>
+        <activity
+            android:name=".students.StudentInfoActivity"
+            android:label="@string/title_activity_student">
         </activity>
     </application>
 
