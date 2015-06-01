@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('token', 'Auth\AuthController@token');
+Route::get('token', ['middleware' => 'tg', 'uses' => 'Auth\AuthController@token']);
 
 /*
  * Muestra la información de un estudiante
