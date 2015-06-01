@@ -26,7 +26,7 @@ Route::get('teacher/{id}', 'PersonsController@showTeachersInfo');
 /*
  * Muestra la información de un curso
  */
-Route::get('course/{NRC}', 'CoursesController@showCoursesInfo ');
+Route::get('course/{NRC}', 'CoursesController@showCoursesInfo');
 
 /*
  * Muestra cursos que dicta el profesor id. Devuelve colección de cursos.
@@ -56,4 +56,4 @@ Route::get('student/{id}/course/{NRC}/attendance', 'StatisticsController@showSta
 
 Route::get('student/{id}/attendance', 'StatisticsController@showStatisticsByStudent');
 
-Route::get('course/{NRC}/attendance', 'StatisticsController@showStatisticsByCourse');
+Route::get('course/{NRC}/attendance.json', 'StatisticsController@showStatisticsByCourse');
