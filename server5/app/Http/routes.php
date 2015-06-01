@@ -54,6 +54,9 @@ Route::resource('attendance', 'AttendanceController');
  */
 Route::get('student/{id}/course/{NRC}/attendance', 'StatisticsController@showStatisticsByStudentByCourse');
 
+/*
+ * Muestra las estadisticas de asistencia de un estudiante a un curso en %
+ */
 Route::get('student/{id}/attendance', 'StatisticsController@showStatisticsByStudent');
 
-Route::get('course/{NRC}/attendance.json', 'StatisticsController@showStatisticsByCourse');
+Route::get('course/{NRC}/attendance.json', ['middleware' => 'filter', 'uses' => 'StatisticsController@showStatisticsByCourse']);
