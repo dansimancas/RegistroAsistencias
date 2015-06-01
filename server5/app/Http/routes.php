@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('token', 'Auth\AuthController@token');
+Route::get('token', ['middleware' => 'tg', 'uses' => 'Auth\AuthController@token']);
 
 /*
  * Muestra la información de un estudiante
@@ -26,7 +26,7 @@ Route::get('teacher/{id}', 'PersonsController@showTeachersInfo');
 /*
  * Muestra la información de un curso
  */
-Route::get('course/{NRC}', 'CoursesController@cd ');
+Route::get('course/{NRC}', 'CoursesController@showCoursesInfo');
 
 /*
  * Muestra cursos que dicta el profesor id. Devuelve colección de cursos.
@@ -52,8 +52,14 @@ Route::resource('attendance', 'AttendanceController');
 /*
  * Muestra las estadisticas de asistencia de un estudiante a un curso en %
  */
-Route::get('student/{id}/course/{NRC}/attendance', 'StatisticsController@showStatisticsByStudentByCourse');
+Route::get('student/{id}/course/{NRC}/attendance',['middleware' => 'filter', 'uses' => 'StatisticsController@showStatisticsByStudentByCourse']);
 
+/*
+ * Muestra las estadisticas de asistencia de un estudiante
+ */
 Route::get('student/{id}/attendance', 'StatisticsController@showStatisticsByStudent');
 
-Route::get('course/{NRC}/attendance', 'StatisticsController@showStatisticsByCourse');
+/*
+ * Muestra las estadisticas de asistencia de un curso
+ */
+Route::get('course/{NRC}/attendance.json', ['middleware' => 'filter', 'uses' => 'StatisticsController@showStatisticsByCourse']);
