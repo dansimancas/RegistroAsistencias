@@ -52,11 +52,14 @@ Route::resource('attendance', 'AttendanceController');
 /*
  * Muestra las estadisticas de asistencia de un estudiante a un curso en %
  */
-Route::get('student/{id}/course/{NRC}/attendance', 'StatisticsController@showStatisticsByStudentByCourse');
+Route::get('student/{id}/course/{NRC}/attendance',['middleware' => 'filter', 'uses' => 'StatisticsController@showStatisticsByStudentByCourse']);
 
 /*
- * Muestra las estadisticas de asistencia de un estudiante a un curso en %
+ * Muestra las estadisticas de asistencia de un estudiante
  */
 Route::get('student/{id}/attendance', 'StatisticsController@showStatisticsByStudent');
 
+/*
+ * Muestra las estadisticas de asistencia de un curso
+ */
 Route::get('course/{NRC}/attendance.json', ['middleware' => 'filter', 'uses' => 'StatisticsController@showStatisticsByCourse']);
