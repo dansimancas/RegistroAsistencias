@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('token', ['middleware' => 'tokengenerator', 'uses' => 'Auth\AuthController@token']);
+Route::post('token', ['middleware' => 'tokengenerator', 'uses' => 'Auth\AuthController@token']);
 
 /*
  * Muestra la información de un profesor
