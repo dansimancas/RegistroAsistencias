@@ -1,6 +1,7 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
+use Request;
 
 class TokenAuthMiddleware {
 
@@ -15,6 +16,11 @@ class TokenAuthMiddleware {
 	{
 
         /*Validar si el token corresponde al usuario que pide la info*/
+        $username = Request::input('username');
+        $token = Request::input('token');
+
+        //Comprobación...
+
 		return $next($request);
 	}
 

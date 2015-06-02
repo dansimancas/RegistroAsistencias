@@ -18,7 +18,7 @@ class TokenGeneratorMiddleware {
         //@TODO: Falta sanear completamente el username
         $username = Request::input('username');;
         $rdn  = ',ou=all,ou=people,dc=utbvirtual,dc=edu,dc=co';
-        $password = Request::input('password');;
+        $password = Request::input('password');
         $hostname = '23.253.34.120';
 
         if ( !$username or !$password) {
@@ -26,7 +26,7 @@ class TokenGeneratorMiddleware {
         }
 
         if (! extension_loaded('ldap')) {
-            return response('PHP LDAP extension not loaded.', 401);
+            return response('PHP LDAP extension not loaded.', 418);
         }
 
         if (! $conn = ldap_connect("ldap://$hostname")) {
@@ -35,6 +35,8 @@ class TokenGeneratorMiddleware {
 
         if (!@ldap_bind($conn, "uid=".$username.$rdn, $password )) {
             return response('Could not bind to AD: ' . ldap_error($conn),401);
+        }else{
+            //@TODO: username, token, timestamps..
         }
 
         return $next($request);
