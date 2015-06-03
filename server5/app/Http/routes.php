@@ -11,17 +11,17 @@
 |
 */
 
-Route::get('token', ['middleware' => 'tg', 'uses' => 'Auth\AuthController@token']);
+Route::post('token', ['middleware' => 'tokengenerator', 'uses' => 'Auth\AuthController@token']);
+
+/*
+ * Muestra la información de un profesor
+ */
+Route::get('teacher/{id}', ['middleware' => 'tokenauth', 'uses' => 'PersonsController@showTeachersInfo']);
 
 /*
  * Muestra la información de un estudiante
  */
 Route::get('student/{id}', 'PersonsController@showStudentsInfo');
-
-/*
- * Muestra la información de un profesor
- */
-Route::get('teacher/{id}', 'PersonsController@showTeachersInfo');
 
 /*
  * Muestra la información de un curso
@@ -62,4 +62,4 @@ Route::get('student/{id}/attendance', 'StatisticsController@showStatisticsByStud
 /*
  * Muestra las estadisticas de asistencia de un curso
  */
-Route::get('course/{NRC}/attendance.json', ['middleware' => 'filter', 'uses' => 'StatisticsController@showStatisticsByCourse']);
+Route::get('course/{NRC}/attendance', ['middleware' => 'filter', 'uses' => 'StatisticsController@showStatisticsByCourse']);

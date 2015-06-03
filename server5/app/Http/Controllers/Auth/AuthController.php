@@ -9,7 +9,7 @@ class AuthController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Registration & Login Controller
+	| Token Generator and Checker
 	|--------------------------------------------------------------------------
 	|
 	| This controller handles the registration of new users, as well as the
@@ -18,26 +18,8 @@ class AuthController extends Controller {
 	|
 	*/
 
-	use AuthenticatesAndRegistersUsers;
-
-	/**
-	 * Create a new authentication controller instance.
-	 *
-	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
-	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
-	 * @return void
-	 */
-	/*
-	 * public function __construct(Guard $auth, Registrar $registrar)
-	{
-		$this->auth = $auth;
-		$this->registrar = $registrar;
-
-		$this->middleware('guest', ['except' => 'getLogout']);
-	}
-	 * */
-
     public function token(){
+        //@TODO: hay que confirmar si es el mismo que se genera en el middleware enla ausencia se cookies en la app
         return csrf_token();
     }
 
