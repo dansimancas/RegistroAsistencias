@@ -41,10 +41,10 @@ class TokenGeneratorMiddleware {
             if($token == null){
                 $token = new TokenModel;
                 $token->USERNAME= $username;
-                $token->TOKEN= csrf_token();
+                $token->TOKEN= "1234567890";
                 $token->save();
             }else{
-                $token->token = csrf_token();
+                $token->token = "1234567890";
                 $token->save();
             }
             return $next($request);

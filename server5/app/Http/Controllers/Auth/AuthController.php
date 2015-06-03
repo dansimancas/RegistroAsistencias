@@ -20,7 +20,7 @@ class AuthController extends Controller {
 
     public function token(){
         //@TODO: hay que confirmar si es el mismo que se genera en el middleware enla ausencia se cookies en la app
-        return csrf_token();
+        return "1234567890";
     }
 
 }
