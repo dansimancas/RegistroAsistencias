@@ -2,6 +2,7 @@
 
 use Closure;
 use Request;
+use App\TokenModel;
 
 class TokenGeneratorMiddleware {
 
@@ -25,7 +26,7 @@ class TokenGeneratorMiddleware {
             return response('Datos de acceso faltantes.', 401);
         }
 
-        if (! extension_loaded('ldap')) {
+        if (!extension_loaded('ldap')) {
             return response('PHP LDAP extension not loaded.', 418);
         }
 
@@ -36,11 +37,15 @@ class TokenGeneratorMiddleware {
         if (!@ldap_bind($conn, "uid=".$username.$rdn, $password )) {
             return response('Could not bind to AD: ' . ldap_error($conn),401);
         }else{
-            //@TODO: username, token, timestamps..
+            $token = new TokenModel;
+            $token->USERNAME= $username;
+            $token->TOKEN= "token";
+            $token->save();
+
+            return 'ok, registro creado';
         }
 
-        return $next($request);
-
+        //return $next($request);
 	}
 
 }

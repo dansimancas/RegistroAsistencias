@@ -2,6 +2,7 @@
 
 use Closure;
 use Request;
+use App\TokenModel;
 
 class TokenAuthMiddleware {
 
@@ -20,6 +21,15 @@ class TokenAuthMiddleware {
         $token = Request::input('token');
 
         //Comprobación...
+        $data = TokenModel::where("USERNAME", "=", $username)
+                ->Where("TOKEN", "=", $token)
+                ->get();
+
+        if($data == null){
+
+        }else{
+
+        }
 
 		return $next($request);
 	}
