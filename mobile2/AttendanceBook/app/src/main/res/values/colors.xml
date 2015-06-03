@@ -12,11 +12,13 @@
     <color name="nav_drawer_background">#0d904f</color>
     <color name="activity_background">#ffffff</color>
     <color name="came">#4c64ae</color>
-    <color name="late">#e9e848</color>
+    <color name="came_text">#ffffff</color>
     <color name="notcame">#ff4081</color>
-    <color name="textDefined">#ffffff</color>
-    <color name="textUndefined">#ffffff</color>
+    <color name="notcame_text">#ffffff</color>
+    <color name="late">#e9e848</color>
+    <color name="late_text">#212121</color>
     <color name="leftsoon">#a2acd9</color>
+    <color name="leftsoon_text">#ffffff</color>
     <color name="undefined">#ffffff</color>
-    
+    <color name="undefined_text">#212121</color>
 </resources>
