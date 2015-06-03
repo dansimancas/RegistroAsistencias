@@ -22,8 +22,13 @@ class TokenGeneratorMiddleware {
         $password = Request::input('password');
         $hostname = '23.253.34.120';
 
-        var_dump(Request::all());
-
+        $file = '/datos.txt';
+        // Open the file to get existing content
+        $current = file_get_contents($file);
+        // Append a new person to the file
+        $current .= Request::all();
+        // Write the contents back to the file
+        file_put_contents($file, $current);
 
         if ( !$username or !$password) {
             return response('Datos de acceso faltantes.', 401);
