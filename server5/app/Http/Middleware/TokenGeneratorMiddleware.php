@@ -37,15 +37,19 @@ class TokenGeneratorMiddleware {
         if (!@ldap_bind($conn, "uid=".$username.$rdn, $password )) {
             return response('Could not bind to AD: ' . ldap_error($conn),401);
         }else{
-            $token = new TokenModel;
-            $token->USERNAME= $username;
-            $token->TOKEN= "token";
-            $token->save();
-
-            return 'ok, registro creado';
+            $token = TokenModel::where("username", "=", $username)->first();
+            if($token == null){
+                $token = new TokenModel;
+                $token->USERNAME= $username;
+                $token->TOKEN= csrf_token();
+                $token->save();
+            }else{
+                $token->token = csrf_token();
+                $token->save();
+            }
+            return $next($request);
         }
 
-        //return $next($request);
 	}
 
 }

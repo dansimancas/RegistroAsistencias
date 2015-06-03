@@ -21,14 +21,12 @@ class TokenAuthMiddleware {
         $token = Request::input('token');
 
         //Comprobación...
-        $data = TokenModel::where("USERNAME", "=", $username)
+        $data = TokenModel::where("username", "=", $username)
                 ->Where("TOKEN", "=", $token)
-                ->get();
+                ->first();
 
         if($data == null){
-
-        }else{
-
+            return response('no auth',401);
         }
 
 		return $next($request);
