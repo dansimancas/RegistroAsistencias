@@ -15,20 +15,17 @@ class TokenAuthMiddleware {
 	 */
 	public function handle($request, Closure $next)
 	{
-
-        /*Validar si el token corresponde al usuario que pide la info*/
+        //Validar si el token corresponde al usuario que pide la info
         $username = Request::input('username');
         $token = Request::input('token');
-
         //Comprobación...
         $data = TokenModel::where("username", "=", $username)
                 ->Where("TOKEN", "=", $token)
                 ->first();
-
+        //Si no hay datos, responde como fallo de autenticación
         if($data == null){
             return response('no auth',401);
         }
-
 		return $next($request);
 	}
 

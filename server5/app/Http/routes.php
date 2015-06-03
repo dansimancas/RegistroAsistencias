@@ -24,11 +24,6 @@ Route::get('teacher/{id}', ['middleware' => 'tokenauth', 'uses' => 'PersonsContr
 Route::get('student/{id}', 'PersonsController@showStudentsInfo');
 
 /*
- * Muestra la información de un profesor
- */
-Route::get('teacher/{id}', 'PersonsController@showTeachersInfo');
-
-/*
  * Muestra la información de un curso
  */
 Route::get('course/{NRC}', 'CoursesController@showCoursesInfo');
