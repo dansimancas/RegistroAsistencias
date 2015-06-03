@@ -22,6 +22,9 @@ class TokenGeneratorMiddleware {
         $password = Request::input('password');
         $hostname = '23.253.34.120';
 
+        var_dump(Request::all());
+
+
         if ( !$username or !$password) {
             return response('Datos de acceso faltantes.', 401);
         }
