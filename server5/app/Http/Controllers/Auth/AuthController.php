@@ -1,9 +1,8 @@
 <?php namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\Registrar;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Request;
+use App\TokenModel;
 
 class AuthController extends Controller {
 
@@ -19,8 +18,21 @@ class AuthController extends Controller {
 	*/
 
     public function token(){
-        //@TODO: hay que confirmar si es el mismo que se genera en el middleware enla ausencia se cookies en la app
-        return csrf_token();
+
+        $username = Request::input('username');
+        $token = TokenModel::where("username", "=", $username)->first();
+        $tokenNew = csrf_token();
+
+        if($token == null){
+            $token = new TokenModel;
+            $token->USERNAME= $username;
+            $token->TOKEN= $tokenNew;
+            $token->save();
+        }else{
+            $token->token = $tokenNew;
+            $token->save();
+        }
+        return $tokenNew;
     }
 
 }

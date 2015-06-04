@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
 
-        final String url = "http://104.236.31.197/token";
+        final String url = "http://192.168.1.109:8000/token";
 
         new AsyncHttpTask().execute(url, username.getText().toString(), password.getText().toString());
     }
