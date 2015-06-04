@@ -19,7 +19,7 @@ class TokenAuthMiddleware {
         $username = Request::input('username');
         $token = Request::input('token');
         //Comprobación...
-        $data = TokenModel::where("username", "=", $username)
+        $data = TokenModel::where("USERNAME", "=", $username)
                 ->Where("TOKEN", "=", $token)
                 ->first();
         //Si no hay datos, responde como fallo de autenticación

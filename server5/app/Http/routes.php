@@ -31,7 +31,7 @@ Route::get('course/{NRC}', 'CoursesController@showCoursesInfo');
 /*
  * Muestra cursos que dicta el profesor id. Devuelve colección de cursos.
 */
-Route::get('teacher/{id}/courses', 'CoursesController@showCoursesByTeacher');
+Route::get('teacher/{id}/courses', ['middleware' => 'tokenauth', 'uses' => 'CoursesController@showCoursesByTeacher']);
 
 /*
  * Muestra la lista de estudiantes del curso NRC del profesor id ya capturado
