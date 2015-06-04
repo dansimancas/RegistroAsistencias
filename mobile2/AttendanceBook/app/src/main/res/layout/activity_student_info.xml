@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="utb.attendancebook.profile.ProfileActivity">
+    tools:context="utb.attendancebook.students.StudentInfoActivity">
 
     <include
         android:id="@+id/app_bar"

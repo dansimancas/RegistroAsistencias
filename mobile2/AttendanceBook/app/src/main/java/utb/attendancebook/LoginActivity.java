@@ -1,18 +1,17 @@
-package utb.logindemo;
+package utb.attendancebook;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
@@ -20,12 +19,30 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-public class MainActivity extends Activity {
+public class LoginActivity extends ActionBarActivity {
+
+    private String mID;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+
+        //Setting the toolbar
+        mToolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
+
+        if(settings.getString("token", "") == null){
+            Intent intent = new Intent(this, MainActivity.class);
+            mID = settings.getString("id","");
+            //@TODO: Cambiar codigo por el mID
+            intent.putExtra("id", mID);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -54,10 +71,16 @@ public class MainActivity extends Activity {
 
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
+        mID = username.getText().toString();
 
         final String url = "http://104.236.31.197/token";
 
         new AsyncHttpTask().execute(url, username.getText().toString(), password.getText().toString());
+
+        Intent intent = new Intent(this, MainActivity.class);
+        //@TODO: Cambiar codigo por mID
+        intent.putExtra("id", mID);
+        startActivity(intent);
     }
 
     public class AsyncHttpTask extends AsyncTask<String, Void, Integer> {
@@ -74,7 +97,7 @@ public class MainActivity extends Activity {
             try {
                 //Create connection
                 String urlParameters = "username=" + URLEncoder.encode(params[1], "UTF-8") +
-                                "&password=" + URLEncoder.encode(params[2], "UTF-8");
+                        "&password=" + URLEncoder.encode(params[2], "UTF-8");
 
                 url = new URL(params[0]);
                 connection = (HttpURLConnection)url.openConnection();
@@ -100,17 +123,18 @@ public class MainActivity extends Activity {
                         sb.append(output);
                     }
 
-                    //guardar token en la app
+                    //guardar token y el usuario en la app
                     SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
                     SharedPreferences.Editor editor = settings.edit();
                     editor.putString("token", sb.toString());
+                    editor.putString("id", mID);
 
                     // Commit the edits!
                     editor.commit();
 
                     Log.e("Respuesta",sb.toString());
                 } catch (Exception e){
-                        e.printStackTrace();
+                    e.printStackTrace();
                 }
 
                 //return response.toString();
@@ -132,17 +156,13 @@ public class MainActivity extends Activity {
 
         @Override
         protected void onPostExecute(Integer result) {
-            //setProgressBarIndeterminateVisibility(false);
-            /* Download complete. Lets update UI */
 
-                Log.e("onPostExecute", "on PostExec");
+            Log.e("onPostExecute", "on PostExec");
 
             SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
             Log.e("onPostExecute", "TokenSaved:"+settings.getString("token",""));
 
         }
     }
-
-
 
 }

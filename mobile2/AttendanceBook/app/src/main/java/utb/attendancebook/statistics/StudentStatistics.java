@@ -1,29 +1,24 @@
 package utb.attendancebook.statistics;
-
-/**
- * Created by daniela on 28/05/15.
- */
-
-import android.os.Bundle;
+import utb.attendancebook.R;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import utb.attendancebook.R;
 
 
-public class WebStatistics extends ActionBarActivity {
+public class StudentStatistics extends ActionBarActivity {
 
     private WebView webview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web_statistics);
+        setContentView(R.layout.activity_student_statistics);
 
-        webview = (WebView) findViewById(R.id.webview);
+        webview= (WebView) findViewById(R.id.webview);
         webview.setWebChromeClient(new WebChromeClient());
         webview.setWebViewClient(new WebViewClient());
         webview.getSettings().setJavaScriptEnabled(true);
@@ -31,9 +26,9 @@ public class WebStatistics extends ActionBarActivity {
 
         String summary = "<html>\n" +
                 "  <head>\n" +
-                "   <script src='http://code.jquery.com/jquery-2.1.4.min.js'></script>" +
-                "   <script src='http://code.highcharts.com/highcharts.js'></script>" +
-                "   <script>" +
+                "   <script src='http://code.jquery.com/jquery-2.1.4.min.js'></script>"+
+                "   <script src='http://code.highcharts.com/highcharts.js'></script>"+
+                "   <script>"+
                 "   $(function () {" +
                 "    $('#container').highcharts({\n" +
                 "        chart: {\n" +
@@ -78,13 +73,13 @@ public class WebStatistics extends ActionBarActivity {
                 "            ]\n" +
                 "        }]\n" +
                 "    });\n" +
-                "});" +
+                "});"+
                 "    </script>\n" +
                 "  </head>\n" +
                 "\n" +
                 "  <body>\n" +
                 "    <div id=\"container\" style=\"min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto\"></div>\n" +
-                "Hola mundo" +
+                "Hola mundo"+
                 "  </body>\n" +
                 "</html>";
         webview.loadData(summary, "text/html", null);

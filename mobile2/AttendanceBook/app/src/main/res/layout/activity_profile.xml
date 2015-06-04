@@ -8,10 +8,39 @@
         android:id="@+id/app_bar"
         layout="@layout/app_bar" />
 
-    <TextView
-        android:layout_below="@+id/app_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activity profile" />
+    <RelativeLayout
+        android:id="@+id/activity_teacher_info"
+        android:layout_below="@id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activity_background">
+
+        <ImageView
+            android:id="@+id/teacher_picture"
+            android:layout_marginTop="@dimen/list_row_left_padding"
+            android:layout_marginLeft="@dimen/list_row_left_padding"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/ic_info" />
+
+        <TextView
+            android:id="@+id/teacher_name"
+            android:layout_marginTop="@dimen/list_row_left_padding"
+            android:layout_toRightOf="@id/teacher_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dummy NAME"
+            android:clickable="true"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/list_row_left_padding"
+            android:text="Dummy ID"
+            android:layout_below="@id/teacher_picture"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

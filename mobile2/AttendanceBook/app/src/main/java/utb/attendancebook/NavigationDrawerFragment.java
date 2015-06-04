@@ -1,6 +1,4 @@
 package utb.attendancebook;
-
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,18 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.Toolbar;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import utb.attendancebook.courses.CourseListActivity;
-import utb.attendancebook.exit.ExitActivity;
 import utb.attendancebook.help.HelpActivity;
 import utb.attendancebook.navigationdrawer.NavigationDrawerAdapter;
 import utb.attendancebook.navigationdrawer.NavigationDrawerItem;
 import utb.attendancebook.profile.ProfileActivity;
 import utb.attendancebook.settings.SettingsActivity;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -141,12 +134,13 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
                 startActivity(new Intent(getActivity(), HelpActivity.class));
                 break;
             case 4:
-                startActivity(new Intent(getActivity(), ExitActivity.class));
+                Context context = getActivity();
+                context.getSharedPreferences("TokenStorage", 0).edit().clear().commit();
+                startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;
             default:
-                startActivity(new Intent(getActivity(), CourseListActivity.class));
+                startActivity(new Intent(getActivity(), MainActivity.class));
                 break;
         }
-
     }
 }

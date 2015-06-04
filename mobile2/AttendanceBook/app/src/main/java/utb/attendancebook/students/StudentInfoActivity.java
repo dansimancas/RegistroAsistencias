@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import utb.attendancebook.R;
-import utb.attendancebook.statistics.WebStatistics;
+import utb.attendancebook.statistics.StudentStatistics;
 
 /**
  * Created by daniela on 29/05/15.
@@ -76,7 +76,7 @@ public class StudentInfoActivity extends ActionBarActivity {
 
         final Context context = this;
 
-        Intent intent = new Intent(context, WebStatistics.class);
+        Intent intent = new Intent(context, StudentStatistics.class);
         startActivity(intent);
     }
 

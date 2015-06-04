@@ -9,10 +9,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -30,9 +34,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import utb.attendancebook.MainActivity;
 import utb.attendancebook.NavigationDrawerFragment;
 import utb.attendancebook.R;
-import utb.attendancebook.statistics.WebStatistics;
+import utb.attendancebook.statistics.CourseStatistics;
 
 
 /**
@@ -84,6 +90,30 @@ public class StudentListActivity extends ActionBarActivity{
 
         new AsyncHttpTask().execute(url);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_student_list, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_statistics) {
+            startActivity(new Intent(this, CourseStatistics.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     public void onStudentItemClick(View vv) {
 
