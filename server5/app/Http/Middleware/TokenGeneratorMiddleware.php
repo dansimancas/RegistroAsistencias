@@ -17,10 +17,15 @@ class TokenGeneratorMiddleware {
 	{
 
         //@TODO: Falta sanear completamente el username
-        $username = Request::input('username');;
+        $username = Request::input('username');
         $rdn  = ',ou=all,ou=people,dc=utbvirtual,dc=edu,dc=co';
         $password = Request::input('password');
         $hostname = '23.253.34.120';
+
+        /*$file = '/datos.txt';
+        $current = file_get_contents($file);
+        $current .= serialize(Request::all());
+        file_put_contents($file, $current);*/
 
         if ( !$username or !$password) {
             return response('Datos de acceso faltantes.', 401);
@@ -36,19 +41,9 @@ class TokenGeneratorMiddleware {
 
         if (!@ldap_bind($conn, "uid=".$username.$rdn, $password )) {
             return response('Could not bind to AD: ' . ldap_error($conn),401);
-        }else{
-            $token = TokenModel::where("username", "=", $username)->first();
-            if($token == null){
-                $token = new TokenModel;
-                $token->USERNAME= $username;
-                $token->TOKEN= csrf_token();
-                $token->save();
-            }else{
-                $token->token = csrf_token();
-                $token->save();
-            }
-            return $next($request);
         }
+
+        return $next($request);
 
 	}
 
