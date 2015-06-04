@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="utb.attendancebook">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
@@ -20,7 +21,7 @@
             android:label="@string/title_activity_profile">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".courses.CourseListActivity"
@@ -36,11 +37,17 @@
             android:label="@string/title_activity_exit"></activity>
         <activity
             android:name=".students.StudentListActivity"
-            android:label="@string/title_activity_student">
-        </activity>
+            android:label="@string/title_activity_student"></activity>
         <activity
             android:name=".students.StudentInfoActivity"
             android:label="@string/title_activity_student">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".students.StudentListActivity" />
+        </activity>
+        <activity
+            android:name=".statistics.WebStatistics"
+            android:label="@string/title_activity_webstatistics">
         </activity>
     </application>
 

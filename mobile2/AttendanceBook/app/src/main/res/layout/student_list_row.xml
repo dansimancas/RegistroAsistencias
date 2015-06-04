@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:clickable="true"
+    android:onClick="onStudentItemClick"
     android:layout_height="@dimen/student_list_item_height"
     android:orientation="horizontal">
 

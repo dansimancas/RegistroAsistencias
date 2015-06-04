@@ -1,25 +1,26 @@
 package utb.attendancebook.students;
-import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Window;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
 import utb.attendancebook.R;
+import utb.attendancebook.statistics.WebStatistics;
+
 /**
  * Created by daniela on 29/05/15.
  */
@@ -50,6 +51,33 @@ public class StudentInfoActivity extends ActionBarActivity {
         final String url = "http://104.236.31.197/student/"+id;
 
         new AsyncHttpTask().execute(url);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_student_info, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.action_settings){
+            return true;
+        }
+        if(id == R.id.home){
+            NavUtils.navigateUpFromSameTask(this);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void onClickInfo(View v) {
+
+        final Context context = this;
+
+        Intent intent = new Intent(context, WebStatistics.class);
+        startActivity(intent);
     }
 
     private void parseResult(String result) {

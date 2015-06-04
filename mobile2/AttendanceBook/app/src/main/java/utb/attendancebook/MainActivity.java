@@ -12,6 +12,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewParent;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -69,10 +72,17 @@ public class MainActivity extends ActionBarActivity {
         new AsyncHttpTask().execute(url);
     }
 
-    public void onCourseItemClick(View v){
-        Log.d("Click", v.getTag().toString());
+    public void onCourseItemClick(View vv){
+        ViewParent parent = vv.getParent();
+        View v;
+        if(vv instanceof RelativeLayout){
+            v = vv;
+        }else{
+            v = (View) parent;
+        }
+        String nrc =  ((TextView) v.findViewById(R.id.nrc)).getText().toString();
+        Log.d("Click", nrc);
         Intent intent = new Intent(this, StudentListActivity.class);
-        String nrc = v.getTag().toString();
         intent.putExtra("nrc", nrc);
         startActivity(intent);
     }

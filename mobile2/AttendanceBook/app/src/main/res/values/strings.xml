@@ -21,5 +21,6 @@
     <string name="notcame_string">Didn\'t come</string>
     <string name="leftsoon_string">Left soon</string>
     <string name="undefined_string">Undefined</string>
+    <string name="title_activity_webstatistics">Students statistics</string>
 
 </resources>

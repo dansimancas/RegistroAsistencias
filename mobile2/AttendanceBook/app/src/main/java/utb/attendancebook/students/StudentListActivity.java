@@ -1,5 +1,4 @@
 package utb.attendancebook.students;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -12,9 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewParent;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -25,7 +23,6 @@ import org.apache.http.params.HttpParams;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -33,7 +30,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-
 import utb.attendancebook.NavigationDrawerFragment;
 import utb.attendancebook.R;
 import utb.attendancebook.statistics.WebStatistics;
@@ -53,7 +49,7 @@ public class StudentListActivity extends ActionBarActivity{
     private JSONArray studentAttendances = new JSONArray();
     private JSONObject courseAttendances = new JSONObject();
     private JSONArray Attendances = new JSONArray();
-    private String nrc = "";
+    private static String mNRC;
     private String uri="http://104.236.31.197/attendance";
 
     @Override
@@ -76,13 +72,15 @@ public class StudentListActivity extends ActionBarActivity{
         mRecyclerView = (RecyclerView) findViewById(R.id.students_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Bundle b = getIntent().getExtras();
-        nrc = b.getString("nrc");
+        if(mNRC == null){
+            Bundle b = getIntent().getExtras();
+            mNRC = b.getString("nrc");
+            Log.d("Tag", mNRC);
+        }
 
-        Log.d("Tag", nrc);
 
         /*Downloading data from below url*/
-        final String url = "http://104.236.31.197/course/"+nrc+"/students";
+        final String url = "http://104.236.31.197/course/"+mNRC+"/students";
 
         new AsyncHttpTask().execute(url);
     }
@@ -91,7 +89,12 @@ public class StudentListActivity extends ActionBarActivity{
 
         //String tag = v.getTag().toString();
         ViewParent parent = vv.getParent();
-        View v = (View) parent;
+        View v;
+        if(vv instanceof RelativeLayout){
+            v = vv;
+        }else{
+            v = (View) parent;
+        }
         TextView studentNameView = (TextView) v.findViewById(R.id.student_name);
         TextView studentIdView = (TextView) v.findViewById(R.id.id);
         String studentId = studentIdView.getText().toString();
@@ -183,13 +186,6 @@ public class StudentListActivity extends ActionBarActivity{
         Log.v("font", v.getClass().toString());
     }
 
-    /*public void onClickInfo(View v) {
-
-        final Context context = this;
-
-        Intent intent = new Intent(context, WebStatistics.class);
-        startActivity(intent);
-    }*/
     public void onClickSave(){
         for(int i = 0; i < studentAttendances.length(); i++){
             try {
@@ -202,7 +198,7 @@ public class StudentListActivity extends ActionBarActivity{
         }
 
         try {
-            courseAttendances.put("NRC", nrc);
+            courseAttendances.put("NRC", mNRC);
             courseAttendances.put("ESTUDIANTES", studentAttendances);
             Attendances.put(courseAttendances);
             System.out.print(courseAttendances);
@@ -264,6 +260,7 @@ public class StudentListActivity extends ActionBarActivity{
     }
 
     public void onInfoIconClick(View vv){
+
         ViewParent grandparent = vv.getParent();
         View v = (View) grandparent;
         String studentId = ((TextView) v.findViewById(R.id.id)).getText().toString();
@@ -273,6 +270,7 @@ public class StudentListActivity extends ActionBarActivity{
             intent.putExtra("id", studentId);
             startActivity(intent);
         }
+
     }
 
     private void parseResult(String result) {

@@ -17,18 +17,19 @@
 
         <ImageView
             android:id="@+id/student_picture"
-            android:layout_marginLeft="@dimen/list_row_left_padding"
             android:layout_marginTop="@dimen/list_row_left_padding"
+            android:layout_marginLeft="@dimen/list_row_left_padding"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:src="@drawable/ic_info" />
 
         <TextView
             android:id="@+id/student_name"
-            android:layout_below="@+id/student_picture"
+            android:layout_marginTop="@dimen/list_row_left_padding"
+            android:layout_toRightOf="@id/student_picture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:text="Dummy NAME"
             android:clickable="true"
             android:textSize="20sp"/>
 
@@ -36,19 +37,33 @@
             android:id="@+id/program"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/student_name"/>
+            android:layout_marginLeft="@dimen/list_row_left_padding"
+            android:text="Dummy PROGRAM"
+            android:layout_below="@id/student_picture"/>
 
         <TextView
             android:id="@+id/id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/program"/>
+            android:layout_marginLeft="@dimen/list_row_left_padding"
+            android:text="Dummy ID"
+            android:layout_below="@id/program"/>
 
         <TextView
             android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/id"/>
+            android:layout_marginLeft="@dimen/list_row_left_padding"
+            android:text="Dummy EMAIL"
+            android:layout_below="@id/id"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/list_row_left_padding"
+            android:text="Statistics"
+            android:onClick="onClickInfo"
+            android:layout_below="@id/email"/>
 
     </RelativeLayout>
 
