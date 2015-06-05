@@ -29,7 +29,7 @@ class AuthController extends Controller {
             $token->TOKEN= $tokenNew;
             $token->save();
         }else{
-            $token->token = $tokenNew;
+            $token->TOKEN = $tokenNew;
             $token->save();
         }
         return $tokenNew;
