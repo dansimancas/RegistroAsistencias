@@ -12,21 +12,24 @@ class PersonsController extends Controller {
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
+
+
     public function showStudentsInfo($id)
     {
-        $data = StudentsModel::where("ID", "=", $id)->get();
+        $student = StudentsModel::where("ID", "=", $id)->get();
         $object = array(
-            "id" => $data[0]["ID"],
-            "names" => $data[0]["NOMBRES"],
-            "lastnames" => $data[0]["APELLIDOS"],
-            "program" => $data[0]["PROGRAMA"],
-            "email" => $data[0]["EMAIL"],
+            "id" => $student[0]["ID"],
+            "names" => $student[0]["NOMBRES"],
+            "lastnames" => $student[0]["APELLIDOS"],
+            "program" => $student[0]["PROGRAMA"],
+            "email" => $student[0]["EMAIL"],
             "links" => array(
-                "student_uri" => "/student/".$data[0]["ID"]."/courses",
-                "attendance_uri" => "/student/".$data[0]["ID"]."/attendance",
+                "student_uri" => "/student/".$student[0]["ID"]."/courses",
+                "attendance_uri" => "/student/".$student[0]["ID"]."/attendance",
             )
 
         );
+
         return response()->json($object);
     }
 

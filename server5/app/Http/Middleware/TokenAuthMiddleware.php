@@ -26,6 +26,7 @@ class TokenAuthMiddleware {
         if($data == null){
             return response('no auth',401);
         }
+
 		return $next($request);
 	}
 
