@@ -21,18 +21,18 @@ class AuthController extends Controller {
 
         $username = Request::input('username');
         $token = TokenModel::where("username", "=", $username)->first();
-        $tokenNew = csrf_token();
 
         if($token == null){
+       	    $tokenNew = csrf_token();
             $token = new TokenModel;
             $token->USERNAME= $username;
             $token->TOKEN= $tokenNew;
             $token->save();
+            return $tokenNew;
         }else{
-            $token->TOKEN = $tokenNew;
-            $token->save();
+           return $token->TOKEN;
         }
-        return $tokenNew;
+        
     }
 
 }
