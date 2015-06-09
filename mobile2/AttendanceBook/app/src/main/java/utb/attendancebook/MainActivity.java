@@ -40,7 +40,7 @@ public class MainActivity extends ActionBarActivity {
     private Toolbar mToolbar;
     private static final String TAG = "Ejemplo de listas";
     private List<CourseItem> mCourseItemList = new ArrayList<>();
-
+    public static SharedPreferences settings;
     private RecyclerView mRecyclerView;
     private CourseAdapter adapter;
     private static String mID;
@@ -67,10 +67,10 @@ public class MainActivity extends ActionBarActivity {
             Bundle b = getIntent().getExtras();
             mID = b.getString("id");
         }
-
+        settings = getSharedPreferences("TokenStorage", 0);
         /*Downloading data from below url*/
-        SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
-        final String url = "http://104.236.31.197/student/"+mID+"/courses?username="+mID+"&token="+settings.getString("token","");
+        final String url = getResources().getString(R.string.server_hostname)+"/teacher/"+mID+"/courses?username="+mID+"&token="+settings.getString("token","");
+        Log.e("URL Main", url);
         //final String url = "http://104.236.31.197/teacher/"+mID+"/courses";
         new AsyncHttpTask().execute(url);
     }
@@ -84,9 +84,14 @@ public class MainActivity extends ActionBarActivity {
             v = (View) parent;
         }
         String nrc =  ((TextView) v.findViewById(R.id.nrc)).getText().toString();
+        String subject_name =  ((TextView) v.findViewById(R.id.subject_name)).getText().toString();
         Log.d("Click", nrc);
         Intent intent = new Intent(this, StudentListActivity.class);
-        intent.putExtra("nrc", nrc);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("nrc", nrc);
+        intent.putExtra("subject_name", subject_name);
+        editor.commit();
+        Log.d("nrc main: ", settings.getString("nrc", ""));
         startActivity(intent);
     }
 

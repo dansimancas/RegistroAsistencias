@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Attendance Book</string>
+    <string name="server_hostname">http://104.236.31.197</string>
     <string name="title_activity_main">Attendance Book</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -15,7 +16,7 @@
     <string name="title_activity_exit">Exit</string>
     <string name="title_activity_student">List of Students</string>
     <string name="title_activity_student_info">About this student</string>
-    <string name="title_activity_login">Login</string>
+    <string name="title_activity_login">Attendance Book</string>
     <string name="courses_subtitle">My courses</string>
     <string name="students_subtitle">My students</string>
     <string name="came_string">Came</string>
@@ -25,5 +26,9 @@
     <string name="undefined_string">Undefined</string>
     <string name="title_activity_student_statistics">Students statistics</string>
     <string name="title_activity_course_statistics">Courses attendance statistics</string>
+    <string name="help_activity_header">RaoS App &#174;</string>
+    <string name="help_activity_content">RaoS App &#174; es una aplicación diseñada para colaborar en el Sistema de Alertas Tempranas. Su uso directo está pensado para los profesores que dictan cursos en la Universidad Tecnológica de Bolívar.
+    Si necesita mayor información sobre su funcionamiento, por favor comunicarse con el departamento de Sistemas.</string>
+    <string name="action_help">help</string>
 
 </resources>

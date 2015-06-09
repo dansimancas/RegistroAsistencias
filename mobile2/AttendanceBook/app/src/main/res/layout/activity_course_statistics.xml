@@ -4,12 +4,14 @@
     android:layout_height="match_parent"
     tools:context="utb.attendancebook.statistics.CourseStatistics">
 
+    <include
+        android:id="@+id/app_bar_course_statistics"
+        layout="@layout/app_bar" />
+
     <WebView
-        android:id="@+id/webview"
+        android:id="@+id/course_statistics"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="center_horizontal" />
+        android:layout_below="@id/app_bar_course_statistics"/>
 
 </RelativeLayout>

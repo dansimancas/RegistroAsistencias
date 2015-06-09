@@ -59,7 +59,7 @@
         android:layout_marginRight="@dimen/info_item_right_margin"
         android:clickable="true"
         android:onClick="onInfoIconClick"
-        android:src="@drawable/ic_info" />
+        android:src="@drawable/ic_info_colored" />
 
     <View
         android:layout_width="fill_parent"

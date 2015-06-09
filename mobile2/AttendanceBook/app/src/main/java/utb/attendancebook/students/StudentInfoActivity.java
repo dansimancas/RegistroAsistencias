@@ -1,15 +1,19 @@
 package utb.attendancebook.students;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,6 +22,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import utb.attendancebook.MainActivity;
 import utb.attendancebook.R;
 import utb.attendancebook.statistics.StudentStatistics;
 
@@ -28,8 +34,7 @@ public class StudentInfoActivity extends ActionBarActivity {
 
     private static final String TAG = "StudentInfoActivity: ";
     private StudentItem student = new StudentItem();
-
-    private StudentInfoAdapter adapter;
+    private String mId = MainActivity.settings.getString("current_student","");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +49,23 @@ public class StudentInfoActivity extends ActionBarActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Bundle b = getIntent().getExtras();
-        String id = b.getString("id");
-
         /*Downloading data from below url*/
-        final String url = "http://104.236.31.197/student/"+id;
+        final String url = getResources().getString(R.string.server_hostname)+"/student/"+mId+"?username="+MainActivity.settings.getString("id","")+"&token="+ MainActivity.settings.getString("token","");
+        //final String url = "http://104.236.31.197/student/"+id;
 
         new AsyncHttpTask().execute(url);
+
+    }
+
+    public void inflateStudentInfo(){
+        TextView name = (TextView) findViewById(R.id.student_name);
+        TextView id = (TextView) findViewById(R.id.id);
+        TextView program = (TextView) findViewById(R.id.program);
+        TextView email = (TextView) findViewById(R.id.email);
+        name.setText(student.getStudentName());
+        id.setText(student.getId());
+        program.setText(student.getProgram());
+        email.setText(student.getEmail());
     }
 
     @Override
@@ -73,10 +88,12 @@ public class StudentInfoActivity extends ActionBarActivity {
     }
 
     public void onClickInfo(View v) {
-
         final Context context = this;
-
         Intent intent = new Intent(context, StudentStatistics.class);
+        SharedPreferences.Editor editor = MainActivity.settings.edit();
+        editor.putString("current_student_name", student.getStudentName());
+        editor.commit();
+
         startActivity(intent);
     }
 
@@ -121,6 +138,7 @@ public class StudentInfoActivity extends ActionBarActivity {
                     while ((line = r.readLine()) != null) {
                         response.append(line);
                     }
+                    Log.d("response: ", response.toString());
                     parseResult(response.toString());
                     result = 1; // Successful
                 } else {
@@ -130,6 +148,7 @@ public class StudentInfoActivity extends ActionBarActivity {
             } catch (Exception e) {
                 Log.d(TAG, e.getLocalizedMessage());
             }
+            //inflateStudentInfo();
             return result; //"Failed to fetch data!";
         }
 
@@ -137,7 +156,7 @@ public class StudentInfoActivity extends ActionBarActivity {
         protected void onPostExecute(Integer result) {
             /* Download complete. Lets update UI */
             if (result == 1) {
-                adapter = new StudentInfoAdapter(StudentInfoActivity.this, student);
+                inflateStudentInfo();
             } else {
                 Log.e(TAG, "Failed to fetch data!");
             }

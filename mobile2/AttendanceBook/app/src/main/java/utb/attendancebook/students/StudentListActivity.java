@@ -1,5 +1,7 @@
 package utb.attendancebook.students;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,7 +17,6 @@ import android.view.View;
 import android.view.ViewParent;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -27,6 +28,7 @@ import org.apache.http.params.HttpParams;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -44,7 +46,7 @@ import utb.attendancebook.statistics.CourseStatistics;
 /**
  * Created by daniela on 28/05/15.
  */
-public class StudentListActivity extends ActionBarActivity{
+public class StudentListActivity extends ActionBarActivity {
 
     private Toolbar mToolbar;
     private static final String TAG = "Estudiantes";
@@ -55,8 +57,8 @@ public class StudentListActivity extends ActionBarActivity{
     private JSONArray studentAttendances = new JSONArray();
     private JSONObject courseAttendances = new JSONObject();
     private JSONArray Attendances = new JSONArray();
-    private static String mNRC;
-    private String uri="http://104.236.31.197/attendance";
+    private String mNRC;
+    private String mSubjectName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,15 +80,16 @@ public class StudentListActivity extends ActionBarActivity{
         mRecyclerView = (RecyclerView) findViewById(R.id.students_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        if(mNRC == null){
-            Bundle b = getIntent().getExtras();
-            mNRC = b.getString("nrc");
-            Log.d("Tag", mNRC);
-        }
+        MainActivity.settings = getSharedPreferences("TokenStorage", 0);
+        mNRC = MainActivity.settings.getString("nrc", "");
+        Log.d("Tag", mNRC);
+
 
 
         /*Downloading data from below url*/
-        final String url = "http://104.236.31.197/course/"+mNRC+"/students";
+        final String url = getResources().getString(R.string.server_hostname) + "/course/" + mNRC + "/students?username="+MainActivity.settings.getString("id","")+"&token="+MainActivity.settings.getString("token","");
+        Log.d("url student list: ", url);
+        //final String url = "http://104.236.31.197/course/"+mNRC+"/students";
 
         new AsyncHttpTask().execute(url);
     }
@@ -107,22 +110,42 @@ public class StudentListActivity extends ActionBarActivity{
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_statistics) {
-            startActivity(new Intent(this, CourseStatistics.class));
+            Intent intent = new Intent(this, CourseStatistics.class);
+
+            /*Getting subject name from the Main Activity*/
+            Bundle b = getIntent().getExtras();
+            mSubjectName = b.getString("subject_name");
+            SharedPreferences.Editor editor = MainActivity.settings.edit();
+            editor.putString("subject_name", mSubjectName);
+            editor.commit();
+
+            startActivity(intent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    public static JSONArray RemoveJSONArray(JSONArray jarray, int pos) {
+        JSONArray Njarray = new JSONArray();
+        try {
+            for (int i = 0; i < jarray.length(); i++) {
+                if (i != pos) Njarray.put(jarray.get(i));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Njarray;
+    }
 
     public void onStudentItemClick(View vv) {
 
         //String tag = v.getTag().toString();
         ViewParent parent = vv.getParent();
         View v;
-        if(vv instanceof RelativeLayout){
+        if (vv instanceof RelativeLayout) {
             v = vv;
-        }else{
+        } else {
             v = (View) parent;
         }
         TextView studentNameView = (TextView) v.findViewById(R.id.student_name);
@@ -132,7 +155,7 @@ public class StudentListActivity extends ActionBarActivity{
         int attendanceValue = 0;
         int currentColor = (v.getBackground() != null) ? ((ColorDrawable) v.getBackground()).getColor() : getResources().getColor(R.color.undefined);
 
-        if(currentColor == getResources().getColor(R.color.undefined)){
+        if (currentColor == getResources().getColor(R.color.undefined)) {
 
             studentNameView.setTextColor(getResources().getColor(R.color.came_text));
             studentIdView.setTextColor(getResources().getColor(R.color.came_text));
@@ -141,7 +164,7 @@ public class StudentListActivity extends ActionBarActivity{
             v.setBackgroundColor(getResources().getColor(R.color.came));
             attendanceValue = 0;
 
-        }else if(currentColor == getResources().getColor(R.color.came)){
+        } else if (currentColor == getResources().getColor(R.color.came)) {
 
             studentNameView.setTextColor(getResources().getColor(R.color.notcame_text));
             studentIdView.setTextColor(getResources().getColor(R.color.notcame_text));
@@ -151,7 +174,7 @@ public class StudentListActivity extends ActionBarActivity{
             v.setBackgroundColor(getResources().getColor(R.color.notcame));
             attendanceValue = 1;
 
-        }else if(currentColor == getResources().getColor(R.color.notcame)){
+        } else if (currentColor == getResources().getColor(R.color.notcame)) {
 
             studentNameView.setTextColor(getResources().getColor(R.color.late_text));
             studentIdView.setTextColor(getResources().getColor(R.color.late_text));
@@ -161,7 +184,7 @@ public class StudentListActivity extends ActionBarActivity{
             v.setBackgroundColor(getResources().getColor(R.color.late));
             attendanceValue = 2;
 
-        }else if(currentColor == getResources().getColor(R.color.late)){
+        } else if (currentColor == getResources().getColor(R.color.late)) {
             studentNameView.setTextColor(getResources().getColor(R.color.leftsoon_text));
             studentIdView.setTextColor(getResources().getColor(R.color.leftsoon_text));
             studentIdView.setTextColor(getResources().getColor(R.color.leftsoon_text));
@@ -170,7 +193,7 @@ public class StudentListActivity extends ActionBarActivity{
             v.setBackgroundColor(getResources().getColor(R.color.leftsoon));
             attendanceValue = 3;
 
-        }else if(currentColor == getResources().getColor(R.color.leftsoon)){
+        } else if (currentColor == getResources().getColor(R.color.leftsoon)) {
             studentNameView.setTextColor(getResources().getColor(R.color.undefined_text));
             studentIdView.setTextColor(getResources().getColor(R.color.undefined_text));
             studentIdView.setTextColor(getResources().getColor(R.color.undefined_text));
@@ -180,7 +203,7 @@ public class StudentListActivity extends ActionBarActivity{
             attendanceValue = 4;
 
         }
-        if(studentAttendances.length() == 0) {
+        if (studentAttendances.length() == 0) {
 
             JSONObject student = new JSONObject();
             try {
@@ -190,15 +213,15 @@ public class StudentListActivity extends ActionBarActivity{
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }else{
-            for(int i = 0; i < studentAttendances.length(); i++){
+        } else {
+            for (int i = 0; i < studentAttendances.length(); i++) {
                 try {
                     JSONObject student = (JSONObject) studentAttendances.get(i);
                     String id = student.getString("ID");
-                    if(id.equals(studentId)) {
+                    if (id.equals(studentId)) {
                         student.remove("ATTENDANCE");
                         student.put("ATTENDANCE", attendanceValue);
-                        studentAttendances.remove(i);
+                        studentAttendances = RemoveJSONArray(studentAttendances,i);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -216,12 +239,12 @@ public class StudentListActivity extends ActionBarActivity{
         Log.v("font", v.getClass().toString());
     }
 
-    public void onClickSave(){
-        for(int i = 0; i < studentAttendances.length(); i++){
+    public void onClickSave() {
+        for (int i = 0; i < studentAttendances.length(); i++) {
             try {
                 JSONObject json = (JSONObject) studentAttendances.get(i);
-                Log.i("ID: ",""+json.getString("id"));
-                Log.i("ATTENDANCE: ",""+json.getString("attendance"));
+                Log.i("ID: ", "" + json.getString("id"));
+                Log.i("ATTENDANCE: ", "" + json.getString("attendance"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -247,7 +270,7 @@ public class StudentListActivity extends ActionBarActivity{
                 HttpParams params = new BasicHttpParams();
                 HttpClient httpclient = new DefaultHttpClient(params);
 
-                HttpPost httpPost = new HttpPost(uri);
+                HttpPost httpPost = new HttpPost(getResources().getString(R.string.server_hostname) + "/attendance?username="+MainActivity.settings.getString("id","")+"&token="+MainActivity.settings.getString("token",""));
 
 
                 httpPost.setEntity(new StringEntity(Attendances.toString(), "UTF8"));
@@ -268,8 +291,6 @@ public class StudentListActivity extends ActionBarActivity{
                 }
 
                 Log.d("RESULT", result);
-
-
             } catch (Exception e) {
 
                 Log.e("ERROR IN SEVER UPLOAD", e.getMessage());
@@ -279,25 +300,36 @@ public class StudentListActivity extends ActionBarActivity{
 
         }
     }
+
     @Override
     public void onBackPressed() {
 
         onClickSave();
-        Log.d("otro1: ",Attendances.toString());
+        Log.d("otro1: ", Attendances.toString());
         UploadASyncTask upload = new UploadASyncTask();
         upload.execute();
         super.onBackPressed();
     }
 
-    public void onInfoIconClick(View vv){
+    public void onInfoIconClick(View vv) {
 
-        ViewParent grandparent = vv.getParent();
-        View v = (View) grandparent;
+        View v;
+        if (vv instanceof RelativeLayout) {
+            v = vv;
+        } else {
+            v = (View) vv.getParent();
+        }
+
         String studentId = ((TextView) v.findViewById(R.id.id)).getText().toString();
-        if(studentId != null){
+        if (studentId != null) {
+            //saving the current student
+            SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString("current_student", studentId);
+            editor.commit();
             Log.d("ClickStudentId", studentId);
-            Intent intent = new Intent(StudentListActivity.this, StudentInfoActivity.class);
-            intent.putExtra("id", studentId);
+            Intent intent = new Intent(this, StudentInfoActivity.class);
+            intent.putExtra("nrc", mNRC);
             startActivity(intent);
         }
 

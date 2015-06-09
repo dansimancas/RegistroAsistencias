@@ -10,36 +10,38 @@
 
     <RelativeLayout
         android:id="@+id/activity_teacher_info"
-        android:layout_below="@id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/app_bar"
         android:background="@color/activity_background">
 
         <ImageView
             android:id="@+id/teacher_picture"
-            android:layout_marginTop="@dimen/list_row_left_padding"
-            android:layout_marginLeft="@dimen/list_row_left_padding"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:src="@drawable/ic_info" />
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:src="@mipmap/ic_profile_pic" />
 
         <TextView
             android:id="@+id/teacher_name"
-            android:layout_marginTop="@dimen/list_row_left_padding"
-            android:layout_toRightOf="@id/teacher_picture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dummy NAME"
-            android:clickable="true"
-            android:textSize="20sp"/>
+            android:layout_below="@id/teacher_picture"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/id"
+            android:id="@+id/teacher_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/list_row_left_padding"
-            android:text="Dummy ID"
-            android:layout_below="@id/teacher_picture"/>
+            android:layout_below="@id/teacher_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/accentColor"
+            android:textSize="14sp" />
 
     </RelativeLayout>
 

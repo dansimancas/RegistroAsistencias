@@ -1,6 +1,4 @@
 package utb.attendancebook.profile;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -21,7 +18,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import utb.attendancebook.R;
-import utb.attendancebook.statistics.StudentStatistics;
 import utb.attendancebook.teachers.TeacherItem;
 
 /**
@@ -31,6 +27,7 @@ public class ProfileActivity extends ActionBarActivity {
 
     private static final String TAG = "ProfileActivity: ";
     private TeacherItem mTeacher = new TeacherItem();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +51,17 @@ public class ProfileActivity extends ActionBarActivity {
         new AsyncHttpTask().execute(url);
     }
 
+    public void inflateTeacherInfo(){
+        TextView name = (TextView) findViewById(R.id.teacher_name);
+        TextView id = (TextView) findViewById(R.id.teacher_id);
+        name.setText(mTeacher.getTeacherName());
+        id.setText(mTeacher.getId());
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_student_info, menu);
+        getMenuInflater().inflate(R.menu.menu_profile, menu);
         return true;
     }
 
@@ -71,14 +75,6 @@ public class ProfileActivity extends ActionBarActivity {
             NavUtils.navigateUpFromSameTask(this);
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void onClickInfo(View v) {
-
-        final Context context = this;
-
-        Intent intent = new Intent(context, StudentStatistics.class);
-        startActivity(intent);
     }
 
     private void parseResult(String result) {
@@ -136,10 +132,7 @@ public class ProfileActivity extends ActionBarActivity {
         protected void onPostExecute(Integer result) {
             /* Download complete. Lets update UI */
             if (result == 1) {
-                TextView name = (TextView) findViewById(R.id.teacher_name);
-                TextView id = (TextView) findViewById(R.id.id);
-                name.setText(mTeacher.getTeacherName());
-                id.setText(mTeacher.getId());
+                inflateTeacherInfo();
             } else {
                 Log.e(TAG, "Failed to fetch data!");
             }

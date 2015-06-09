@@ -41,8 +41,8 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
 
     public static List<NavigationDrawerItem> getItems(){
         List<NavigationDrawerItem> data = new ArrayList<>();
-        int[] icons = {R.drawable.ic_profile, R.drawable.ic_home, R.drawable.ic_settings, R.drawable.ic_help, R.drawable.ic_exit};
-        String[] titles = {"Profile", "Home", "Settings", "Help", "Exit"};
+        int[] icons = {R.drawable.ic_profile, R.drawable.ic_home, R.drawable.ic_help, R.drawable.ic_exit};
+        String[] titles = {"Profile", "Home", "Help", "Exit"};
 
         for(int i = 0; i < icons.length && i < titles.length; i++){
             NavigationDrawerItem current = new NavigationDrawerItem();
@@ -128,12 +128,10 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
                 startActivity(new Intent(getActivity(), MainActivity.class));
                 break;
             case 2:
-                startActivity(new Intent(getActivity(), SettingsActivity.class));
-                break;
-            case 3:
                 startActivity(new Intent(getActivity(), HelpActivity.class));
                 break;
-            case 4:
+            case 3:
+                //@TODO: Encontrar la forma de eliminar el token del celular
                 Context context = getActivity();
                 context.getSharedPreferences("TokenStorage", 0).edit().clear().commit();
                 startActivity(new Intent(getActivity(), LoginActivity.class));

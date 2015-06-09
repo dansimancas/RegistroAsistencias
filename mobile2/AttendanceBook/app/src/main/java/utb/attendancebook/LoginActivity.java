@@ -21,7 +21,7 @@ import java.net.URLEncoder;
 
 public class LoginActivity extends ActionBarActivity {
 
-    private String mID;
+    private String mTeacherID;
     private Toolbar mToolbar;
 
     @Override
@@ -36,11 +36,11 @@ public class LoginActivity extends ActionBarActivity {
 
         SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
 
-        if(settings.getString("token", "") == null){
+        if(settings.getString("token", "") != ""){
             Intent intent = new Intent(this, MainActivity.class);
-            mID = settings.getString("id","");
-            //@TODO: Cambiar codigo por el mID
-            intent.putExtra("id", mID);
+            mTeacherID = settings.getString("id","");
+            //@TODO: Cambiar codigo por el mTeacherID
+            intent.putExtra("id", mTeacherID);
             startActivity(intent);
         }
     }
@@ -71,15 +71,14 @@ public class LoginActivity extends ActionBarActivity {
 
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
-        mID = username.getText().toString();
+        mTeacherID = username.getText().toString();
 
-        final String url = "http://104.236.31.197/token";
+        final String url = getResources().getString(R.string.server_hostname)+"/token";
 
         new AsyncHttpTask().execute(url, username.getText().toString(), password.getText().toString());
 
         Intent intent = new Intent(this, MainActivity.class);
-        //@TODO: Cambiar codigo por mID
-        intent.putExtra("id", mID);
+        intent.putExtra("id", mTeacherID);
         startActivity(intent);
     }
 
@@ -124,10 +123,9 @@ public class LoginActivity extends ActionBarActivity {
                     }
 
                     //guardar token y el usuario en la app
-                    SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
-                    SharedPreferences.Editor editor = settings.edit();
+                    SharedPreferences.Editor editor = MainActivity.settings.edit();
                     editor.putString("token", sb.toString());
-                    editor.putString("id", mID);
+                    editor.putString("id", mTeacherID);
 
                     // Commit the edits!
                     editor.commit();
@@ -161,6 +159,7 @@ public class LoginActivity extends ActionBarActivity {
 
             SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
             Log.e("onPostExecute", "TokenSaved:"+settings.getString("token",""));
+            Log.e("onPostExecute", "IdSaved:"+settings.getString("id",""));
 
         }
     }

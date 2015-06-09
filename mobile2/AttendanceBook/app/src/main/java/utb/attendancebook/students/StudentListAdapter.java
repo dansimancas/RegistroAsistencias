@@ -1,14 +1,19 @@
 package utb.attendancebook.students;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.InputStream;
 import java.util.List;
 
 import utb.attendancebook.R;
@@ -43,8 +48,9 @@ public class StudentListAdapter extends RecyclerView.Adapter<FeedStudentListRowH
         feedStudentListRowHolder.student_name.setText(Html.fromHtml(studentItem.getStudentName()));
         //feedStudentListRowHolder.student_name.setTag(Html.fromHtml(studentItem.getId()));
         feedStudentListRowHolder.id.setText(Html.fromHtml(studentItem.getId()));
-        feedStudentListRowHolder.student_thumbnail.setImageResource(studentItem.getStudentThumbnail());
+        //feedStudentListRowHolder.student_thumbnail.setImageResource(studentItem.getStudentThumbnail());
         //feedStudentListRowHolder.id.setTag(Html.fromHtml(studentItem.getId()));
+
     }
 
     @Override
@@ -57,4 +63,6 @@ public class StudentListAdapter extends RecyclerView.Adapter<FeedStudentListRowH
         return (null != studentItemList ? studentItemList.size() : 0);
     }
 
-}
+    }
+
+
