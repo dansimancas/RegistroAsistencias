@@ -43,7 +43,8 @@ public class MainActivity extends ActionBarActivity {
     public static SharedPreferences settings;
     private RecyclerView mRecyclerView;
     private CourseAdapter adapter;
-    private static String mID;
+    private String mID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,28 +64,28 @@ public class MainActivity extends ActionBarActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.courses_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        if(mID == null){
-            Bundle b = getIntent().getExtras();
-            mID = b.getString("id");
+        if (mID == null) {
+            SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
+            mID = settings.getString("id", "");
         }
         settings = getSharedPreferences("TokenStorage", 0);
         /*Downloading data from below url*/
-        final String url = getResources().getString(R.string.server_hostname)+"/teacher/"+mID+"/courses?username="+mID+"&token="+settings.getString("token","");
+        final String url = getResources().getString(R.string.server_hostname) + "/teacher/" + mID + "/courses?username=" + mID + "&token=" + settings.getString("token", "");
         Log.e("URL Main", url);
         //final String url = "http://104.236.31.197/teacher/"+mID+"/courses";
         new AsyncHttpTask().execute(url);
     }
 
-    public void onCourseItemClick(View vv){
+    public void onCourseItemClick(View vv) {
         ViewParent parent = vv.getParent();
         View v;
-        if(vv instanceof RelativeLayout){
+        if (vv instanceof RelativeLayout) {
             v = vv;
-        }else{
+        } else {
             v = (View) parent;
         }
-        String nrc =  ((TextView) v.findViewById(R.id.nrc)).getText().toString();
-        String subject_name =  ((TextView) v.findViewById(R.id.subject_name)).getText().toString();
+        String nrc = ((TextView) v.findViewById(R.id.nrc)).getText().toString();
+        String subject_name = ((TextView) v.findViewById(R.id.subject_name)).getText().toString();
         Log.d("Click", nrc);
         Intent intent = new Intent(this, StudentListActivity.class);
         SharedPreferences.Editor editor = settings.edit();
@@ -111,7 +112,7 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(this,"You clicked "+item.getTitle(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You clicked " + item.getTitle(), Toast.LENGTH_SHORT).show();
             return true;
         }
 
@@ -161,7 +162,7 @@ public class MainActivity extends ActionBarActivity {
                 /* for Get request */
                 urlConnection.setRequestMethod("GET");
                 int statusCode = urlConnection.getResponseCode();
-                Log.e("Respuesta Main", "ID = "+urlConnection.getResponseCode());
+                Log.e("Respuesta Main", "ID = " + urlConnection.getResponseCode());
 
                 /* 200 represents HTTP OK */
                 if (statusCode == 200) {

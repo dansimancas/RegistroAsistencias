@@ -1,5 +1,6 @@
 package utb.attendancebook;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -77,13 +78,12 @@ public class LoginActivity extends ActionBarActivity {
 
         new AsyncHttpTask().execute(url, username.getText().toString(), password.getText().toString());
 
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("id", mTeacherID);
-        startActivity(intent);
+
     }
 
     public class AsyncHttpTask extends AsyncTask<String, Void, Integer> {
 
+        Context context;
         @Override
         protected void onPreExecute() {
 
@@ -158,9 +158,12 @@ public class LoginActivity extends ActionBarActivity {
             Log.e("onPostExecute", "on PostExec");
 
             SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
-            Log.e("onPostExecute", "TokenSaved:"+settings.getString("token",""));
-            Log.e("onPostExecute", "IdSaved:"+settings.getString("id",""));
+            Log.e("onPostExecute", "TokenSaved:" + settings.getString("token", ""));
+            Log.e("onPostExecute", "IdSaved:" + settings.getString("id", ""));
 
+            Intent intent_name = new Intent();
+            intent_name.setClass(getApplicationContext(), MainActivity.class);
+            startActivity(intent_name);
         }
     }
 
