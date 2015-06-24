@@ -30,5 +30,7 @@
     <string name="help_activity_content">RaoS App &#174; es una aplicación diseñada para colaborar en el Sistema de Alertas Tempranas. Su uso directo está pensado para los profesores que dictan cursos en la Universidad Tecnológica de Bolívar.
     Si necesita mayor información sobre su funcionamiento, por favor comunicarse con el departamento de Sistemas.</string>
     <string name="action_help">help</string>
+    <string name="process_dialog_title">Working..</string>
+    <string name="process_dialog_text">Downloading Data...</string>
 
 </resources>

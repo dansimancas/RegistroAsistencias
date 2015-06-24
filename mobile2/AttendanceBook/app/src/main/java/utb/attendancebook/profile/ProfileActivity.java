@@ -1,4 +1,5 @@
 package utb.attendancebook.profile;
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class ProfileActivity extends ActionBarActivity {
 
     private static final String TAG = "ProfileActivity: ";
     private TeacherItem mTeacher = new TeacherItem();
+    private ProgressDialog pd = null;
 
 
     @Override
@@ -46,8 +48,11 @@ public class ProfileActivity extends ActionBarActivity {
         SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
         String id = settings.getString("id", "");
         final String url = "http://104.236.31.197/teacher/"+id+"/courses?username="+id+"&token="+settings.getString("token","");
-        //final String url = "http://104.236.31.197/teacher/"+id;
 
+        /*New spinner*/
+        this.pd = ProgressDialog.show(this, getResources().getText(R.string.process_dialog_title), getResources().getText(R.string.process_dialog_text), true, false);
+
+        /*New Async task*/
         new AsyncHttpTask().execute(url);
     }
 
@@ -135,6 +140,10 @@ public class ProfileActivity extends ActionBarActivity {
                 inflateTeacherInfo();
             } else {
                 Log.e(TAG, "Failed to fetch data!");
+            }
+
+            if (ProfileActivity.this.pd != null) {
+                ProfileActivity.this.pd.dismiss();
             }
         }
     }

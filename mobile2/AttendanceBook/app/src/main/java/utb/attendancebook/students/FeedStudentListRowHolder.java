@@ -33,7 +33,7 @@ public class FeedStudentListRowHolder extends RecyclerView.ViewHolder{
         id = (TextView) view.findViewById(R.id.id);
         program = (TextView) view.findViewById(R.id.program);
         email = (TextView) view.findViewById(R.id.email);
-        new DownloadImageTask((ImageView) view.findViewById(R.id.student_thumbnail)).execute(imageUri + id.getText().toString());
+        //new DownloadImageTask((ImageView) view.findViewById(R.id.student_thumbnail)).execute(imageUri + id.getText().toString());
         //student_thumbnail = (ImageView) view.findViewById(R.id.student_thumbnail);
     }
 

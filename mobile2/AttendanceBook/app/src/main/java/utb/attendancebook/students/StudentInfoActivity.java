@@ -1,4 +1,5 @@
 package utb.attendancebook.students;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -35,6 +36,7 @@ public class StudentInfoActivity extends ActionBarActivity {
     private static final String TAG = "StudentInfoActivity: ";
     private StudentItem student = new StudentItem();
     private String mId = MainActivity.settings.getString("current_student","");
+    private ProgressDialog pd = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class StudentInfoActivity extends ActionBarActivity {
         final String url = getResources().getString(R.string.server_hostname)+"/student/"+mId+"?username="+MainActivity.settings.getString("id","")+"&token="+ MainActivity.settings.getString("token","");
         //final String url = "http://104.236.31.197/student/"+id;
 
+        /*New spinner*/
+        this.pd = ProgressDialog.show(this, "Working..", "Downloading Data...", true, false);
         new AsyncHttpTask().execute(url);
 
     }
@@ -159,6 +163,10 @@ public class StudentInfoActivity extends ActionBarActivity {
                 inflateStudentInfo();
             } else {
                 Log.e(TAG, "Failed to fetch data!");
+            }
+
+            if (StudentInfoActivity.this.pd != null) {
+                StudentInfoActivity.this.pd.dismiss();
             }
         }
     }

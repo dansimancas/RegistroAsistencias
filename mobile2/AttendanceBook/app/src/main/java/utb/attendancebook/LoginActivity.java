@@ -1,5 +1,6 @@
 package utb.attendancebook;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,6 +25,7 @@ public class LoginActivity extends ActionBarActivity {
 
     private String mTeacherID;
     private Toolbar mToolbar;
+    private ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,14 @@ public class LoginActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         SharedPreferences settings = getSharedPreferences("TokenStorage", 0);
+        //Mientras tanto
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("token", "GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS");
+        editor.putString("id", "t00010915");
+
+        // Commit the edits!
+        editor.commit();
+        //ya
 
         if(settings.getString("token", "") != ""){
             Intent intent = new Intent(this, MainActivity.class);
@@ -76,8 +86,11 @@ public class LoginActivity extends ActionBarActivity {
 
         final String url = getResources().getString(R.string.server_hostname)+"/token";
 
-        new AsyncHttpTask().execute(url, username.getText().toString(), password.getText().toString());
+        /*New spinner*/
+        this.pd = ProgressDialog.show(this, getResources().getText(R.string.process_dialog_title), getResources().getText(R.string.process_dialog_text), true, false);
 
+        /*New Async task*/
+        new AsyncHttpTask().execute(url, username.getText().toString(), password.getText().toString());
 
     }
 
@@ -164,6 +177,10 @@ public class LoginActivity extends ActionBarActivity {
             Intent intent_name = new Intent();
             intent_name.setClass(getApplicationContext(), MainActivity.class);
             startActivity(intent_name);
+
+            if (LoginActivity.this.pd != null) {
+                LoginActivity.this.pd.dismiss();
+            }
         }
     }
 

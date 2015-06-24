@@ -1,5 +1,6 @@
 package utb.attendancebook.students;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
@@ -59,6 +60,7 @@ public class StudentListActivity extends ActionBarActivity {
     private JSONArray Attendances = new JSONArray();
     private String mNRC;
     private String mSubjectName;
+    private ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +93,10 @@ public class StudentListActivity extends ActionBarActivity {
         Log.d("url student list: ", url);
         //final String url = "http://104.236.31.197/course/"+mNRC+"/students";
 
+        /*New spinner*/
+        this.pd = ProgressDialog.show(this, getResources().getText(R.string.process_dialog_title), getResources().getText(R.string.process_dialog_text), true, false);
+
+        /*New Async Task*/
         new AsyncHttpTask().execute(url);
     }
 
@@ -111,14 +117,6 @@ public class StudentListActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_statistics) {
             Intent intent = new Intent(this, CourseStatistics.class);
-
-            /*Getting subject name from the Main Activity*/
-            Bundle b = getIntent().getExtras();
-            mSubjectName = b.getString("subject_name");
-            SharedPreferences.Editor editor = MainActivity.settings.edit();
-            editor.putString("subject_name", mSubjectName);
-            editor.commit();
-
             startActivity(intent);
             return true;
         }
@@ -411,6 +409,10 @@ public class StudentListActivity extends ActionBarActivity {
                 mRecyclerView.setAdapter(adapter);
             } else {
                 Log.e(TAG, "Failed to fetch data!");
+            }
+
+            if (StudentListActivity.this.pd != null) {
+                StudentListActivity.this.pd.dismiss();
             }
         }
     }

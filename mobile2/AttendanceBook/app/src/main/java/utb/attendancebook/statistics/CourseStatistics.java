@@ -1,15 +1,23 @@
 package utb.attendancebook.statistics;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import utb.attendancebook.MainActivity;
 import utb.attendancebook.R;
 
 
 public class CourseStatistics extends ActionBarActivity {
+
+    private static final String TAG = "Course statistics: ";
+    private WebView myWebView;
+    private ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,13 +196,33 @@ public class CourseStatistics extends ActionBarActivity {
                 "</html>";
 
         // Step 1: Create WebView
-        WebView myWebView = (WebView) findViewById(R.id.course_statistics);
+        myWebView = (WebView) findViewById(R.id.course_statistics);
+        WebSettings settings = myWebView.getSettings();
+        settings.setJavaScriptEnabled(true);
 
+        /*New spinner*/
+        this.pd = ProgressDialog.show(this, getResources().getText(R.string.process_dialog_title), getResources().getText(R.string.process_dialog_text), true, false);
+
+        myWebView.setWebViewClient(new WebViewClient() {
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                Log.i(TAG, "Processing webview url click...");
+                view.loadUrl(url);
+                return true;
+            }
+
+            public void onPageFinished(WebView view, String url) {
+                Log.i(TAG, "Finished loading URL: " + url);
+                if (pd.isShowing()) {
+                    pd.dismiss();
+                }
+            }
+
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                Log.e(TAG, "Error: " + description);
+            }
+        });
         // Step 2: Load page from assets
-        //myWebView.loadUrl("file:///android_asset/chart.html");
         myWebView.loadDataWithBaseURL("file:///android_asset/", content, "text/html", "utf-8", null);
 
-        // Step 3: Enable Javascript
-        myWebView.getSettings().setJavaScriptEnabled(true);
     }
 }

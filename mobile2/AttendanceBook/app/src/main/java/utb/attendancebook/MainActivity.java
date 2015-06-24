@@ -1,5 +1,6 @@
 package utb.attendancebook;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -44,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
     private RecyclerView mRecyclerView;
     private CourseAdapter adapter;
     private String mID;
+    private ProgressDialog pd = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +74,11 @@ public class MainActivity extends ActionBarActivity {
         /*Downloading data from below url*/
         final String url = getResources().getString(R.string.server_hostname) + "/teacher/" + mID + "/courses?username=" + mID + "&token=" + settings.getString("token", "");
         Log.e("URL Main", url);
-        //final String url = "http://104.236.31.197/teacher/"+mID+"/courses";
+
+        /*New spinner*/
+        this.pd = ProgressDialog.show(this, getResources().getText(R.string.process_dialog_title), getResources().getText(R.string.process_dialog_text), true, false);
+
+        /*New Async task*/
         new AsyncHttpTask().execute(url);
     }
 
@@ -90,7 +96,7 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, StudentListActivity.class);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("nrc", nrc);
-        intent.putExtra("subject_name", subject_name);
+        editor.putString("subject_name", subject_name);
         editor.commit();
         Log.d("nrc main: ", settings.getString("nrc", ""));
         startActivity(intent);
@@ -186,13 +192,17 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(Integer result) {
-            setProgressBarIndeterminateVisibility(false);
+
             /* Download complete. Lets update UI */
             if (result == 1) {
                 adapter = new CourseAdapter(MainActivity.this, mCourseItemList);
                 mRecyclerView.setAdapter(adapter);
             } else {
                 Log.e(TAG, "Failed to fetch data!");
+            }
+
+            if (MainActivity.this.pd != null) {
+                MainActivity.this.pd.dismiss();
             }
         }
     }
