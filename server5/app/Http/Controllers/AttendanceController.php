@@ -1,10 +1,9 @@
 <?php namespace App\Http\Controllers;
 use App\AttendanceModel;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Validator, Input, Redirect;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Tests\ServerBagTest;
+
 class AttendanceController extends Controller
 {
     /**
@@ -42,7 +41,7 @@ class AttendanceController extends Controller
      */
     public function store()
     {
-        $json  = Input::json()->all();
+        /*$json  = Input::json()->all();
 
         $size =  sizeof($json[0]['ESTUDIANTES']);
         for($i=0;$i<$size;$i++){
@@ -51,8 +50,24 @@ class AttendanceController extends Controller
             $attendance->STUDENTID      = $json[0]['ESTUDIANTES'][$i]['ID'];
             $attendance->ATTENDANCE     = $json[0]['ESTUDIANTES'][$i]['ATTENDANCE'];
             $attendance->save();
-        }
-        return 'ok, registro creado';
+        }*/
+
+        //$alarm =  new AlarmsController();
+        //$alarm = $alarm->createAlarm($json[0][$json[0]['NRC']);
+
+
+        $attendance = new AttendanceModel;
+        $attendance->STUDENTID      = Input::get('STUDENTID');
+        $attendance->NRC       = Input::get('NRC');
+        $attendance->ATTENDANCE     = Input::get('ATTENDANCE');
+        $attendance->save();
+
+        //generacion de alarmas
+        $alarm =  new AlarmsController();
+        $alarm = $alarm->createAlarm(Input::get('NRC'));
+
+       //return 'ok, registro creado';
+        return $alarm;
 
     }
 
