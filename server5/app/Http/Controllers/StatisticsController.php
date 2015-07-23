@@ -82,8 +82,6 @@ class StatisticsController extends Controller {
 
         $object["attendance"] = $attendance;
 
-        //$jsonp = json_encode($object);
-
         if($response) {
             return response()->json($object); //returns json object
         }else{

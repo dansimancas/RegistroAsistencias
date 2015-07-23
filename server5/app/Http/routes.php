@@ -12,18 +12,29 @@
 */
 
 use App\LogsModel;
+use App\Http\Middleware\TokenAuthMiddleware;
 use App\Http\Controllers\PersonsController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\StatisticsController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\AlarmsController;
 
 //Event Listeners
 Event::listen('teacher.showTeachersInfo', function($id)
 {
-    $event = "Teacher ". $id. " info was required";
+    /*$mid = new TokenAuthMiddleware();
+    $user = $mid->getUsername();
+
+    if($id == $user){
+        $event = "The user ". $user." required it´s own info";
+    }else{
+        $event = "The user ". $user." required teacher ". $id. " info";
+    }
+
     $logs = new LogsModel;
     $logs->EVENT= $event;
     $logs->TYPE= "teacher";
-    $logs->save();
+    $logs->save();*/
 });
 
 Event::listen('student.showStudentsInfo', function($id)
@@ -57,8 +68,9 @@ Event::listen('course.showCoursesByTeacher', function($id)
 //Routes
 Route::post('token', ['middleware' => 'tokengenerator', 'uses' => 'Auth\AuthController@token']);
 
-Route::group(['middleware' => 'tokenauth'], function() {
-    /*
+//Route::group(['middleware' => 'tokenauth'], function() {
+
+        /*
      * Muestra la información de un profesor
      */
     Route::get('teacher/{id}', function ($id) {
@@ -116,11 +128,6 @@ Route::group(['middleware' => 'tokenauth'], function() {
         Route::get('student/{id}/course/{NRC}/attendance', 'StatisticsController@showStatisticsByStudentByCourse');
 
         /*
-         * Muestra las estadisticas de asistencia de un estudiante
-         */
-        //Route::get('student/{id}/attendance', 'StatisticsController@showStatisticsByStudent');
-
-        /*
          * Muestra las estadisticas de asistencia de un curso
          */
         Route::get('course/{NRC}/attendance', function ($NRC) {
@@ -128,8 +135,31 @@ Route::group(['middleware' => 'tokenauth'], function() {
             $controller = new StatisticsController();
             return $controller->showStatisticsByCourse($NRC);
         });
+
+        /*
+         * Muestra las estadisticas de asistencia de un estudiante
+         */
+        //Route::get('student/{id}/attendance', 'StatisticsController@showStatisticsByStudent');
+
+        /*
+         * Muestra las alarmas por falta de asistencia de estudiantes a un curso
+         */
+        Route::get('course/{NRC}/alarms', function ($NRC) {
+            //Event::fire('course.showCoursesInfo', $NRC);
+            $controller = new AlarmsController();
+            return $controller->showCoursesAlarms($NRC);
+        });
+
+        /*
+        * Muestra las alarmas por falta de asistencia de estudiantes a un curso
+        */
+        /*Route::get('course/{NRC}/student/{id}/alarms', function ($NRC, $id) {
+            //Event::fire('course.showCoursesInfo', $NRC);
+            $controller = new AlarmsController();
+            return $controller->showAlarmsByStudentByCourse($NRC);
+        });*/
     });
-});
+//});
 
 
 
