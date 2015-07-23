@@ -13,34 +13,92 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/app_bar"
-        android:background="@color/activity_background">
+        android:background="@color/primaryColor">
 
         <ImageView
             android:id="@+id/teacher_picture"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="@dimen/teacher_profilePic_width"
+            android:layout_height="@dimen/teacher_profilePic_height"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="@dimen/teacher_profilePic_marginTop"
             android:src="@mipmap/ic_profile_pic" />
 
         <TextView
             android:id="@+id/teacher_name"
-            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/teacher_picture"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="12dp"
-            android:layout_marginTop="8dp"
-            android:textSize="18sp" />
+            style="@style/MainNameTitle"/>
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/teacher_name"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/teacher_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/profileTextColor"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/profile_divider"
+            android:layout_width="fill_parent"
+            android:layout_height="0.7dp"
+            android:layout_below="@id/linearlayout"
+            android:background="@color/primaryColor200"/>
 
         <TextView
             android:id="@+id/teacher_id"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/teacher_name"
+            android:gravity="center"
+            android:layout_below="@id/profile_divider"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="12dp"
-            android:textColor="@color/accentColor"
+            android:textColor="@color/profileTextColor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/teacher_school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teacher_id"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/profileTextColor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/teacher_department"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teacher_school"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/profileTextColor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/teacher_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teacher_department"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/profileTextColor"
             android:textSize="14sp" />
 
     </RelativeLayout>

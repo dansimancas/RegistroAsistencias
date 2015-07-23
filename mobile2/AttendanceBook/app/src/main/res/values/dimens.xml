@@ -27,4 +27,9 @@
     <dimen name="info_icon_width">32dp</dimen>
     <dimen name="info_icon_height">32dp</dimen>
     <dimen name="info_item_right_margin">24dp</dimen>
+    <dimen name="student_list_bottom_margin">56dp</dimen>
+    <dimen name="send_button_bottom_margin">8dp</dimen>
+    <dimen name="teacher_profilePic_width">150dp</dimen>
+    <dimen name="teacher_profilePic_height">150dp</dimen>
+    <dimen name="teacher_profilePic_marginTop">48dp</dimen>
 </resources>

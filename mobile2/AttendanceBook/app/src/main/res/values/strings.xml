@@ -32,5 +32,7 @@
     <string name="action_help">help</string>
     <string name="process_dialog_title">Working..</string>
     <string name="process_dialog_text">Downloading Data...</string>
+    <string name="send_button_text">Enviar</string>
+    <string name="report_sent_message">¡Enviado!</string>
 
 </resources>

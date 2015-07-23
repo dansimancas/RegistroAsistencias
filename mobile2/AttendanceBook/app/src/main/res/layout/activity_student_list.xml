@@ -29,10 +29,23 @@
             android:id="@+id/students_list"
             android:layout_width="match_parent"
             android:layout_below="@+id/subtitle"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/student_list_bottom_margin">
         </android.support.v7.widget.RecyclerView>
 
+        <Button
+            android:id="@+id/send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send_button_text"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/send_button_bottom_margin"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:onClick="onSendButtonClick"/>
+
     </RelativeLayout>
+
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"

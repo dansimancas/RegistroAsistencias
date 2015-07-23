@@ -16,4 +16,11 @@
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
     </style>
 
+    <style name="MainNameTitle" parent="AppTheme.Base">
+        <item name="android:textColor">@color/profileTextColor</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
 </resources>

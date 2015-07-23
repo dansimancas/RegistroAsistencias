@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewParent;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -267,46 +268,43 @@ public class StudentListActivity extends ActionBarActivity {
             try {
                 HttpParams params = new BasicHttpParams();
                 HttpClient httpclient = new DefaultHttpClient(params);
-
                 HttpPost httpPost = new HttpPost(getResources().getString(R.string.server_hostname) + "/attendance?username="+MainActivity.settings.getString("id","")+"&token="+MainActivity.settings.getString("token",""));
-
-
                 httpPost.setEntity(new StringEntity(Attendances.toString(), "UTF8"));
                 httpPost.setHeader("Content-type", "application/json");
-
-
                 HttpResponse httpResponse = httpclient.execute(httpPost);
-
                 InputStream inputStream = httpResponse.getEntity().getContent();
                 String result = "";
 
                 if (inputStream != null) {
                     result = inputStream.toString();
-
                 } else {
                     result = "Did not work!";
-
                 }
 
                 Log.d("RESULT", result);
             } catch (Exception e) {
-
                 Log.e("ERROR IN SEVER UPLOAD", e.getMessage());
             }
             return null;
-
-
         }
     }
 
     @Override
     public void onBackPressed() {
-
         onClickSave();
-        Log.d("otro1: ", Attendances.toString());
+        Log.d("GUARDAR ENVIO: ", Attendances.toString());
         UploadASyncTask upload = new UploadASyncTask();
         upload.execute();
         super.onBackPressed();
+    }
+
+    public void onSendButtonClick(View v) {
+        onClickSave();
+        Log.d("GUARDAR ENVIO: ", Attendances.toString());
+        UploadASyncTask upload = new UploadASyncTask();
+        upload.execute();
+        super.onBackPressed();
+        Toast.makeText(this, R.string.report_sent_message, Toast.LENGTH_SHORT).show();
     }
 
     public void onInfoIconClick(View vv) {
