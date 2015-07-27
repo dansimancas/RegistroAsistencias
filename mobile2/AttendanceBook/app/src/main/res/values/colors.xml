@@ -5,6 +5,8 @@
     <color name="darkPrimaryColor">#303F9F</color>
     <color name="lightPrimaryColor">#C5CAE9</color>
     <color name="primaryColor400">#5C6BC0</color>
+    <color name="primaryColor100">#C5CAE9</color>
+    <color name="primaryColor50">#E8EAF6</color>
     <color name="primaryColor200">#9FA8DA</color>
     <color name="accentColor">#E91E63</color>
     <color name="primaryText">#212121</color>

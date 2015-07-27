@@ -7,7 +7,7 @@ import android.text.TextUtils;
  */
 public class WordManagement {
 
-    public static WordManagement WM;
+    public static final WordManagement WM = new WordManagement();
 
     public String toTitleCase(String str){
         String[] words = str.split("[\\s]+");
@@ -15,6 +15,7 @@ public class WordManagement {
         for(int i = 0; i < words.length; i++) {
             words[i] = words[i].substring(0,1).toUpperCase()
                     + words[i].substring(1).toLowerCase();
+            words[i] = words[i].replace("?", "ñ");
         }
 
         String titleCase = TextUtils.join(" ", words);

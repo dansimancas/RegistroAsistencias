@@ -9,6 +9,8 @@ public class TeacherItem {
     private int teacher_picture;
     private int teacher_thumbnail;
     private String teacher_name;
+    private String teacher_lastName;
+    private String teacher_fullName;
     private String id;
     private String uri;
     private String type;
@@ -16,32 +18,45 @@ public class TeacherItem {
     private String department;
     private String email;
 
+    public void cleanStrings(){
+        //Cleaning the names
+        teacher_name = WordManagement.WM.toTitleCase(teacher_name);
+        //Cleaning the lastNames
+        teacher_lastName = WordManagement.WM.toTitleCase(teacher_lastName);
+        //Setting up the fullName
+        teacher_fullName = WordManagement.WM.firstNameLastnames(teacher_name,teacher_lastName);
+        //Cleaning the type
+        type = WordManagement.WM.toLowerCase(type);
+        //Cleaning the school
+        school = WordManagement.WM.toTitleCase(school);
+        //Cleaning the department
+        department = WordManagement.WM.toTitleCase(department);
+        //Cleaning the email
+        email = WordManagement.WM.toLowerCase(email);
+    }
+
     public String getTeacherType(){return type;}
 
     public void setTeacherType(String type){
-        this.type = WordManagement.WM.toLowerCase(type);
+        this.type = type;
     }
 
     public String getTeacherSchool(){return school;}
 
     public void setTeacherSchool(String school){
-        this.school = WordManagement.WM.toTitleCase(school);
+        this.school = school;
     }
 
     public String getTeacherDepartment(){return department;}
 
     public void setTeacherDepartment(String department){
-        this.department = WordManagement.WM.toTitleCase(department);
+        this.department = department;
     }
 
     public String getTeacherEmail(){return email;}
 
     public void setTeacherEmail(String email){
-        this.email = WordManagement.WM.toLowerCase(email);
-    }
-
-    public String getUri() {
-        return uri;
+        this.email = email;
     }
 
     public void setUri(String uri) {
@@ -56,20 +71,23 @@ public class TeacherItem {
         this.id = id;
     }
 
-    public String getTeacherName() {
-        return teacher_name;
+    public String getTeacherFullName() {
+        return teacher_fullName;
     }
 
-    public void setTeacherName(String names, String lastnames) {
-        String fullName = WordManagement.WM.firstNameLastnames(names, lastnames);
-        this.teacher_name = WordManagement.WM.toTitleCase(fullName);
+    public void setTeacherName(String names) {
+        this.teacher_name = names;
     }
 
-    public int getTeacherThumbnail(){
+    public void setTeacherLastName(String lastnames) {
+        this.teacher_lastName = lastnames;
+    }
+
+    public int getTeacherThumbnail() {
         return teacher_thumbnail;
     }
 
-    public void setTeacherThumbnail(int imageId){
+    public void setTeacherThumbnail(int imageId) {
         teacher_thumbnail = imageId;
     }
 

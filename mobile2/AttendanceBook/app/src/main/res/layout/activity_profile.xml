@@ -23,34 +23,33 @@
             android:layout_marginTop="@dimen/teacher_profilePic_marginTop"
             android:src="@mipmap/ic_profile_pic" />
 
-        <TextView
-            android:id="@+id/teacher_name"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/teacher_picture"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
-            style="@style/MainNameTitle"/>
-
         <LinearLayout
             android:id="@+id/linearlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_below="@id/teacher_name"
+            android:layout_below="@id/teacher_picture"
+            android:orientation="vertical"
             android:weightSum="1">
 
             <TextView
-                android:id="@+id/teacher_type"
+                android:id="@+id/teacher_name"
+                style="@style/MainNameTitle"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:gravity="center"
+                android:layout_height="0dp"
                 android:layout_marginBottom="12dp"
+                android:layout_weight="0.7"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/teacher_summary"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="12dp"
+                style="@style/ProfileTeacherSummary"
+                android:layout_weight="0.7"
+                android:gravity="center"
                 android:textColor="@color/profileTextColor"
-                android:textSize="14sp"
-                />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <View
@@ -58,48 +57,73 @@
             android:layout_width="fill_parent"
             android:layout_height="0.7dp"
             android:layout_below="@id/linearlayout"
-            android:background="@color/primaryColor200"/>
+            android:background="@color/primaryColor400" />
 
-        <TextView
-            android:id="@+id/teacher_id"
+        <LinearLayout
+            android:id="@+id/linearlayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_below="@id/profile_divider"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
-            android:textColor="@color/profileTextColor"
-            android:textSize="14sp" />
+            android:weightSum="1">
 
-        <TextView
-            android:id="@+id/teacher_school"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/teacher_id"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
-            android:textColor="@color/profileTextColor"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/teacher_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_weight="0.35"
+                android:gravity="center_horizontal"
+                android:textColor="@color/profileTextColor"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/teacher_department"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/teacher_school"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
-            android:textColor="@color/profileTextColor"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/teacher_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_weight="0.65"
+                android:gravity="center_horizontal"
+                android:textColor="@color/profileTextColor"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/teacher_email"
-            android:layout_width="wrap_content"
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayout3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/teacher_department"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
-            android:textColor="@color/profileTextColor"
-            android:textSize="14sp" />
+            android:layout_below="@id/linearlayout2"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/teacher_id_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_weight="0.35"
+                android:gravity="center_horizontal"
+                android:text="ID"
+                android:textColor="@color/profileTextColor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/teacher_email_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_weight="0.65"
+                android:gravity="center_horizontal"
+                android:text="EMAIL"
+                android:textColor="@color/profileTextColor"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/profile_divider2"
+            android:layout_width="fill_parent"
+            android:layout_height="0.7dp"
+            android:layout_below="@id/linearlayout3"
+            android:background="@color/primaryColor400" />
 
     </RelativeLayout>
 

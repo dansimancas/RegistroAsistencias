@@ -60,7 +60,6 @@ public class StudentListActivity extends ActionBarActivity {
     private JSONObject courseAttendances = new JSONObject();
     private JSONArray Attendances = new JSONArray();
     private String mNRC;
-    private String mSubjectName;
     private ProgressDialog pd;
 
     @Override
@@ -137,15 +136,10 @@ public class StudentListActivity extends ActionBarActivity {
         return Njarray;
     }
 
-    public void onStudentItemClick(View vv) {
+    public void onStudentItemClick(View v) {
 
-        //String tag = v.getTag().toString();
-        ViewParent parent = vv.getParent();
-        View v;
-        if (vv instanceof RelativeLayout) {
-            v = vv;
-        } else {
-            v = (View) parent;
+        if (!(v instanceof RelativeLayout)) {
+            v = (View) v.getParent();
         }
         TextView studentNameView = (TextView) v.findViewById(R.id.student_name);
         TextView studentIdView = (TextView) v.findViewById(R.id.id);

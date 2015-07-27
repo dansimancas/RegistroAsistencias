@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import utb.attendancebook.aidClasses.WordManagement;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,25 +48,24 @@ public class ProfileActivity extends ActionBarActivity {
         String id = settings.getString("id", "");
         final String url = "http://104.236.31.197/teacher/"+id+"?username="+id+"&token="+settings.getString("token","");
 
-        /*New spinner*/
-        this.pd = ProgressDialog.show(this, getResources().getText(R.string.process_dialog_title), getResources().getText(R.string.process_dialog_text), true, false);
-
         /*New Async task*/
         new AsyncHttpTask().execute(url);
+
+        /*New spinner*/
+        this.pd = ProgressDialog.show(this, getResources().getText(R.string.process_dialog_title), getResources().getText(R.string.process_dialog_text), true, false);
     }
 
     public void inflateTeacherInfo(){
         TextView name = (TextView) findViewById(R.id.teacher_name);
+        TextView summary = (TextView) findViewById(R.id.teacher_summary);
         TextView id = (TextView) findViewById(R.id.teacher_id);
-        TextView type = (TextView) findViewById(R.id.teacher_type);
-        TextView school = (TextView) findViewById(R.id.teacher_school);
-        TextView department = (TextView) findViewById(R.id.teacher_department);
         TextView email = (TextView) findViewById(R.id.teacher_email);
-        name.setText(mTeacher.getTeacherName());
+
+        mTeacher.cleanStrings();
+
+        name.setText(mTeacher.getTeacherFullName());
+        summary.setText("Profesor de " + mTeacher.getTeacherType() + ". Facultad de " + mTeacher.getTeacherSchool() + ". Departamento: " + mTeacher.getTeacherDepartment());
         id.setText(mTeacher.getId());
-        type.setText("Profesor de " + mTeacher.getTeacherType()+". Facultad de "+ mTeacher.getTeacherSchool()+". Departamento: "+mTeacher.getTeacherDepartment());
-        school.setText(mTeacher.getTeacherSchool());
-        department.setText(mTeacher.getTeacherDepartment());
         email.setText(mTeacher.getTeacherEmail());
     }
 
@@ -93,9 +91,8 @@ public class ProfileActivity extends ActionBarActivity {
     private void parseResult(String result) {
         try {
             JSONObject response = new JSONObject(result);
-            String names = response.optString("names");
-            String lastnames = response.optString("lastnames");
-            mTeacher.setTeacherName(names,lastnames);
+            mTeacher.setTeacherName(response.optString("names"));
+            mTeacher.setTeacherLastName(response.optString("lastnames"));
             mTeacher.setId(response.optString("id"));
             mTeacher.setTeacherType(response.optString("type"));
             mTeacher.setTeacherSchool(response.optString("school"));
@@ -142,7 +139,8 @@ public class ProfileActivity extends ActionBarActivity {
                 }
 
             } catch (Exception e) {
-                Log.d(TAG, e.getLocalizedMessage());
+                //Log.d(TAG, e.getLocalizedMessage());
+                Log.i(TAG, "se putió esta vaina");
             }
             return result; //"Failed to fetch data!";
         }
