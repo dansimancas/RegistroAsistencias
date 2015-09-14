@@ -1,5 +1,10 @@
 <?php
 
+// allow origin [para acceso desde la app web]
+header('Access-Control-Allow-Origin: *');
+// add any additional headers you need to support here [para acceso desde la app web]
+header('Access-Control-Allow-Headers: Origin, Content-Type');
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application

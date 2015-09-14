@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b672acb-965b-4b93-8acf-fde77160218c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile2/AttendanceBook/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/mobile2/AttendanceBook/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginDemo/LoginDemo.iml" afterPath="$PROJECT_DIR$/LoginDemo/LoginDemo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginDemo/app/src/main/java/utb/logindemo/MainActivity.java" afterPath="$PROJECT_DIR$/LoginDemo/app/src/main/java/utb/logindemo/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile2/AttendanceBook/app/src/main/java/utb/attendancebook/statistics/WebStatistics.java" afterPath="$PROJECT_DIR$/mobile2/AttendanceBook/app/src/main/java/utb/attendancebook/statistics/WebStatistics.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginDemo/app/app.iml" afterPath="$PROJECT_DIR$/LoginDemo/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginDemo/.idea/gradle.xml" afterPath="$PROJECT_DIR$/LoginDemo/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginDemo/.idea/misc.xml" afterPath="$PROJECT_DIR$/LoginDemo/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginDemo/.idea/modules.xml" afterPath="$PROJECT_DIR$/LoginDemo/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile2/AttendanceBook/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/mobile2/AttendanceBook/app/src/main/res/values/strings.xml" />
+    <list default="true" id="3b672acb-965b-4b93-8acf-fde77160218c" name="Default" comment="agregadas lineas para permitir el acceso a la API desde la app web.">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/.idea/dictionaries/daniela.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/mobile/build/intermediates/gradle_project_sync_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/mobile/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/app/app.iml" afterPath="$PROJECT_DIR$/mobile/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server5/bootstrap/app.php" afterPath="$PROJECT_DIR$/server5/bootstrap/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/appcompat_v7_22_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/appcompat_v7_22_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/cardview_v7_22_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/cardview_v7_22_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/compiler.xml" afterPath="$PROJECT_DIR$/mobile/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/gradle.xml" afterPath="$PROJECT_DIR$/mobile/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/local.properties" afterPath="$PROJECT_DIR$/mobile/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/misc.xml" afterPath="$PROJECT_DIR$/mobile/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_7_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_7_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_analytics_7_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_analytics_7_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_appstate_7_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_appstate_7_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_fitness_7_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_fitness_7_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_games_7_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_games_7_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_maps_7_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_maps_7_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_panorama_7_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_panorama_7_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_plus_7_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/play_services_plus_7_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/recyclerview_v7_22_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/recyclerview_v7_22_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/libraries/support_v4_22_0_0.xml" afterPath="$PROJECT_DIR$/mobile/.idea/libraries/support_v4_22_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/vcs.xml" afterPath="$PROJECT_DIR$/mobile/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mobile/.idea/workspace.xml" />
     </list>
     <ignored path="RegistroAsistencias.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,12 +54,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AttendanceController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/AttendanceController.php">
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server5/bootstrap/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22330096" vertical-offset="912" max-vertical-offset="1890">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.15450644" vertical-offset="0" max-vertical-offset="1026">
+              <caret line="4" column="85" selection-start-line="4" selection-start-column="85" selection-end-line="4" selection-end-column="85" />
+              <folding>
+                <element signature="e#245#645#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,6 +81,7 @@
       <list>
         <option value="$PROJECT_DIR$/server5/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/server5/app/Http/Controllers/AttendanceController.php" />
+        <option value="$PROJECT_DIR$/server5/bootstrap/app.php" />
       </list>
     </option>
   </component>
@@ -68,10 +90,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="x" value="49" />
+    <option name="y" value="-4" />
+    <option name="width" value="1391" />
+    <option name="height" value="904" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -99,7 +121,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -146,7 +167,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -164,42 +185,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegistroAsistencias" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
+              <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -264,18 +256,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="49" y="-4" width="1391" height="904" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25870648" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27137548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32948717" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32743362" sideWeight="0.3249595" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25186765" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31167513" sideWeight="0.67504054" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30769232" sideWeight="0.67504054" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -308,12 +301,54 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="agregadas lineas para permitir el acceso a la API desde la app web." />
+    <option name="LAST_COMMIT_MESSAGE" value="agregadas lineas para permitir el acceso a la API desde la app web." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/Auth/PasswordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/AttendanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/AttendanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/AttendanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/AttendanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
@@ -447,51 +482,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server5/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="391">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server5/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="391">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server5/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="391">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server5/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -503,9 +496,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server5/.env">
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -513,13 +513,6 @@
     <entry file="file://$PROJECT_DIR$/server5/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server5/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -556,13 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23551401" vertical-offset="0" max-vertical-offset="535">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/Auth/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67333335" vertical-offset="87" max-vertical-offset="987">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -615,13 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server5/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10047847" vertical-offset="0" max-vertical-offset="627">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/StatisticsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1911" max-vertical-offset="3129">
@@ -657,11 +636,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Middleware/Authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8414322" vertical-offset="329" max-vertical-offset="774">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/Auth/PasswordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/Auth/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93167704" vertical-offset="162" max-vertical-offset="756">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server5/app/Http/Controllers/AttendanceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22330096" vertical-offset="912" max-vertical-offset="1890">
+        <state vertical-scroll-proportion="0.0" vertical-offset="936" max-vertical-offset="1926">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server5/bootstrap/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15450644" vertical-offset="0" max-vertical-offset="1026">
+          <caret line="4" column="85" selection-start-line="4" selection-start-column="85" selection-end-line="4" selection-end-column="85" />
+          <folding>
+            <element signature="e#245#645#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
