@@ -12,7 +12,7 @@ class AttendanceController extends Controller
      * @return Response
      */
 
-   /* public function index()
+   public function index()
     {
         $attendance = AttendanceModel::all();
 
@@ -33,7 +33,7 @@ class AttendanceController extends Controller
         return response()->json($object);
 
 
-    }*/
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -41,7 +41,7 @@ class AttendanceController extends Controller
      */
     public function store()
     {
-        /*$json  = Input::json()->all();
+        $json  = Input::json()->all();
 
         $size =  sizeof($json[0]['ESTUDIANTES']);
         for($i=0;$i<$size;$i++){
@@ -50,12 +50,13 @@ class AttendanceController extends Controller
             $attendance->STUDENTID      = $json[0]['ESTUDIANTES'][$i]['ID'];
             $attendance->ATTENDANCE     = $json[0]['ESTUDIANTES'][$i]['ATTENDANCE'];
             $attendance->save();
-        }*/
+        }
+        return "Registro Creado";
 
         //$alarm =  new AlarmsController();
         //$alarm = $alarm->createAlarm($json[0][$json[0]['NRC']);
 
-
+        /*
         $attendance = new AttendanceModel;
         $attendance->STUDENTID      = Input::get('STUDENTID');
         $attendance->NRC       = Input::get('NRC');
@@ -68,6 +69,7 @@ class AttendanceController extends Controller
 
        //return 'ok, registro creado';
         return $alarm;
+        */
 
     }
 
