@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAttendance extends Migration {
+class CreateApptokenTable extends Migration {
 
     /**
      * Run the migrations.
@@ -11,11 +11,10 @@ class CreateAttendance extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('attendance', function(Blueprint $table) {
+        Schema::create('apptoken', function(Blueprint $table) {
             $table->increments('ID')->unsigned();
-            $table->string('STUDENTID', 10);
-            $table->string('NRC', 15);
-            $table->integer('ATTENDANCE')->unsigned();
+            $table->string('USERNAME', 10);
+            $table->string('TOKEN', 50);
             $table->timestamps();
         });
     }
@@ -26,7 +25,7 @@ class CreateAttendance extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('attendance');
+        Schema::drop('apptoken');
     }
 
 }

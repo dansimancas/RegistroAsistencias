@@ -11,6 +11,6 @@ class StudentsModel extends Model {
      * NOMBRES, APELLIDOS (nombres y apellidos del profesor, respectivamente), EMAIL (email del estudiante).
      * @var string
      */
-    protected $table = 'SIRIUS_STUDENTS';
+    protected $table = 'sirius_students';
 
 }

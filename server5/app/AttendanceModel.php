@@ -4,6 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class AttendanceModel extends Model {
 
-    protected $table='Attendance';
+    protected $table='attendance';
 
 }

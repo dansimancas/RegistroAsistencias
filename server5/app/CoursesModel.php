@@ -11,6 +11,6 @@ class CoursesModel extends Model {
      * CRÉDITOS(créditos de la materia), HORAS_SEMANALAES(cantidad de horas que se dicta la materia semanalmente).
      * @var string
      */
-    protected $table = 'SIRIUS_COURSES';
+    protected $table = 'sirius_courses';
 
 }

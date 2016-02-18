@@ -10,6 +10,6 @@ class CoursesByTeacherModel extends Model {
      * NAMES, LASTNAMES (nombres y apellidos del profesor, respectivamente).
      * @var string
      */
-    protected $table = 'CoursesByTeacher';
+    protected $table = 'coursesbyteacher';
 
 }

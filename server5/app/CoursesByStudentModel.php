@@ -12,6 +12,6 @@ class CoursesByStudentModel extends Model {
      * @var string
      */
 
-    protected $table = 'CoursesByStudent';
+    protected $table = 'coursesbystudent';
 
 }

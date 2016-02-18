@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAttendance extends Migration {
+class CreateAlarmsTable extends Migration {
 
     /**
      * Run the migrations.
@@ -11,11 +11,12 @@ class CreateAttendance extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('attendance', function(Blueprint $table) {
+        Schema::create('alarms', function(Blueprint $table) {
             $table->increments('ID')->unsigned();
-            $table->string('STUDENTID', 10);
-            $table->string('NRC', 15);
-            $table->integer('ATTENDANCE')->unsigned();
+            $table->string('TEACHER', 10);
+            $table->string('COURSE', 15);
+            $table->string('TYPE', 10);
+            $table->string('MESSAGE', 130);
             $table->timestamps();
         });
     }
@@ -26,7 +27,7 @@ class CreateAttendance extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('attendance');
+        Schema::drop('alarms');
     }
 
 }
