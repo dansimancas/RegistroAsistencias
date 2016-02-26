@@ -47,8 +47,8 @@ class AttendanceController extends Controller {
         for ($i = 0; $i < $size; $i++) {
             $attendance = new AttendanceModel;
             $attendance->NRC = $json['NRC'];
-            $attendance->STUDENTID = $json[0]['ESTUDIANTES'][$i]['ID'];
-            $attendance->ATTENDANCE = $json[0]['ESTUDIANTES'][$i]['ATTENDANCE'];
+            $attendance->STUDENTID = $json['ESTUDIANTES'][$i]['ID'];
+            $attendance->ATTENDANCE = $json['ESTUDIANTES'][$i]['ATTENDANCE'];
             $attendance->save();
         }
         return "Registro Creado";
