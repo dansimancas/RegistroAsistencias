@@ -1,24 +1,27 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
+
 use App\AttendanceModel;
 use App\Http\Requests;
-use Validator, Input, Redirect;
+use Validator,
+    Input,
+    Redirect;
 use Illuminate\Http\Request;
 
-class AttendanceController extends Controller
-{
+class AttendanceController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-
-   public function index()
-    {
+    public function index() {
         $attendance = AttendanceModel::all();
 
         $object = array();
 
-        foreach($attendance as $value){
+        foreach ($attendance as $value) {
             $var = array(
                 "id" => $value["ID"],
                 "student_id" => $value["STUDENTID"],
@@ -31,24 +34,21 @@ class AttendanceController extends Controller
         }
 
         return response()->json($object);
-
-
     }
 
     /**
      * Store a newly created resource in storage.
      * @return Response
      */
-    public function store()
-    {
-        $json  = Input::json()->all();
+    public function store() {
+        $json = Input::json()->all();
 
-        $size =  sizeof($json[0]['ESTUDIANTES']);
-        for($i=0;$i<$size;$i++){
+        $size = sizeof($json['ESTUDIANTES']);
+        for ($i = 0; $i < $size; $i++) {
             $attendance = new AttendanceModel;
-            $attendance->NRC       = $json[0]['NRC'];
-            $attendance->STUDENTID      = $json[0]['ESTUDIANTES'][$i]['ID'];
-            $attendance->ATTENDANCE     = $json[0]['ESTUDIANTES'][$i]['ATTENDANCE'];
+            $attendance->NRC = $json['NRC'];
+            $attendance->STUDENTID = $json[0]['ESTUDIANTES'][$i]['ID'];
+            $attendance->ATTENDANCE = $json[0]['ESTUDIANTES'][$i]['ATTENDANCE'];
             $attendance->save();
         }
         return "Registro Creado";
@@ -57,51 +57,49 @@ class AttendanceController extends Controller
         //$alarm = $alarm->createAlarm($json[0][$json[0]['NRC']);
 
         /*
-        $attendance = new AttendanceModel;
-        $attendance->STUDENTID      = Input::get('STUDENTID');
-        $attendance->NRC       = Input::get('NRC');
-        $attendance->ATTENDANCE     = Input::get('ATTENDANCE');
-        $attendance->save();
+          $attendance = new AttendanceModel;
+          $attendance->STUDENTID      = Input::get('STUDENTID');
+          $attendance->NRC       = Input::get('NRC');
+          $attendance->ATTENDANCE     = Input::get('ATTENDANCE');
+          $attendance->save();
 
-        //generacion de alarmas
-        $alarm =  new AlarmsController();
-        $alarm = $alarm->createAlarm(Input::get('NRC'));
+          //generacion de alarmas
+          $alarm =  new AlarmsController();
+          $alarm = $alarm->createAlarm(Input::get('NRC'));
 
-       //return 'ok, registro creado';
-        return $alarm;
-        */
-
+          //return 'ok, registro creado';
+          return $alarm;
+         */
     }
 
     /**
      * @param $NRC
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    /*public function show($NRC)
-    {
-        $attendance = AttendanceModel::where('NRC', "=", $NRC)->get();
-        $object = array(
-            "nrc" => $attendance[0]["NRC"]
-        );
+    /* public function show($NRC)
+      {
+      $attendance = AttendanceModel::where('NRC', "=", $NRC)->get();
+      $object = array(
+      "nrc" => $attendance[0]["NRC"]
+      );
 
-        foreach($attendance as $value){
-            $var = array(
-                "id" => $value["ID"],
-                "student_id" => $value["STUDENTID"],
-                "attendance" => $value["ATTENDANCE"],
-                "created_at" => $value["created_at"]->toDateTimeString(),
-                "updated_at" => $value['updated_at']->toDateTimeString()
-            );
-            $object["students"][] = $var;
-        }
+      foreach($attendance as $value){
+      $var = array(
+      "id" => $value["ID"],
+      "student_id" => $value["STUDENTID"],
+      "attendance" => $value["ATTENDANCE"],
+      "created_at" => $value["created_at"]->toDateTimeString(),
+      "updated_at" => $value['updated_at']->toDateTimeString()
+      );
+      $object["students"][] = $var;
+      }
 
-        return response()->json($object);
-    }*/
+      return response()->json($object);
+      } */
 
-    /*public function show($id)
-    {
-        $attendance = Attendance::where("StudentId", "=", $id)->get();
-        return response()->json($id);
-    }*/
-
+    /* public function show($id)
+      {
+      $attendance = Attendance::where("StudentId", "=", $id)->get();
+      return response()->json($id);
+      } */
 }
