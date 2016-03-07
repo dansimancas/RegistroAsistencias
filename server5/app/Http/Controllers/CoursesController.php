@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\CoursesByTeacherModel;
@@ -9,14 +11,12 @@ use Illuminate\Http\Request;
 
 class CoursesController extends Controller {
 
-
     /**
      * FunciÃ³n para mostrar toda la informaciÃ³n de un curso, pasando como referencia el NRC_PERIODO_KEY
      * @param $NRC
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showCoursesInfo($NRC)
-    {
+    public function showCoursesInfo($NRC) {
         $data = CoursesModel::where("NRC_PERIODO_KEY", "=", $NRC)->get();
 
         $object = array(
@@ -30,11 +30,10 @@ class CoursesController extends Controller {
             "course" => $data[0]["CURSO"],
             "teacher_id" => $data[0]["DOCENTEID"],
             "links" => array(
-                "students_uri" => "/course/".$data[0]["NRC_PERIODO_KEY"]."/students",
-                "statistics_uri" => $data[0]["NRC_PERIODO_KEY"]."/attendance/",
-                "teacher_uri" => "/teacher/".$data[0]["DOCENTEID"]
+                "students_uri" => "/course/" . $data[0]["NRC_PERIODO_KEY"] . "/students",
+                "statistics_uri" => $data[0]["NRC_PERIODO_KEY"] . "/attendance/",
+                "teacher_uri" => "/teacher/" . $data[0]["DOCENTEID"]
             )
-
         );
 
         return response()->json($object);
@@ -45,29 +44,29 @@ class CoursesController extends Controller {
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showCoursesByTeacher($id)
-    {
+    public function showCoursesByTeacher($id) {
         $data = CoursesByTeacherModel::where("TEACHERID", "=", $id)->get();
-
+        if ($data->isEmpty()) {
+            return response()->setStatusCode(201, "No tienes cursos matriculados.");
+        }
         $object = array(
             "id" => $data[0]["TEACHERID"],
             "names" => $data[0]["NAMES"],
             "lastnames" => $data[0]["LASTNAMES"]
         );
-        $object["resource_uri"] = "/teacher/".$data[0]["TEACHERID"];
+        $object["resource_uri"] = "/teacher/" . $data[0]["TEACHERID"];
 
-        foreach($data as $value){
+        foreach ($data as $value) {
             $var = array(
                 "subject_name" => $value["SUBJECTNAME"],
                 "nrc" => $value["NRC"],
                 "section" => $value["SECTION"],
-                "resource_uri" => "/course/".$value["NRC"],
+                "resource_uri" => "/course/" . $value["NRC"],
             );
             $object["courses"][] = $var;
         }
 
         return response()->json($object);
-
     }
 
     /**
@@ -75,8 +74,7 @@ class CoursesController extends Controller {
      * @param $NRC
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showStudentsByCourse($NRC)
-    {
+    public function showStudentsByCourse($NRC) {
         $studentsbycourse = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
 
         $studentsbycourse_INIT = $studentsbycourse[0];
@@ -87,16 +85,16 @@ class CoursesController extends Controller {
             "teacher_id" => $studentsbycourse_INIT["TEACHERID"],
         );
 
-        $studentsbycourse_JSON["resource_uri"] = "/course/".$studentsbycourse[0]["NRC"];
+        $studentsbycourse_JSON["resource_uri"] = "/course/" . $studentsbycourse[0]["NRC"];
 
-        foreach($studentsbycourse as $value){
+        foreach ($studentsbycourse as $value) {
             $var = array(
                 "id" => $value["STUDENTID"],
                 "names" => $value["NAMES"],
                 "lastnames" => $value["LASTNAMES"],
                 "program" => $value["PROGRAM"],
                 "email" => $value["EMAIL"],
-                "resource_uri" => "/student/".$value["STUDENTID"],
+                "resource_uri" => "/student/" . $value["STUDENTID"],
             );
             $studentsbycourse_JSON["students"][] = $var;
         }
@@ -109,8 +107,7 @@ class CoursesController extends Controller {
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showCoursesByStudent($id)
-    {
+    public function showCoursesByStudent($id) {
         $coursesbystudent = CoursesByStudentModel::where("STUDENTID", "=", $id)->get();
 
         $coursesbystudent_INIT = $coursesbystudent[0];
@@ -120,7 +117,7 @@ class CoursesController extends Controller {
             "courses" => array()
         );
 
-        foreach($coursesbystudent as $value){
+        foreach ($coursesbystudent as $value) {
             $var = array(
                 "subject_name" => $value["SUBJECTNAME"],
                 "nrc" => $value["NRC"],
@@ -128,7 +125,6 @@ class CoursesController extends Controller {
                 "names" => $value["NAMES"],
                 "lastnames" => $value["LASTNAMES"],
                 "teacher_id" => $value["TEACHERID"],
-
             );
             $coursesbystudent_JSON["courses"][] = $var;
         }
