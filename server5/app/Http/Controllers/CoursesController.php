@@ -46,26 +46,23 @@ class CoursesController extends Controller {
      */
     public function showCoursesByTeacher($id) {
         $data = CoursesByTeacherModel::where("TEACHERID", "=", $id)->get();
-        if ($data->isEmpty()) {
-            return response()->setStatusCode(201, "No tienes cursos matriculados.");
-        }
         $object = array(
             "id" => $data[0]["TEACHERID"],
             "names" => $data[0]["NAMES"],
             "lastnames" => $data[0]["LASTNAMES"]
         );
         $object["resource_uri"] = "/teacher/" . $data[0]["TEACHERID"];
-
-        foreach ($data as $value) {
-            $var = array(
-                "subject_name" => $value["SUBJECTNAME"],
-                "nrc" => $value["NRC"],
-                "section" => $value["SECTION"],
-                "resource_uri" => "/course/" . $value["NRC"],
-            );
-            $object["courses"][] = $var;
+        if (!$data->isEmpty()) {
+            foreach ($data as $value) {
+                $var = array(
+                    "subject_name" => $value["SUBJECTNAME"],
+                    "nrc" => $value["NRC"],
+                    "section" => $value["SECTION"],
+                    "resource_uri" => "/course/" . $value["NRC"],
+                );
+                $object["courses"][] = $var;
+            }
         }
-
         return response()->json($object);
     }
 
