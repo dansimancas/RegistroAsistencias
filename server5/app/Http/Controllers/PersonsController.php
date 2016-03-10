@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\StudentsModel;
@@ -12,10 +14,7 @@ class PersonsController extends Controller {
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-
-
-    public function showStudentsInfo($id)
-    {
+    public function showStudentsInfo($id) {
         $student = StudentsModel::where("ID", "=", $id)->get();
         $object = array(
             "id" => $student[0]["ID"],
@@ -24,10 +23,9 @@ class PersonsController extends Controller {
             "program" => $student[0]["PROGRAMA"],
             "email" => $student[0]["EMAIL"],
             "links" => array(
-                "student_uri" => "/student/".$student[0]["ID"]."/courses",
-                "attendance_uri" => "/student/".$student[0]["ID"]."/attendance",
+                "student_uri" => "/student/" . $student[0]["ID"] . "/courses",
+                "attendance_uri" => "/student/" . $student[0]["ID"] . "/attendance",
             )
-
         );
 
         return response()->json($object);
@@ -38,8 +36,7 @@ class PersonsController extends Controller {
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showTeachersInfo($id)
-    {
+    public function showTeachersInfo($id) {
         $data = TeachersModel::where("ID", "=", $id)->get();
         $object = array(
             "id" => $data[0]["ID"],
@@ -49,8 +46,9 @@ class PersonsController extends Controller {
             "school" => $data[0]["ESCUELA"],
             "department" => $data[0]["DEPARTAMENTO"],
             "email" => $data[0]["EMAIL"],
-            "resource_uri" => "/teacher/".$data[0]["ID"]."/courses",
+            "resource_uri" => "/teacher/" . $data[0]["ID"] . "/courses",
         );
         return response()->json($object);
     }
+
 }

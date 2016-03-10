@@ -1,1 +1,3 @@
-/server5/nbproject/private/
+/server5/nbproject/
+/nbproject/
+.env
