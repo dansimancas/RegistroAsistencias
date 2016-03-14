@@ -114,7 +114,7 @@ Route::post('token', ['middleware' => 'tokengenerator', 'uses' => 'Auth\AuthCont
     /*
      * Muestra los cursos en los que esta inscrito el estudiante id
      */
-    Route::get('student/{id}/courses', 'CoursesController@showCoursesByStudent');
+        Route::get('student/{id}/courses', 'CoursesController@showCoursesByStudent');
 
     /*
      * Guarda asistencias en la base de datos

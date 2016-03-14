@@ -25,13 +25,14 @@ class AuthController extends Controller {
         $token = TokenModel::where("username", "=", $username)->first();
 
         $student = StudentsModel::where("ID", "=", $username)->first();
+        $teacher = TeachersModel::where("ID", "=", $username)->first();
+
         if ($student){
             $type = "student";
-        }
-
-        $teacher = TeachersModel::where("ID", "=", $username)->first();
-        if ($teacher){
+        }else if ($teacher){
             $type = "teacher";
+        }else{
+            $type = "undefined";
         }
 
         if($token == null){
