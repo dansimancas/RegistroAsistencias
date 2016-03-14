@@ -20,17 +20,19 @@ class AlarmsController extends Controller
      */
     public function createAlarm($NRC)
     {
-        $studentsByCourse = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
+        $studentsbycourse = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
+        if (!$studentsbycourse->isEmpty()) {
+
+        }
+
         $students=array();
 
-        foreach($studentsByCourse as $value){
+        foreach($studentsbycourse as $value){
             array_push($students,$value["STUDENTID"]);
         }
 
         foreach ($students as $id){
-            $attendances = AttendanceModel::where("NRC", "=", $NRC)
-                                        ->Where("STUDENTID", "=", $id)
-                                        ->get();
+            $attendances = AttendanceModel::where("NRC", "=", $NRC)->Where("STUDENTID", "=", $id)->get();
 
             $came = 0;
             $notcame = 0;
@@ -67,10 +69,7 @@ class AlarmsController extends Controller
             $student = StudentsModel::where("ID", "=", $id)->get();
 
             //Danger alarm
-            $danger = AlarmsModel::where("STUDENT", "=", $id)
-                ->Where("COURSE", "=", $NRC)
-                ->Where("TYPE", "=", "danger")
-                ->first();
+            $danger = AlarmsModel::where("STUDENT", "=", $id)->Where("COURSE", "=", $NRC)->Where("TYPE", "=", "danger")->first();
 
             if ($notcame>= 3) {
                 if ($danger == null) {
@@ -91,9 +90,7 @@ class AlarmsController extends Controller
 
     public function showCoursesAlarms($NRC)
     {
-        $danger = AlarmsModel::where("COURSE", "=", $NRC)
-                             ->Where("TYPE", "=", "danger")
-                             ->get();
+        $danger = AlarmsModel::where("COURSE", "=", $NRC)->Where("TYPE", "=", "danger")->get();
 
         $object = array(
             "teacher id" => $danger[0]["TEACHER"],

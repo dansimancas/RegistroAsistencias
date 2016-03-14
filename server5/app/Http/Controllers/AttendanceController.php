@@ -41,35 +41,22 @@ class AttendanceController extends Controller {
      * @return Response
      */
     public function store() {
-    $json  = Input::json()->all();
+        $json  = Input::json()->all();
 
-    $size =  sizeof($json['estudiantes']);
-    for($i=0;$i<$size;$i++){
-        $attendance = new AttendanceModel;
-        $attendance->NRC            = $json['nrc'];
-        $attendance->STUDENTID      = $json['estudiantes'][$i]['id'];
-        $attendance->ATTENDANCE     = $json['estudiantes'][$i]['attendance'];
-        $attendance->save();
-    }
-    return "Registro Creado";
+        $size =  sizeof($json['estudiantes']);
+        for($i=0;$i<$size;$i++){
+            $attendance = new AttendanceModel;
+            $attendance->NRC            = $json['nrc'];
+            $attendance->STUDENTID      = $json['estudiantes'][$i]['id'];
+            $attendance->ATTENDANCE     = $json['estudiantes'][$i]['attendance'];
+            $attendance->save();
+        }
+        //return "Registro Creado";
 
-        //$alarm =  new AlarmsController();
-        //$alarm = $alarm->createAlarm($json[0][$json[0]['NRC']);
-
-        /*
-          $attendance = new AttendanceModel;
-          $attendance->STUDENTID      = Input::get('STUDENTID');
-          $attendance->NRC       = Input::get('NRC');
-          $attendance->ATTENDANCE     = Input::get('ATTENDANCE');
-          $attendance->save();
-
-          //generacion de alarmas
-          $alarm =  new AlarmsController();
-          $alarm = $alarm->createAlarm(Input::get('NRC'));
-
-          //return 'ok, registro creado';
-          return $alarm;
-         */
+        //generacion de alarmas
+        $alarm =  new AlarmsController();
+        $alarm = $alarm->createAlarm($json['nrc']);
+        return $alarm;
     }
 
     /**

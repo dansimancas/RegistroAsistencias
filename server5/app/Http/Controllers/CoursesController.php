@@ -19,27 +19,29 @@ class CoursesController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showCoursesInfo($NRC) {
-        $data = CoursesModel::where("NRC_PERIODO_KEY", "=", $NRC)->first();
-        if ($data) {
+        $course = CoursesModel::where("NRC_PERIODO_KEY", "=", $NRC)->first();
+
+        if ($course) {
             $object = array(
-                "subject_name" => $data["NOMBREASIGNATURA"],
-                "nrc" => $data["NRC_PERIODO_KEY"],
-                "period" => $data["PERIODO"],
-                "credits" => $data["CREDITOS"],
-                "week_hours" => $data["HORAS_SEMANALES"],
-                "subject" => $data["MATERIA"],
-                "section" => $data["SECCION"],
-                "course" => $data["CURSO"],
-                "teacher_id" => $data["DOCENTEID"],
+                "subject_name" => $course["NOMBREASIGNATURA"],
+                "nrc" => $course["NRC_PERIODO_KEY"],
+                "period" => $course["PERIODO"],
+                "credits" => $course["CREDITOS"],
+                "week_hours" => $course["HORAS_SEMANALES"],
+                "subject" => $course["MATERIA"],
+                "section" => $course["SECCION"],
+                "course" => $course["CURSO"],
+                "teacher_id" => $course["DOCENTEID"],
                 "links" => array(
-                    "students_uri" => "/course/" . $data["NRC_PERIODO_KEY"] . "/students",
-                    "statistics_uri" => $data["NRC_PERIODO_KEY"] . "/attendance/",
-                    "teacher_uri" => "/teacher/" . $data["DOCENTEID"]
+                    "students_uri" => "/course/" . $course["NRC_PERIODO_KEY"] . "/students",
+                    "statistics_uri" => $course["NRC_PERIODO_KEY"] . "/attendance/",
+                    "teacher_uri" => "/teacher/" . $course["DOCENTEID"]
                 )
             );
         } else {
             $object = "No existe ningún curso con el NRC " . $NRC . ".";
         }
+
         return response()->json($object);
     }
 
@@ -49,16 +51,17 @@ class CoursesController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showCoursesByTeacher($id) {
-        $data = CoursesByTeacherModel::where("TEACHERID", "=", $id)->get();
-        if (!$data->isEmpty()) {
-            $object = array(
-                "id" => $data[0]["TEACHERID"],
-                "names" => $data[0]["NAMES"],
-                "lastnames" => $data[0]["LASTNAMES"]
-            );
-            $object["resource_uri"] = "/teacher/" . $data[0]["TEACHERID"];
+        $course = CoursesByTeacherModel::where("TEACHERID", "=", $id)->get();
 
-            foreach ($data as $value) {
+        if (!$course->isEmpty()) {
+            $object = array(
+                "id" => $course[0]["TEACHERID"],
+                "names" => $course[0]["NAMES"],
+                "lastnames" => $course[0]["LASTNAMES"]
+            );
+            $object["resource_uri"] = "/teacher/" . $course[0]["TEACHERID"];
+
+            foreach ($course as $value) {
                 $var = array(
                     "subject_name" => $value["SUBJECTNAME"],
                     "nrc" => $value["NRC"],
@@ -85,6 +88,7 @@ class CoursesController extends Controller {
      */
     public function showStudentsByCourse($NRC) {
         $studentsbycourse = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
+
         if (!$studentsbycourse->isEmpty()) {
             $studentsbycourse_INIT = $studentsbycourse[0];
 
@@ -126,6 +130,7 @@ class CoursesController extends Controller {
      */
     public function showCoursesByStudent($id) {
         $coursesbystudent = CoursesByStudentModel::where("STUDENTID", "=", $id)->get();
+
         if (!$coursesbystudent->isEmpty()) {
             $coursesbystudent_INIT = $coursesbystudent[0];
 
