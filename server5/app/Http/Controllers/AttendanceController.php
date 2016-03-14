@@ -53,18 +53,6 @@ class AttendanceController extends Controller {
     }
     return "Registro Creado";
 
-        /*$json = Input::json()->all();
-
-        $size = sizeof($json['ESTUDIANTES']);
-        for ($i = 0; $i < $size; $i++) {
-            $attendance = new AttendanceModel;
-            $attendance->NRC = $json['NRC'];
-            $attendance->STUDENTID = $json[0]['ESTUDIANTES'][$i]['ID'];
-            $attendance->ATTENDANCE = $json[0]['ESTUDIANTES'][$i]['ATTENDANCE'];
-            $attendance->save();
-        }
-        return "Registro Creado";
-*/
         //$alarm =  new AlarmsController();
         //$alarm = $alarm->createAlarm($json[0][$json[0]['NRC']);
 
