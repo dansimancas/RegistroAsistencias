@@ -24,8 +24,6 @@ class AuthController extends Controller
     {
 
         $username = Request::input('username');
-        $token = TokenModel::where("username", "=", $username)->first();
-
         $student = StudentsModel::where("ID", "=", $username)->first();
         if ($student) {
             $type = "student";
@@ -33,17 +31,12 @@ class AuthController extends Controller
             $teacher = TeachersModel::where("ID", "=", $username)->first();
             if ($teacher) {
                 $type = "teacher";
+            }else{
+                $type = "undefined";
             }
         }
 
-
-        if ($student) {
-
-        } else if ($teacher) {
-
-        } else {
-            $type = "undefined";
-        }
+        $token = TokenModel::where("username", "=", $username)->first();
 
         if ($token == null) {
             $tokenNew = csrf_token();
