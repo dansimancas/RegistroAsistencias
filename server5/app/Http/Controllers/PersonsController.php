@@ -46,14 +46,14 @@ class PersonsController extends Controller {
 
         if ($teacher) {
             $object = array(
-                "id" => $teacher[0]["ID"],
-                "names" => $teacher[0]["NOMBRES"],
-                "lastnames" => $teacher[0]["APELLIDOS"],
-                "type" => $teacher[0]["TIPODOCENTE"],
-                "school" => $teacher[0]["ESCUELA"],
-                "department" => $teacher[0]["DEPARTAMENTO"],
-                "email" => $teacher[0]["EMAIL"],
-                "resource_uri" => "/teacher/" . $teacher[0]["ID"] . "/courses",
+                "id" => $teacher["ID"],
+                "names" => $teacher["NOMBRES"],
+                "lastnames" => $teacher["APELLIDOS"],
+                "type" => $teacher["TIPODOCENTE"],
+                "school" => $teacher["ESCUELA"],
+                "department" => $teacher["DEPARTAMENTO"],
+                "email" => $teacher["EMAIL"],
+                "resource_uri" => "/teacher/" . $teacher["ID"] . "/courses",
             );
         } else{
             $object = "No existe ningún profesor con el ID " . $id . ".";
