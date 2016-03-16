@@ -2,5 +2,4 @@
 /nbproject/
 .env
 .idea/
-SavioDB.sql
-rao.sql
+sql
