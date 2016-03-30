@@ -19,6 +19,11 @@ use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AlarmsController;
 
+Route::get('prueba', function(){
+    $matricula = \App\CoursesModel::find('1425-201610');
+    dd($matricula->matriculas[2]->student);
+});
+
 //Event Listeners
 Event::listen('teacher.showTeachersInfo', function($id)
 {

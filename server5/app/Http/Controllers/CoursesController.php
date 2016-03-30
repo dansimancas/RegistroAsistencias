@@ -87,27 +87,27 @@ class CoursesController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showStudentsByCourse($NRC) {
-        $studentsbycourse = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
-
+        $studentsbycourse = StudentsByCourseModel::where("IDNUMBER", "=", $NRC)->where('ROLE', '=', 'student')->get();
         if (!$studentsbycourse->isEmpty()) {
             $studentsbycourse_INIT = $studentsbycourse[0];
 
             $studentsbycourse_JSON = array(
-                "subject" => $studentsbycourse_INIT["SUBJECT"],
-                "nrc" => $studentsbycourse_INIT["NRC"],
-                "teacher_id" => $studentsbycourse_INIT["TEACHERID"],
+                "subject" => $studentsbycourse_INIT->course["NOMBREASIGNATURA"],
+                "nrc" => $studentsbycourse_INIT["IDNUMBER"],
+                "teacher_id" => $studentsbycourse_INIT->course["DOCENTEID"],
             );
 
             $studentsbycourse_JSON["resource_uri"] = "/course/" . $studentsbycourse[0]["NRC"];
 
             foreach ($studentsbycourse as $value) {
+
                 $var = array(
-                    "id" => $value["STUDENTID"],
-                    "names" => $value["NAMES"],
-                    "lastnames" => $value["LASTNAMES"],
-                    "program" => $value["PROGRAM"],
-                    "email" => $value["EMAIL"],
-                    "resource_uri" => "/student/" . $value["STUDENTID"],
+                    "id" => $value->student["ID"],
+                    "names" => $value->student["NOMBRES"],
+                    "lastnames" => $value->student["APELLIDOS"],
+                    "program" => $value->student["PROGRAMA"],
+                    "email" => $value->student["EMAIL"],
+                    "resource_uri" => "/student/" . $value->student["ID"],
                 );
                 $studentsbycourse_JSON["students"][] = $var;
             }

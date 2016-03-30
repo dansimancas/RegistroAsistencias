@@ -12,6 +12,14 @@ class StudentsByCourseModel extends Model {
      * @var string Carga la vista que contiene la información de los estudiantes que asisten a cursos.
      */
 
-    protected $table = 'StudentsByCourse';
+    protected $table = 'MATRICULA_EXTERNA_SAVIO';
     protected $connection = 'sirius_bd';
+
+    public function course(){
+        return $this->belongsTo('App\CoursesModel', 'IDNUMBER', 'NRC_PERIODO_KEY');
+    }
+
+    public function student(){
+        return  $this->belongsTo('App\StudentsModel', 'USERNAME', 'ID');
+    }
 }
