@@ -19,14 +19,14 @@ class PersonsController extends Controller {
 
         if ($student) {
             $object = array(
-                "id" => $student[0]["ID"],
-                "names" => $student[0]["NOMBRES"],
-                "lastnames" => $student[0]["APELLIDOS"],
-                "program" => $student[0]["PROGRAMA"],
-                "email" => $student[0]["EMAIL"],
+                "id" => $student["ID"],
+                "names" => $student["NOMBRES"],
+                "lastnames" => $student["APELLIDOS"],
+                "program" => $student["PROGRAMA"],
+                "email" => $student["EMAIL"],
                 "links" => array(
-                    "student_uri" => "/student/" . $student[0]["ID"] . "/courses",
-                    "attendance_uri" => "/student/" . $student[0]["ID"] . "/attendance",
+                    "student_uri" => "/student/" . $student["ID"] . "/courses",
+                    "attendance_uri" => "/student/" . $student["ID"] . "/attendance",
                 )
             );
         } else{

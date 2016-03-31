@@ -16,6 +16,11 @@ class CoursesModel extends Model {
     protected $connection = 'sirius_bd';
 
     public function matriculas(){
-        return $this->hasMany('App\StudentsByCourseModel', 'IDNUMBER');
+        return $this->hasMany('App\MatriculasModel', 'IDNUMBER', 'NRC_PERIODO_KEY');
     }
+
+    public function docente(){
+        return $this->belongsTo('App\TeachersModel', 'DOCENTEID', 'ID');
+    }
+
 }

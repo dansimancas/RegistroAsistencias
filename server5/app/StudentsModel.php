@@ -15,6 +15,6 @@ class StudentsModel extends Model {
     protected $connection = 'sirius_bd';
 
     public function matriculas(){
-        return $this->hasMany('App\StudentsByCourseModel', 'USERNAME');
+        return $this->hasMany('App\MatriculasModel', 'USERNAME', 'ID');
     }
 }

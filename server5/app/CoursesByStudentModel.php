@@ -12,6 +12,15 @@ class CoursesByStudentModel extends Model {
      * @var string
      */
 
-    protected $table = 'coursesbystudent';
+    protected $table = 'MATRICULA_EXTERNA_SAVIO';
+    protected $connection = 'sirius_bd';
+
+    public function course(){
+        return $this->belongsTo('App\CoursesModel', 'IDNUMBER', 'NRC_PERIODO_KEY');
+    }
+
+    public function student(){
+        return  $this->belongsTo('App\StudentsModel', 'USERNAME', 'ID');
+    }
 
 }

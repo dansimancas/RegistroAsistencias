@@ -20,8 +20,10 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AlarmsController;
 
 Route::get('prueba', function(){
-    $matricula = \App\CoursesModel::find('1425-201610');
-    dd($matricula->matriculas[2]->student);
+    /*$estudiante = \App\StudentsModel::find('T00032524');
+    dd($estudiante->matriculas[0]->course);*/
+    $matricula = \App\CoursesModel::find('PREG_0005');
+    dd($matricula);
 });
 
 //Event Listeners

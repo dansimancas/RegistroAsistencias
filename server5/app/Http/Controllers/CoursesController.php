@@ -9,6 +9,7 @@ use App\StudentsByCourseModel;
 use App\CoursesModel;
 use App\TeachersModel;
 use App\StudentsModel;
+use App\MatriculasModel;
 use Illuminate\Http\Request;
 
 class CoursesController extends Controller {
@@ -87,7 +88,7 @@ class CoursesController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showStudentsByCourse($NRC) {
-        $studentsbycourse = StudentsByCourseModel::where("IDNUMBER", "=", $NRC)->where('ROLE', '=', 'student')->get();
+        $studentsbycourse = MatriculasModel::where("IDNUMBER", "=", $NRC)->where('ROLE', '=', 'student')->get();
         if (!$studentsbycourse->isEmpty()) {
             $studentsbycourse_INIT = $studentsbycourse[0];
 
@@ -129,24 +130,24 @@ class CoursesController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showCoursesByStudent($id) {
-        $coursesbystudent = CoursesByStudentModel::where("STUDENTID", "=", $id)->get();
+        $coursesbystudent = MatriculasModel::where("USERNAME", "=", $id)->where('ROLE', '=', 'student')->where('IDNUMBER', 'not like', 'PREG%')->get();
 
         if (!$coursesbystudent->isEmpty()) {
             $coursesbystudent_INIT = $coursesbystudent[0];
 
             $coursesbystudent_JSON = array(
-                "student_id" => $coursesbystudent_INIT["STUDENTID"],
+                "student_id" => $coursesbystudent_INIT["USERNAME"],
                 "courses" => array()
             );
 
             foreach ($coursesbystudent as $value) {
                 $var = array(
-                    "subject_name" => $value["SUBJECTNAME"],
-                    "nrc" => $value["NRC"],
-                    "section" => $value["SECTION"],
-                    "names" => $value["NAMES"],
-                    "lastnames" => $value["LASTNAMES"],
-                    "teacher_id" => $value["TEACHERID"],
+                    "subject_name" => $value->course["NOMBREASIGNATURA"],
+                    "nrc" => $value->course["NRC"],
+                    "section" => $value->course["SECCION"],
+                    "names" => $value->course->docente["NOMBRES"],
+                    "lastnames" => $value->course->docente["APELLIDOS"],
+                    "teacher_id" => $value->course["DOCENTEID"],
                 );
                 $coursesbystudent_JSON["courses"][] = $var;
             }
