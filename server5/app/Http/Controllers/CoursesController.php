@@ -52,22 +52,23 @@ class CoursesController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showCoursesByTeacher($id) {
-        $course = CoursesByTeacherModel::where("TEACHERID", "=", $id)->get();
+        $coursesbyteacher = MatriculasModel::where("USERNAME", "=", $id)->where('ROLE', '=', 'editingteacher')->get();
 
-        if (!$course->isEmpty()) {
+        if (!$coursesbyteacher->isEmpty()) {
             $object = array(
-                "id" => $course[0]["TEACHERID"],
-                "names" => $course[0]["NAMES"],
-                "lastnames" => $course[0]["LASTNAMES"]
+                "id" => $coursesbyteacher[0]->teacher["ID"],
+                "names" => $coursesbyteacher[0]->teacher["NOMBRES"],
+                "lastnames" => $coursesbyteacher[0]->teacher["APELLIDOS"]
             );
-            $object["resource_uri"] = "/teacher/" . $course[0]["TEACHERID"];
+            $object["resource_uri"] = "/teacher/" . $coursesbyteacher[0]["TEACHERID"];
 
-            foreach ($course as $value) {
+            foreach ($coursesbyteacher as $value) {
+
                 $var = array(
-                    "subject_name" => $value["SUBJECTNAME"],
-                    "nrc" => $value["NRC"],
-                    "section" => $value["SECTION"],
-                    "resource_uri" => "/course/" . $value["NRC"],
+                    "subject_name" => $value->course["NOMBREASIGNATURA"],
+                    "nrc" => $value->course["NRC_PERIODO_KEY"],
+                    "section" => $value->course["SECCION"],
+                    "resource_uri" => "/course/" . $value->course["NRC_PERIODO_KEY"],
                 );
                 $object["courses"][] = $var;
             }

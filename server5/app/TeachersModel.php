@@ -13,4 +13,8 @@ class TeachersModel extends Model
      */
     protected $table = 'SIRIUS_TEACHERS';
     protected $connection = 'sirius_bd';
+
+    public function matriculas(){
+        return $this->hasMany('App\MatriculasModel', 'ID', 'USERNAME');
+    }
 }
