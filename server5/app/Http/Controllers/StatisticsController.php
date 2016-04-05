@@ -10,9 +10,8 @@
 namespace App\Http\Controllers;
 
 use App\AttendanceModel;
-use App\StudentsByCourseModel;
+use App\MatriculasModel;
 use App\StudentsModel;
-use App\CoursesByStudentModel;
 use App\CoursesModel;
 
 class StatisticsController extends Controller {
@@ -24,9 +23,10 @@ class StatisticsController extends Controller {
      */
     public function showStatisticsByStudentByCourse($id, $NRC, $response = true) {
         $data = AttendanceModel::where("STUDENTID", "=", $id)
-                ->Where("NRC", "=", $NRC)
+                ->where("NRC", "=", $NRC)
                 ->get();
-
+        $data = AttendanceModel::all();
+        dd($data);
         if ($data->isEmpty()) {
             $student = StudentsModel::where("ID", "=", $id)->first();
 
@@ -40,7 +40,7 @@ class StatisticsController extends Controller {
                 $object = "No existe un curso con el NRC " . $NRC;
                 return $object;
             }
-            $object = "El estudiante con código " . $id . " no está matriculado en el curso con NRC " . $NRC;
+            $object = "El estudiante con código " . $id . " no está tiene ninguna asistencia registrada en el curso con NRC " . $NRC;
             return $object;
         }
 
@@ -148,16 +148,15 @@ class StatisticsController extends Controller {
             "students" => array()
         );
 
-        $students = StudentsByCourseModel::where("NRC", "=", $NRC)->get()->toArray();
-
+        $students = MatriculasModel::where("IDNUMBER", "=", $NRC)->where('ROLE','=', 'student')->get();
         foreach ($students as $student) {
-            $course_attendance = self::showStatisticsByStudentByCourse($student["STUDENTID"], $NRC, false);
-            // var_dump($course_attendance);
+            $course_attendance = self::showStatisticsByStudentByCourse($student["USERNAME"], $NRC, false);
+            dd($course_attendance);
 
             $student_attendance = array(
-                "student_name" => $student["NAMES"],
-                "student_lastname" => $student["LASTNAMES"],
-                "student_id" => $student["STUDENTID"],
+                "student_name" => $student["NOMBRES"],
+                "student_lastname" => $student["APELLIDOS"],
+                "student_id" => $student["USERNAME"],
                 "resource_uri" => "/student/" . $student["STUDENTID"] . "/attendance",
                 "attendance" => array(
                     array("key" => "Came", "value" => $course_attendance["attendance"][0]["value"]),

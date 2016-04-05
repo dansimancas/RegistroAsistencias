@@ -142,13 +142,14 @@ class CoursesController extends Controller {
             );
 
             foreach ($coursesbystudent as $value) {
+                $course = $value->course;
                 $var = array(
-                    "subject_name" => $value->course["NOMBREASIGNATURA"],
-                    "nrc" => $value->course["NRC"],
-                    "section" => $value->course["SECCION"],
-                    "names" => $value->course->docente["NOMBRES"],
-                    "lastnames" => $value->course->docente["APELLIDOS"],
-                    "teacher_id" => $value->course["DOCENTEID"],
+                    "subject_name" => $course["NOMBREASIGNATURA"],
+                    "nrc" => $course["NRC"].'-'.$course['PERIODO'],
+                    "section" => $course["SECCION"],
+                    "names" => $course->docente["NOMBRES"],
+                    "lastnames" => $course->docente["APELLIDOS"],
+                    "teacher_id" => $course["DOCENTEID"],
                 );
                 $coursesbystudent_JSON["courses"][] = $var;
             }
