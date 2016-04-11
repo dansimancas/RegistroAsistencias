@@ -22,7 +22,8 @@ class AlarmsController extends Controller
     {
         $studentsbycourse = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
         if (!$studentsbycourse->isEmpty()) {
-
+            $object = "No hay estudiantes matriculados en el curso";
+            return response()->json($object);
         }
 
         $students=array();
@@ -36,9 +37,9 @@ class AlarmsController extends Controller
 
             $came = 0;
             $notcame = 0;
-            $arrivedlate = 0;
+            /*$arrivedlate = 0;
             $leftsoon = 0;
-            $DK = 0;
+            $DK = 0;*/
 
             foreach ($attendances as $value) {
 
@@ -51,7 +52,7 @@ class AlarmsController extends Controller
                     case 1:
                         $notcame += 1;
                         break;
-                    case 2:
+                    /*case 2:
                         $arrivedlate += 1;
                         break;
                     case 3:
@@ -59,7 +60,7 @@ class AlarmsController extends Controller
                         break;
                     case 4:
                         $DK += 1;
-                        break;
+                        break;*/
                 }
             }
 
@@ -69,7 +70,7 @@ class AlarmsController extends Controller
             $student = StudentsModel::where("ID", "=", $id)->get();
 
             //Danger alarm
-            $danger = AlarmsModel::where("STUDENT", "=", $id)->Where("COURSE", "=", $NRC)->Where("TYPE", "=", "danger")->first();
+            $danger = AlarmsModel::where("STUDENT", "=", $id)->where("COURSE", "=", $NRC)->where("TYPE", "=", "danger")->first();
 
             if ($notcame>= 3) {
                 if ($danger == null) {

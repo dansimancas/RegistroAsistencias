@@ -25,8 +25,6 @@ class StatisticsController extends Controller {
         $data = AttendanceModel::where("STUDENTID", "=", $id)
                 ->where("NRC", "=", $NRC)
                 ->get();
-        $data = AttendanceModel::all();
-        dd($data);
         if ($data->isEmpty()) {
             $student = StudentsModel::where("ID", "=", $id)->first();
 
@@ -51,9 +49,9 @@ class StatisticsController extends Controller {
 
         $came = 0;
         $notcame = 0;
-        $arrivedlate = 0;
+        /*$arrivedlate = 0;
         $leftsoon = 0;
-        $DK = 0;
+        $DK = 0;*/
 
         foreach ($data as $value) {
 
@@ -66,36 +64,27 @@ class StatisticsController extends Controller {
                 case 1:
                     $notcame += 1;
                     break;
-                case 2:
-                    $arrivedlate += 1;
-                    break;
-                case 3:
-                    $leftsoon += 1;
-                    break;
-                case 4:
-                    $DK += 1;
-                    break;
             }
         }
 
-        $total = $came + $notcame + $arrivedlate + $leftsoon + $DK;
+        $total = $came + $notcame; // + $arrivedlate + $leftsoon + $DK;
 
         //Two dimensional arrays
         if ($total != 0) {
             $attendance = array(
                 array("key" => "Came", "value" => round($came * 100 / $total, 2, PHP_ROUND_HALF_UP)), //2 decimals round
                 array("key" => "Did not come", "value" => round($notcame * 100 / $total, 2, PHP_ROUND_HALF_UP)),
-                array("key" => "Arrived late", "value" => round($arrivedlate * 100 / $total, 2, PHP_ROUND_HALF_UP)),
+                /*array("key" => "Arrived late", "value" => round($arrivedlate * 100 / $total, 2, PHP_ROUND_HALF_UP)),
                 array("key" => "Left Soon", "value" => round($leftsoon * 100 / $total, 2, PHP_ROUND_HALF_UP)),
-                array("key" => "Undefined", "value" => round($DK * 100 / $total, 2, PHP_ROUND_HALF_UP))
+                array("key" => "Undefined", "value" => round($DK * 100 / $total, 2, PHP_ROUND_HALF_UP))*/
             );
         } else {
             $attendance = array(
                 array("key" => "Came", "value" => 0),
                 array("key" => "Did not come", "value" => 0),
-                array("key" => "Arrived late", "value" => 0),
+                /*array("key" => "Arrived late", "value" => 0),
                 array("key" => "Left Soon", "value" => 0),
-                array("key" => "Undefined", "value" => 100)
+                array("key" => "Undefined", "value" => 100)*/
             );
         }
 
@@ -161,9 +150,9 @@ class StatisticsController extends Controller {
                 "attendance" => array(
                     array("key" => "Came", "value" => $course_attendance["attendance"][0]["value"]),
                     array("key" => "Did not come", "value" => $course_attendance["attendance"][1]["value"]),
-                    array("key" => "Arrived late", "value" => $course_attendance["attendance"][2]["value"]),
+                    /*array("key" => "Arrived late", "value" => $course_attendance["attendance"][2]["value"]),
                     array("key" => "Left Soon", "value" => $course_attendance["attendance"][3]["value"]),
-                    array("key" => "Undefined", "value" => $course_attendance["attendance"][4]["value"])
+                    array("key" => "Undefined", "value" => $course_attendance["attendance"][4]["value"])*/
                 )
             );
             $response_data["students"][] = $student_attendance;
