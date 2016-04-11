@@ -1,5 +1,8 @@
-/server5/nbproject/
-/nbproject/
+/vendor
+/node_modules
 .env
-.idea/
-sql
+/.idea
+.DS_Store
+Thumbs.db
+composer.lock
+composer.phar
