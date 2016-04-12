@@ -32,14 +32,13 @@ class StatisticsController extends Controller {
                 $object = "No existe un estudiante con el código " . $id;
                 return $object;
             }
+
             $course = CoursesModel::where("NRC_PERIODO_KEY", "=", $NRC)->first();
 
             if (!$course) {
                 $object = "No existe un curso con el NRC " . $NRC;
                 return $object;
             }
-            $object = "El estudiante con código " . $id . " no está tiene ninguna asistencia registrada en el curso con NRC " . $NRC;
-            return $object;
         }
 
         $object = array(
@@ -140,7 +139,6 @@ class StatisticsController extends Controller {
         $students = MatriculasModel::where("IDNUMBER", "=", $NRC)->where('ROLE','=', 'student')->get();
         foreach ($students as $student) {
             $course_attendance = self::showStatisticsByStudentByCourse($student["USERNAME"], $NRC, false);
-            dd($course_attendance);
 
             $student_attendance = array(
                 "student_name" => $student["NOMBRES"],
