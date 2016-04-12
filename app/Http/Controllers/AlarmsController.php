@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\AttendanceModel;
 use App\AlarmsModel;
-use App\CoursesByStudentModel;
+use App\MatriculasModel;
 use App\CoursesModel;
-use App\StudentsByCourseModel;
 use App\StudentsModel;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,8 +19,9 @@ class AlarmsController extends Controller
      */
     public function createAlarm($NRC)
     {
-        $studentsbycourse = StudentsByCourseModel::where("NRC", "=", $NRC)->get();
-        if (!$studentsbycourse->isEmpty()) {
+        $studentsbycourse = MatriculasModel::where("IDNUMBER", "=", $NRC)->get();
+
+        if ($studentsbycourse->isEmpty()) {
             $object = "No hay estudiantes matriculados en el curso";
             return response()->json($object);
         }
@@ -29,7 +29,7 @@ class AlarmsController extends Controller
         $students=array();
 
         foreach($studentsbycourse as $value){
-            array_push($students,$value["STUDENTID"]);
+            array_push($students,$value["USERNAME"]);
         }
 
         foreach ($students as $id){
