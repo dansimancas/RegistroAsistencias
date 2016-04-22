@@ -25,7 +25,7 @@ class TokenAuthMiddleware {
                 ->first();
         //Si no hay datos, responde como fallo de autenticación
         if($data == null){
-            return response('no auth',401);
+            return response('Acceso no autorizado.', 401);
         }
 
 		return $next($request);

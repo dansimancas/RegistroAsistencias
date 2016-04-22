@@ -69,7 +69,7 @@ Event::listen('course.showCoursesByTeacher', function($id)
 //Routes
 Route::post('token', ['middleware' => 'tokengenerator', 'uses' => 'Auth\AuthController@token']);
 
-//Route::group(['middleware' => 'tokenauth'], function() {
+Route::group(['middleware' => 'tokenauth'], function() {
 
         /*
      * Muestra la información de un profesor
@@ -160,7 +160,7 @@ Route::post('token', ['middleware' => 'tokengenerator', 'uses' => 'Auth\AuthCont
             return $controller->showAlarmsByStudentByCourse($NRC);
         });*/
     });
-//});
+});
 
 
 
