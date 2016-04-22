@@ -136,14 +136,15 @@ class StatisticsController extends Controller {
             "students" => array()
         );
 
-        $students = MatriculasModel::where("IDNUMBER", "=", $NRC)->where('ROLE','=', 'student')->get();
-        foreach ($students as $student) {
-            $course_attendance = self::showStatisticsByStudentByCourse($student["USERNAME"], $NRC, false);
+        $matriculas = MatriculasModel::where("IDNUMBER", "=", $NRC)->where('ROLE','=', 'student')->get();
 
+        foreach ($matriculas as $matricula) {
+            $student = $matricula->student;
+            $course_attendance = self::showStatisticsByStudentByCourse($student["ID"], $NRC, false);
             $student_attendance = array(
                 "student_name" => $student["NOMBRES"],
                 "student_lastname" => $student["APELLIDOS"],
-                "student_id" => $student["USERNAME"],
+                "student_id" => $student["ID"],
                 "resource_uri" => "/student/" . $student["STUDENTID"] . "/attendance",
                 "attendance" => array(
                     array("key" => "Came", "value" => $course_attendance["attendance"][0]["value"]),
