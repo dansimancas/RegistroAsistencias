@@ -23,39 +23,24 @@ class StatisticsController extends Controller {
      */
     public function showStatisticsByStudentByCourse($id, $NRC, $response = true) {
         $data = AttendanceModel::where("STUDENTID", "=", $id)
-                ->where("NRC", "=", $NRC)
-                ->get();
+                ->where("NRC", "=", $NRC)->get();
         if ($data->isEmpty()) {
             $student = StudentsModel::where("ID", "=", $id)->first();
-
             if (!$student) {
                 $object = "No existe un estudiante con el código " . $id;
                 return $object;
-            }
-
-            $course = CoursesModel::where("NRC_PERIODO_KEY", "=", $NRC)->first();
-
-            if (!$course) {
-                $object = "No existe un curso con el NRC " . $NRC;
-                return $object;
+            }else{
+                $course = CoursesModel::where("NRC_PERIODO_KEY", "=", $NRC)->first();
+                if (!$course) {
+                    $object = "No existe un curso con el NRC " . $NRC;
+                    return $object;
+                }
             }
         }
-
-        $object = array(
-            "student_id" => $id,
-            "nrc" => $NRC
-        );
-
-        $came = 0;
-        $notcame = 0;
-        /*$arrivedlate = 0;
-        $leftsoon = 0;
-        $DK = 0;*/
-
+        $object = array("student_id" => $id,"nrc" => $NRC);
+        $came = $notcame = 0;
         foreach ($data as $value) {
-
             $attendance_log = $value["ATTENDANCE"];
-
             switch ($attendance_log) {
                 case 0:
                     $came += 1;
@@ -65,28 +50,25 @@ class StatisticsController extends Controller {
                     break;
             }
         }
-
-        $total = $came + $notcame; // + $arrivedlate + $leftsoon + $DK;
-
+        $total = $came + $notcame;
+        $attendance = array();
         //Two dimensional arrays
         if ($total != 0) {
-            $attendance = array(
+            $attendance['percent'] = array(
                 array("key" => "Came", "value" => round($came * 100 / $total, 2, PHP_ROUND_HALF_UP)), //2 decimals round
                 array("key" => "Did not come", "value" => round($notcame * 100 / $total, 2, PHP_ROUND_HALF_UP)),
-                /*array("key" => "Arrived late", "value" => round($arrivedlate * 100 / $total, 2, PHP_ROUND_HALF_UP)),
-                array("key" => "Left Soon", "value" => round($leftsoon * 100 / $total, 2, PHP_ROUND_HALF_UP)),
-                array("key" => "Undefined", "value" => round($DK * 100 / $total, 2, PHP_ROUND_HALF_UP))*/
+            );
+            $attendance['value'] =  array(
+                array("key" => "Came", "value" => $came), //2 decimals round
+                array("key" => "Did not come", "value" => $notcame),
             );
         } else {
-            $attendance = array(
+            $attendance['percent'] = array(
                 array("key" => "Came", "value" => 0),
                 array("key" => "Did not come", "value" => 0),
-                /*array("key" => "Arrived late", "value" => 0),
-                array("key" => "Left Soon", "value" => 0),
-                array("key" => "Undefined", "value" => 100)*/
             );
+            $attendance['value'] = $attendance['percent'];
         }
-
         $object["attendance"] = $attendance;
 
         if ($response) {
@@ -146,12 +128,13 @@ class StatisticsController extends Controller {
                 "student_lastname" => $student["APELLIDOS"],
                 "student_id" => $student["ID"],
                 "resource_uri" => "/student/" . $student["STUDENTID"] . "/attendance",
-                "attendance" => array(
-                    array("key" => "Came", "value" => $course_attendance["attendance"][0]["value"]),
-                    array("key" => "Did not come", "value" => $course_attendance["attendance"][1]["value"]),
-                    /*array("key" => "Arrived late", "value" => $course_attendance["attendance"][2]["value"]),
-                    array("key" => "Left Soon", "value" => $course_attendance["attendance"][3]["value"]),
-                    array("key" => "Undefined", "value" => $course_attendance["attendance"][4]["value"])*/
+                "attendance_percent" => array(
+                    array("key" => "Came", "value" => $course_attendance["attendance"]["percent"][0]["value"]),
+                    array("key" => "Did not come", "value" => $course_attendance["attendance"]["percent"][1]["value"]),
+                ),
+                "attendance_value" => array(
+                    array("key" => "Came", "value" => $course_attendance["attendance"]["value"][0]["value"]),
+                    array("key" => "Did not come", "value" => $course_attendance["attendance"]["value"][1]["value"]),
                 )
             );
             $response_data["students"][] = $student_attendance;
