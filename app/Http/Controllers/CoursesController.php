@@ -10,6 +10,7 @@ use App\CoursesModel;
 use App\TeachersModel;
 use App\StudentsModel;
 use App\MatriculasModel;
+use App\PeriodosModel;
 use Illuminate\Http\Request;
 
 class CoursesController extends Controller {
@@ -21,7 +22,6 @@ class CoursesController extends Controller {
      */
     public function showCoursesInfo($NRC) {
         $course = CoursesModel::where("NRC_PERIODO_KEY", "=", $NRC)->first();
-
         if ($course) {
             $object = array(
                 "subject_name" => $course["NOMBREASIGNATURA"],
@@ -52,7 +52,15 @@ class CoursesController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showCoursesByTeacher($id) {
-        $coursesbyteacher = MatriculasModel::where("USERNAME", "=", $id)->where('ROLE', '=', 'editingteacher')->get();
+        $coursesbyteacher = MatriculasModel::where("USERNAME", "=", $id)->where('ROLE', '=', 'editingteacher');
+        $coursesbyteacher->where(function($query) {
+            $periodos = new PeriodosModel;
+            foreach ($periodos->periodosActivos() as $periodo) {
+                $query->orWhere('IDNUMBER', 'like', '%' . $periodo->periodo);
+            }
+        });
+
+        $coursesbyteacher = $coursesbyteacher->get();
 
         if (!$coursesbyteacher->isEmpty()) {
             $object = array(
@@ -63,7 +71,6 @@ class CoursesController extends Controller {
             $object["resource_uri"] = "/teacher/" . $coursesbyteacher[0]["TEACHERID"];
 
             foreach ($coursesbyteacher as $value) {
-
                 $var = array(
                     "subject_name" => $value->course["NOMBREASIGNATURA"],
                     "nrc" => $value->course["NRC_PERIODO_KEY"],
@@ -90,6 +97,7 @@ class CoursesController extends Controller {
      */
     public function showStudentsByCourse($NRC) {
         $studentsbycourse = MatriculasModel::where("IDNUMBER", "=", $NRC)->where('ROLE', '=', 'student')->get();
+
         if (!$studentsbycourse->isEmpty()) {
             $studentsbycourse_INIT = $studentsbycourse[0];
 
@@ -131,7 +139,16 @@ class CoursesController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showCoursesByStudent($id) {
-        $coursesbystudent = MatriculasModel::where("USERNAME", "=", $id)->where('ROLE', '=', 'student')->where('IDNUMBER', 'not like', 'PREG%')->get();
+        $coursesbystudent = MatriculasModel::where("USERNAME", "=", $id)->where('ROLE', '=', 'student')->where('IDNUMBER', 'not like', 'PREG%');
+
+        $coursesbystudent->where(function($query) {
+            $periodos = new PeriodosModel;
+            foreach ($periodos->periodosActivos() as $periodo) {
+                $query->orWhere('IDNUMBER', 'like', '%' . $periodo->periodo);
+            }
+        });
+
+        $coursesbystudent = $coursesbystudent->get();
 
         if (!$coursesbystudent->isEmpty()) {
             $coursesbystudent_INIT = $coursesbystudent[0];
@@ -145,7 +162,7 @@ class CoursesController extends Controller {
                 $course = $value->course;
                 $var = array(
                     "subject_name" => $course["NOMBREASIGNATURA"],
-                    "nrc" => $course["NRC"].'-'.$course['PERIODO'],
+                    "nrc" => $course["NRC"] . '-' . $course['PERIODO'],
                     "section" => $course["SECCION"],
                     "names" => $course->docente["NOMBRES"],
                     "lastnames" => $course->docente["APELLIDOS"],

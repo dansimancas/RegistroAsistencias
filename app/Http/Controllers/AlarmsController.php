@@ -9,8 +9,7 @@ use App\CoursesModel;
 use App\StudentsModel;
 use Illuminate\Database\Eloquent\Model;
 
-class AlarmsController extends Controller
-{
+class AlarmsController extends Controller {
 
     /**
      * Función para mostrar estadisticas de asistencia de un estudiante a un curso
@@ -92,20 +91,23 @@ class AlarmsController extends Controller
     public function showCoursesAlarms($NRC)
     {
         $danger = AlarmsModel::where("COURSE", "=", $NRC)->Where("TYPE", "=", "danger")->get();
-
-        $object = array(
-            "teacher id" => $danger[0]["TEACHER"],
-            "nrc" => $danger[0]["COURSE"]
-        );
-
-        foreach($danger as $value){
-            $var = array(
-                "student id" => $value["STUDENT"],
-                "message" => $value["MESSAGE"],
+        if($danger->isEmpty()){
+            return "No hay alarmas";
+        }else{
+            $object = array(
+                "teacher id" => $danger[0]["TEACHER"],
+                "nrc" => $danger[0]["COURSE"]
             );
-            $object["alarms"]["danger"][] = $var;
-        }
 
-        return response()->json($object);
+            foreach($danger as $value){
+                $var = array(
+                    "student id" => $value["STUDENT"],
+                    "message" => $value["MESSAGE"],
+                );
+                $object["alarms"]["danger"][] = $var;
+            }
+
+            return response()->json($object);
+        }
     }
 }

@@ -1,63 +1,68 @@
-<?php namespace App\Http\Controllers\Auth;
+<?php
 
+namespace App\Http\Controllers\Auth;
+
+use App\User;
+use Validator;
 use App\Http\Controllers\Controller;
-use App\StudentsModel;
-use App\TeachersModel;
-use Request;
-use App\TokenModel;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-class AuthController extends Controller
-{
-
+class AuthController extends Controller {
     /*
-    |--------------------------------------------------------------------------
-    | Token Generator and Checker
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
+      |--------------------------------------------------------------------------
+      | Registration & Login Controller
+      |--------------------------------------------------------------------------
+      |
+      | This controller handles the registration of new users, as well as the
+      | authentication of existing users. By default, this controller uses
+      | a simple trait to add these behaviors. Why don't you explore it?
+      |
+     */
 
-    public function token()
-    {
+use AuthenticatesAndRegistersUsers,
+    ThrottlesLogins;
 
-        $username = Request::input('username');
-        $student = StudentsModel::where("ID", "=", $username)->first();
-        if ($student) {
-            $type = "student";
-        } else {
-            $teacher = TeachersModel::where("ID", "=", $username)->first();
-            if ($teacher) {
-                $type = "teacher";
-            }else{
-                $type = "undefined";
-            }
-        }
+    // Amount of bad attempts user can make
+    protected $maxLoginAttempts = 2;
+    // Time for which user is going to be blocked in seconds
+    protected $lockoutTime = 300;
 
-        $token = TokenModel::where("username", "=", $username)->first();
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct() {
+        $this->middleware('guest', ['except' => 'getLogout']);
+    }
 
-        if ($token == null) {
-            $tokenNew = csrf_token();
-            $token = new TokenModel;
-            $token->USERNAME = $username;
-            $token->TOKEN = $tokenNew;
-            $token->save();
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data) {
+        return Validator::make($data, [
+                    'name' => 'required|max:255',
+                    'email' => 'required|email|max:255|unique:users',
+                    'password' => 'required|confirmed|min:6',
+        ]);
+    }
 
-            $object = array(
-                "type" => $type,
-                "token" => $tokenNew
-            );
-        } else {
-            $object = array(
-                "type" => $type,
-                "token" => $token->TOKEN
-            );
-        }
-
-        return $object;
-
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return User
+     */
+    protected function create(array $data) {
+        return User::create([
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'password' => bcrypt($data['password']),
+        ]);
     }
 
 }
