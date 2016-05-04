@@ -1,1 +1,9 @@
-/server5/nbproject/private/
+/vendor
+/node_modules
+.env
+/.idea
+.DS_Store
+Thumbs.db
+composer.lock
+composer.phar
+/nbproject/private/
