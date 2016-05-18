@@ -16,8 +16,8 @@ use App\CoursesByStudentModel;
 class StatisticsController extends Controller {
 
     /**
-     * Función para mostrar estadisticas de asistencia de un estudiante a un curso
-     * @param $idstudent, $idcourse
+     * Show attendance stats of a student to a particular course 
+     * @param $id, $NRC
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showStatisticsByStudentByCourse($id, $NRC, $response=true)
@@ -61,7 +61,6 @@ class StatisticsController extends Controller {
 
         $total = $came + $notcame + $arrivedlate + $leftsoon + $DK;
 
-        //Two dimensional arrays
         if($total!=0) {
             $attendance = array(
                 array("key" => "Came", "value" => round($came * 100 / $total, 2, PHP_ROUND_HALF_UP)), //2 decimals round
@@ -88,39 +87,12 @@ class StatisticsController extends Controller {
             return($object); //returns an array
         }
     }
-/*
-    public function showStatisticsByStudent($id)
-    {
-        $response_data = array(
-            "student_id" => $id,
-            "resource_uri" => "/student/".$id,
-            "courses" => array()
-        );
-
-        $courses = CoursesByStudentModel::where("STUDENTID", "=", $id)->get()->toArray();
-
-        foreach($courses as $course){
-            $student_attendance = self::showStatisticsByStudentByCourse($id, $course["NRC"], false);
-            $course_attendance = array(
-                "subject_name" => $course["SUBJECTNAME"],
-                "nrc" => $course["NRC"],
-                "resource_uri" => "/course/".$course["NRC"],
-                //"attendance" => $student_attendance
-                "attendance" => array(
-                    "came" => $student_attendance["came"],
-                    "did_not_come" => $student_attendance["did_not_come"],
-                    "arrived_late" => $student_attendance["arrived_late"],
-                    "left_soon" => $student_attendance["left_soon"],
-                    "undefined" => $student_attendance["undefined"]
-                )
-            );
-            $response_data["courses"][] = $course_attendance;
-        }
-
-        return response()->json($response_data);
-
-    }*/
-
+    
+    /**
+     * Show student attendance stats of an entire course 
+     * @param $NRC
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function showStatisticsByCourse($NRC)
     {
         $response_data = array(
@@ -133,7 +105,6 @@ class StatisticsController extends Controller {
 
         foreach($students as $student){
             $course_attendance = self::showStatisticsByStudentByCourse($student["STUDENTID"], $NRC, false);
-            // var_dump($course_attendance);
 
             $student_attendance = array(
                 "student_name" => $student["NAMES"],
@@ -156,7 +127,12 @@ class StatisticsController extends Controller {
 
     }
 
-    /*public function showStatisticsByStudent($id)
+    /**
+         * Show general attendance stats of a student to all his courses
+         * @param $id
+         * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function showStatisticsByStudent($id)
     {
         $response_data = array(
             "student_id" => $id,
@@ -172,7 +148,6 @@ class StatisticsController extends Controller {
                 "subject_name" => $course["SUBJECTNAME"],
                 "nrc" => $course["NRC"],
                 "resource_uri" => "/course/".$course["NRC"],
-                //"attendance" => $student_attendance
                 "attendance" => array(
                     "came" => $student_attendance["came"],
                     "did_not_come" => $student_attendance["did_not_come"],
@@ -186,6 +161,6 @@ class StatisticsController extends Controller {
 
         return response()->json($response_data);
 
-    }*/
+    }
 
 }
